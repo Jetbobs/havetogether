@@ -1,0 +1,12 @@
+@import './color.scss';
+
+.btn{
+    padding: 16px 8px;
+    background-color: $btn-bg;
+    color: $btn-font;
+    font-weight: bold;
+    border-radius: 4px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}

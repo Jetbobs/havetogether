@@ -1,0 +1,41 @@
+
+.title{
+    font-family: "Noto Sans KR Black";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.6;
+}
+.subtitle{
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+.form_title{
+    font-size: 14px;
+    line-height: 1.6;
+}
+.terms_title{
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.6;
+    padding: 4px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .c_terms_detail{
+        font-weight: bold;
+        font-size: 10px;
+        cursor: pointer;
+    }
+}
+.terms_subtitle{
+    font-weight: bold;
+    font-size: 10px;
+    padding: 4px;
+}
+.terms_text{
+    font-size: 10px;
+    font-weight: 400;
+    padding: 4px;
+}

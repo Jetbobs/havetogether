@@ -1,0 +1,18 @@
+.login_w{
+    width: 512px;
+    box-sizing: border-box;
+}
+.login_set{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: #202020;
+}
+.login_c_set{
+    padding: 32px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $white;
+    border-radius: 10px;
+}
