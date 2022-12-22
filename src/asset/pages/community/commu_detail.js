@@ -1,119 +1,10 @@
-import './App.scss';
-import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
-import logo from './asset/img/ht_logo_header.png';
-import GlobalStyles from './components/GlobalStyles';
-//fontawesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-//login
-import LoginMain from './asset/pages/login/main';
-import Terms from './asset/pages/login/terms';
-import InfoInput from './asset/pages/login/info_input';
-import InfoInputMore from './asset/pages/login/info_input_more';
-import MyInfo from './asset/pages/login/my_info';
-//community
-import CommuInfo from './asset/pages/community/commu_info';
-import CommuDetail from './asset/pages/community/commu_detail';
-import EventInfo from './asset/pages/community/event_info';
-import MemberInfo from './asset/pages/community/member_info';
-//pic
-import userPic from './asset/img/pic.png';
-import groupImg from './asset/img/group_img_00.png';
-import hostPic from './asset/img/host_img00.png';
-//bootstrap
-import { Container, Row, Col } from 'react-bootstrap';
-import ResponsiveExample from './asset/pages/test';
-import AutoLayoutExample from './asset/pages/test2';
+import { Link } from "react-router-dom";
+import hostPic from '../../img/host_img00.png'
 
-function App() {
-
-  let navigate = useNavigate();
-
-  return (
-    <div className="App" id='app'>
-      <>
-        <GlobalStyles />
-      </>
-      <div className="main_container">
-        <header>
-          <div id="logo">
-            <img src={logo} alt="" />
-          </div>
-          <div id="header_info">
-            <div className="hi_community">
-              커뮤니티
-            </div>
-            <div className="hi_my_page">
-              마이 페이지
-            </div>
-            <div className="hi_user">
-              <FontAwesomeIcon icon={faCircleUser}></FontAwesomeIcon>
-            </div>
-            <div className="hi_menu">
-              <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
-            </div>
-          </div>
-        </header>
-        <Routes>
-          <Route path='/login' element={<LoginMain></LoginMain>}>
-          </Route>
-          <Route path='/terms' element={<Terms></Terms>}></Route>
-          <Route path='/info_input' element={<InfoInput />}></Route>
-          <Route path='/info_input_more' element={<InfoInputMore />}></Route>
-          <Route path='/my_info' element={<MyInfo />}></Route>
-          <Route path='/test' element={<ResponsiveExample />} />
-          <Route path='/test2' element={<AutoLayoutExample />} />
-        </Routes>
-        <Routes>
-          <Route path='/community' element={<>
-            <div id="main">
-              <div id="side_menu">
-                <div className="menu_container">
-                  <div className="container">
-                    <div className="menu" onClick={() => { navigate() }}>
-                      커뮤니티 정보
-                    </div>
-                    <div className="menu" onClick={() => { navigate() }}>
-                      이벤트 정보
-                    </div>
-                    <div className="menu" onClick={() => { navigate() }}>
-                      멤버 보기
-                    </div>
-                  </div>
-                </div>
-                <div className="btn">
-                  이벤트 만들기
-                </div>
-              </div>
-              <Outlet></Outlet>
-            </div>
-          </>}>
-            <Route path='commu_info' element={<CommuInfo />}></Route>
-            <Route path='commu_detail' element={<CommuDetail/>}></Route>
-            <Route path='event_info' element={<EventInfo />}></Route>
-            <Route path='member_info' element={<MemberInfo />}></Route>
-          </Route>
-        </Routes>
-        {/* <div id="main">
-          <div id="side_menu">
-            <div className="menu_container">
-              <div className="container">
-                <div className="menu" onClick={() => { navigate() }}>
-                  커뮤니티 정보
-                </div>
-                <div className="menu" onClick={() => { navigate() }}>
-                  이벤트 정보
-                </div>
-                <div className="menu" onClick={() => { navigate() }}>
-                  멤버 보기
-                </div>
-              </div>
-            </div>
-            <div className="btn">
-              이벤트 만들기
-            </div>
-          </div>
-          <div id="meetup_detail">
+function CommuDetail(props){
+    return(
+        <>
+                      <div id="meetup_detail">
             <div id="meetup_info_title">
               <div className="bg"></div>
               <div className="corp_info">
@@ -527,10 +418,7 @@ function App() {
               </div>
             </div>
           </div>
-        </div> */}
-      </div>
-    </div>
-  );
+        </>
+    )
 }
-
-export default App;
+export default CommuDetail;
