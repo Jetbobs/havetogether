@@ -1,11 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import hostPic from '../../img/host_img00.png';
 import userPic from '../../img/pic.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 function EventDetail01(props){
+  let navigate = useNavigate();
     return(
         <>
-                  <div id="event_detail">
+      <div id="event_detail">
+        <div className="detail">
+          <div className="text">
+            이벤트 상세정보
+          </div>
+          <div className="text" onClick={()=>{navigate()}}>
+          <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon> 이벤트 목록
+          </div>
+        </div>
           <div id="info_title">
           <div className="container">
             <div className="title">
@@ -197,7 +208,27 @@ function EventDetail01(props){
                 <div className="btn" id='btn_not_join'>참가 취소하기</div>
               </div>
             </div>
-          </div></>
+          </div>
+          <div className="modal" id='event_cancel_01'>
+            <div className="modal_bg">
+            </div>
+            <div className="contents">
+              <div className="title">
+                MARU Meet Up
+              </div>
+              <div className="desc">
+                참가를 취소하시겠습니까? <br />
+                (마루민)님을 기다리고 있는데, 아쉬워요!
+                <div className="time">
+                
+              </div>
+              </div>
+              <div className="btn_wrapper">
+                <div className="btn" id='btn_not_join'>참가 취소하기</div>
+              </div>
+            </div>
+          </div>
+          </>
     )
 }
 

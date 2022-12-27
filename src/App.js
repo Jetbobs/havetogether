@@ -13,12 +13,17 @@ import InfoInputMore from './asset/pages/login/info_input_more';
 import MyInfo from './asset/pages/login/my_info';
 //community
 import CommuInfo from './asset/pages/community/commu_info';
-import CommuDetail from './asset/pages/community/commu_detail';
+import EventDetail00 from './asset/pages/community/commu_detail';
 import EventDetail01 from './asset/pages/community/event_detail_01';
 import EventInfo from './asset/pages/community/event_info';
 import MemberInfo from './asset/pages/community/member_info';
+import Matching from './asset/pages/community/matching';
+//event_create
+import EventCreate from './asset/pages/event_create/event_create';
 //pic
 import userPic from './asset/img/pic.png';
+import userPic01 from './asset/img/pic01.png';
+import userPic02 from './asset/img/pic02.png';
 import groupImg from './asset/img/group_img_00.png';
 import hostPic from './asset/img/host_img00.png';
 //bootstrap
@@ -90,10 +95,36 @@ function App() {
             </div>
           </>}>
             <Route path='commu_info' element={<CommuInfo />}></Route>
-            <Route path='commu_detail' element={<CommuDetail/>}></Route>
+            <Route path='event_detail_00' element={<EventDetail00 />}></Route>
             <Route path='event_info' element={<EventInfo />}></Route>
             <Route path='member_info' element={<MemberInfo />}></Route>
-            <Route path='event_detail01' element={<EventDetail01/>}></Route>
+            <Route path='event_detail_01' element={<EventDetail01 />}></Route>
+            <Route path='matching' element={<Matching />}></Route>
+          </Route>
+          <Route path='/event_create' element={<>
+            <div id="main">
+              <div id="side_menu">
+                <div className="menu_container">
+                  <div className="container">
+                    <div className="menu" onClick={() => { navigate() }}>
+                      커뮤니티 정보
+                    </div>
+                    <div className="menu" onClick={() => { navigate() }}>
+                      이벤트 정보
+                    </div>
+                    <div className="menu" onClick={() => { navigate() }}>
+                      멤버 보기
+                    </div>
+                  </div>
+                </div>
+                <div className="btn">
+                  이벤트 만들기
+                </div>
+              </div>
+              <Outlet></Outlet>
+            </div>
+          </>}>
+            <Route path='create' element={<EventCreate></EventCreate>}></Route>
           </Route>
         </Routes>
         {/* <div id="main">
@@ -115,296 +146,381 @@ function App() {
               이벤트 만들기
             </div>
           </div>
-          <div id="event_detail">
-          <div id="info_title">
-          <div className="container">
-            <div className="title">
-              치맥하실 야근러 모집!!
-              <div className="look">
-          <Link>운영정책 살펴보기</Link>
-          </div>
-            </div>
-            <div className="subtitle">
-              야근합니다! 신난다 야호 <br />
-              루프탑에서 치킨 함께 드실 분 구합니다! 청년치킨에서 픽업할 거에요!!!
-            </div>
-            <div className="time">
-              2022. 9. 30(금) 오후 7시
-            </div>
-          </div>
-          <div className="btn">
-            참가하기<strong>D-day</strong>
-          </div>
-        </div>
-        <div className="contents">
-        <div className="info_container" id='host_info'>
-                  <div className="title">
-                    개최자 정보
-                    <span></span>
-                  </div>
-                  <div className="card_container">
-                    <div className="card">
-                      <div className="pic_name">
-                        <div className="pic">
-                          <img src={userPic} alt="" />
-                        </div>
-                        <div className="name_wrapper">
-                          <div className="name">
-                            TOMAS
-                          </div>
-                          <div className="sub">
-                            UNISTY CEO
-                          </div>
-                        </div>
-                      </div>
-                      <div className="intro">
-                        IT 커뮤니티와 IT 기업을 연결하는 일을 하고 있습니다.
-                      </div>
-                      <div className="tag">
-                        <div className="item">
-                          <span>기획</span>
-                        </div>
-                        <div className="item">
-                          <span>브랜딩</span>
-                        </div>
-                        <div className="item">
-                          <span>서비스 디자인</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+          <div id="event_create">
+            <div className="header" id='header'>
+              <div className="container">
+                <div className="title">
+                  이벤트 만들기
+                </div>
+                <div className="subtitle">
+                네트워킹・고민상담・취미 모임・동아리 등의 멤버들과 함께 할 수 있는 이벤트를 만들어보세요. 
+                </div>
               </div>
-              <div className="info_container" id='participant_info'>
-                  <div className="title">
-                    참가자 정보
-                    <span>가장 먼저 참가신청 해보세요!</span>
-                  </div>
-                  <div className="card_container">
-                    <div className="card">
-                      <div className="pic_name">
-                        <div className="pic">
-                          <img src={hostPic} alt="" />
-                        </div>
-                        <div className="name_wrapper">
-                          <div className="name">
-                            마루요정
-                          </div>
-                          <div className="sub">
-                            ASAN NANUM Foundation
-                          </div>
-                        </div>
-                      </div>
-                      <div className="intro">
-                        마루민들의 행복과 너강을 넘어 네트워킹을 만들어가는 마루요정이에요!
-                      </div>
-                      <div className="tag">
-                        <div className="item">
-                          <span>아산</span>
-                        </div>
-                        <div className="item">
-                          <span>마루</span>
-                        </div>
-                        <div className="item">
-                          <span>커뮤니티</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="card">
-                      <div className="pic_name">
-                        <div className="pic">
-                          <img src={hostPic} alt="" />
-                        </div>
-                        <div className="name_wrapper">
-                          <div className="name">
-                            마루요정
-                          </div>
-                          <div className="sub">
-                            ASAN NANUM Foundation
-                          </div>
-                        </div>
-                      </div>
-                      <div className="intro">
-                        마루민들의 행복과 너강을 넘어 네트워킹을 만들어가는 마루요정이에요!
-                      </div>
-                      <div className="tag">
-                        <div className="item">
-                          <span>아산</span>
-                        </div>
-                        <div className="item">
-                          <span>마루</span>
-                        </div>
-                        <div className="item">
-                          <span>커뮤니티</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="card">
-                      <div className="pic_name">
-                        <div className="pic">
-                          <img src={hostPic} alt="" />
-                        </div>
-                        <div className="name_wrapper">
-                          <div className="name">
-                            마루요정
-                          </div>
-                          <div className="sub">
-                            ASAN NANUM Foundation
-                          </div>
-                        </div>
-                      </div>
-                      <div className="intro">
-                        마루민들의 행복과 너강을 넘어 네트워킹을 만들어가는 마루요정이에요!
-                      </div>
-                      <div className="tag">
-                        <div className="item">
-                          <span>아산</span>
-                        </div>
-                        <div className="item">
-                          <span>마루</span>
-                        </div>
-                        <div className="item">
-                          <span>커뮤니티</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-        </div>
-          </div>
-          <div className="modal" id='event_join'>
-            <div className="modal_bg">
+              <Link>이벤트 만드는 방법 자세히 보기 <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></Link>
             </div>
-            <div className="contents">
+            <div className="body" id='body'>
+              <div className="contents_container">
               <div className="title">
-                치맥하실 야근러 모집!!
+                이벤트 필수 정보
               </div>
-              <div className="desc">
-                참가 신청을 완료했습니다. 일정을 확인해주세요!
-                <div className="time">
-                *2022.9.30(금) 오후7시
+              <div className="contents">
+                <div className="input_container">
+                <div className="input">
+                  <div className="text_container">
+                  <div className="title">
+                    행사명
+                  </div>
+                  <div className="desc">
+
+                  </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                  <div className="title">
+                    커버 이미지
+                  </div>
+                  <div className="desc">
+
+                  </div>
+                  </div>
+                  <div className="input_wrapper" id='input_upload'>
+                  <input type="file" id='upload' />
+                  <label htmlFor="upload"><span>Upload</span></label>
+                  </div>
+                  
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                  <div className="title">
+                    간단한 이벤트 소개
+                  </div>
+                  <div className="desc">
+
+                  </div>
+                  </div>
+                  <div className="input_wrapper" id='input_textarea'>
+                  <textarea name="" id="" cols="30" rows="10"></textarea>
+                  </div>
+                  
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                  <div className="title">
+                    관련 URL
+                  </div>
+                  <div className="desc">
+
+                  </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                  <div className="title">
+                    이벤트 일자
+                  </div>
+                  <div className="desc">
+                    * 이벤트 만들기 이후에는 수정 불가능
+                  </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                  <div className="title">
+                    참가자 정원
+                  </div>
+                  <div className="desc">
+                      *이벤트 만들기 이후에는 수정 불가능
+                  </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                </div>
               </div>
               </div>
               <div className="btn_wrapper">
-                <div className="btn" id='btn_confirm'>확인</div>
+                <div className="btn">
+                  입력 완료
+                </div>
               </div>
             </div>
           </div>
-          <div className="modal" id='event_cancel'>
+          <div className="modal" id='meetup_join'>
             <div className="modal_bg">
             </div>
             <div className="contents">
               <div className="title">
                 MARU Meet Up
               </div>
-              <div className="desc">
-                참가를 취소하시겠습니까? <br />
-                (마루민)님을 기다리고 있는데, 아쉬워요!
-                <div className="time">
-                
+              <div className="time">
+                <div className="period">
+                  참가 신청기간 : 2022. 10. 17(월) ~19(수)
+                </div>
+                <div className="result">
+                  매칭결과 안내 : 2022. 10. 20(목)
+                </div>
               </div>
+              <div className="line">
+
+              </div>
+              <div className="desc">
+                입력하신 관심사 정보를 기반으로 매칭을 진행합니다.
+              </div>
+              <div className="content_title" id='mj_ct_00'>
+                만나고 싶은 시간을 알려주세요.
+              </div>
+              <div className="day_week_wrapper">
+                <div className="day_week" id='monday'>
+                  MM.DD
+                  <span>월요일</span>
+                </div>
+                <div className="day_week" id='tuesday'>
+                  MM.DD
+                  <span>화요일</span>
+                </div>
+                <div className="day_week" id='wednesday'>
+                  MM.DD
+                  <span>수요일</span>
+                </div>
+                <div className="day_week" id='thursday'>
+                  MM.DD
+                  <span>목요일</span>
+                </div>
+                <div className="day_week" id='friday'>
+                  MM.DD
+                  <span>금요일</span>
+                </div>
+              </div>
+              <div className="time_week_wrapper">
+                <div className="time_week" id='m_11'>
+                  11:30
+                </div>
+                <div className="time_week" id='m_12'>
+                  12:00
+                </div>
+                <div className="time_week" id='t_11'>
+                  11:30
+                </div>
+                <div className="time_week" id='t_12'>
+                  12:00
+                </div>
+                <div className="time_week" id='w_11'>
+                  11:30
+                </div>
+                <div className="time_week" id='w_12'>
+                  12:00
+                </div>
+                <div className="time_week" id='th_11'>
+                  11:30
+                </div>
+                <div className="time_week" id='th_12'>
+                  12:00
+                </div>
+                <div className="time_week" id='f_11'>
+                  11:30
+                </div>
+                <div className="time_week" id='f_12'>
+                  12:00
+                </div>
+              </div>
+              <div className="content_title" id='mj_ct_01'>
+                관심사, 취미를 알려주세요
+              </div>
+              <div className="hobbies_wrapper">
+                <div className="hobby_wrapper" id='mj_hw_00'>
+                  <span className="hobby">
+                    신문물
+                  </span>
+                  <span className="hobby">
+                    운동
+                  </span>
+                  <span className="hobby">
+                    반려동물
+                  </span>
+                  <span className="hobby">
+                    독서
+                  </span>
+                  <span className="hobby">
+                    자기계발
+                  </span>
+                </div>
+                <div className="hobby_wrapper" id='mj_hw_01'>
+                  <span className="hobby">
+                    외국어
+                  </span>
+                  <span className="hobby">
+                    맛집
+                  </span>
+                  <span className="hobby">
+                    여행
+                  </span>
+                  <span className="hobby">
+                    음악
+                  </span>
+                  <span className="hobby">
+                    공연
+                  </span>
+                  <span className="hobby">
+                    영화
+                  </span>
+                </div>
+                <div className="hobby_wrapper" id='mj_hw_02'>
+                  <span className="hobby">
+                    커피
+                  </span>
+                  <span className="hobby">
+                    맛집
+                  </span>
+                  <span className="hobby">
+                    주식
+                  </span>
+                  <span className="hobby">
+                    투자
+                  </span>
+                </div>
+              </div>
+              <div className="guide">
+                회원가입시 입력하신 관심사를 표기했습니다. <br />
+                변경하신 정보는 저장되며 다음 참가신청시에 표기됩니다.
               </div>
               <div className="btn_wrapper">
-                <div className="btn" id='btn_not_join'>참가 취소하기</div>
+                <div className="btn" id='btn_cancel'>취소</div>
+                <div className="btn" id='btn_join'>참가하기</div>
               </div>
             </div>
           </div>
-          <div className="modal" id='member_detail'>
-            <div className="modal_bg">
-            </div>
+          <div className="modal" id='meetup_confirm'>
+            <div className="modal_bg"></div>
             <div className="contents">
-            <div className="card_container">
-                    <div className="card">
-                      <div className="pic_name">
-                        <div className="pic">
-                          <img src={userPic} alt="" />
-                        </div>
-                        <div className="name_wrapper">
-                          <div className="name">
-                            TOMAS
-                          </div>
-                          <div className="sub">
-                            UNISTY CEO
-                          </div>
-                        </div>
-                      </div>
-                      <div className="intro">
-                        IT 커뮤니티와 IT 기업을 연결하는 일을 하고 있습니다.
-                      </div>
-                      <div className="tag">
-                        <div className="item">
-                          <span>기획</span>
-                        </div>
-                        <div className="item">
-                          <span>브랜딩</span>
-                        </div>
-                        <div className="item">
-                          <span>서비스 디자인</span>
-                        </div>
-                      </div>
-                      <div className="line"></div>
-                      <div className="contact">
-                        <div className="info" id='email'>
-                          이메일 : hq@UNISTY.center
-                        </div>
-                        <div className="info" id='phone'>
-                          연락처 : 010-2731-0705
-                        </div>
-                        <div className="belong">
-                          <div className="item" id='maru180'>
-                            <span>MARU 180</span>
-                          </div>
-                          <div className="item" id='ict_coc'>
-                            <span>ICT COC</span>
-                          </div>
-                          <div className="item" id='d_camp'>
-                            <span>d.camp</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="line"></div>
-                      <div className="title">
-                        참가 예정인 이벤트
-                      </div>
-                      <div className="event_container">
-                        <div className="event">
-                          <div className="title_state">
-                            <div className="title">
-                              MARU Meet Up
-                            </div>
-                            <div className="state">
-                              접수중 D-<span>3</span>
-                            </div>
-                          </div>
-                          <div className="time_writer">
-                            <div className="time">
-                              2022. 10. 3(월) ~7(금)
-                            </div>
-                            <div className="writer">
-                            마루 요정 🧚
-                            </div>
-                          </div>
-                        </div>
-                        <div className="event">
-                          <div className="title_state">
-                            <div className="title">
-                              치맥하실 야근러 모집!!
-                            </div>
-                            <div className="state">
-                              접수중 ,<span>오늘</span>
-                            </div>
-                          </div>
-                          <div className="time_writer">
-                            <div className="time">
-                              2022. 9. 30(금) 오후 7시
-                            </div>
-                            <div className="writer">
-                            UNISTY TOMAS
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div className="title">
+                MARU Meet Up
+              </div>
+              <div className="desc">
+                참가신청을 완료했습니다. 매칭이 완료되면 안내드리겠습니다. <br />
+                * 매칭결과 안내 : <span>2022. 10. 20(목)</span>
+              </div>
+              <div className="line"></div>
+              <div className="content_title" id='mc_ct_00'>
+                선택하신 요일, 시간
+              </div>
+              <div className="day_week_wrapper">
+                <div className="day_week" id='monday'>
+                  MM.DD
+                  <span>월요일</span>
+                </div>
+                <div className="day_week" id='tuesday'>
+                  MM.DD
+                  <span>화요일</span>
+                </div>
+                <div className="day_week" id='wednesday'>
+                  MM.DD
+                  <span>수요일</span>
+                </div>
+                <div className="day_week" id='thursday'>
+                  MM.DD
+                  <span>목요일</span>
+                </div>
+                <div className="day_week" id='friday'>
+                  MM.DD
+                  <span>금요일</span>
+                </div>
+              </div>
+              <div className="time_week_wrapper">
+                <div className="time_week active" id='m_11'>
+                  11:30
+                </div>
+                <div className="time_week" id='m_12'>
+                  12:00
+                </div>
+                <div className="time_week" id='t_11'>
+                  11:30
+                </div>
+                <div className="time_week" id='t_12'>
+                  12:00
+                </div>
+                <div className="time_week" id='w_11'>
+                  11:30
+                </div>
+                <div className="time_week active" id='w_12'>
+                  12:00
+                </div>
+                <div className="time_week" id='th_11'>
+                  11:30
+                </div>
+                <div className="time_week" id='th_12'>
+                  12:00
+                </div>
+                <div className="time_week" id='f_11'>
+                  11:30
+                </div>
+                <div className="time_week" id='f_12'>
+                  12:00
+                </div>
+              </div>
+              <div className="content_title" id='mc_ct_01'>
+                선택하신 관심사, 취미
+              </div>
+              <div className="hobbies_wrapper">
+                <div className="hobby_wrapper" id='mc_hw_00'>
+                  <span className="hobby">
+                    운동
+                  </span>
+                  <span className="hobby">
+                    음악
+                  </span>
+                  <span className="hobby">
+                    자기계발
+                  </span>
+                  <span className="hobby">
+                    맛집
+                  </span>
+                </div>
+              </div>
+              <div className="btn_wrapper">
+                <div className="btn">
+                  수정하기
+                </div>
+                <div className="btn">
+                  확인
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="modal" id='meetup_cancel'>
+            <div className="modal_bg"></div>
+            <div className="contents">
+              <div className="title">
+                MARU Meet Up
+              </div>
+              <div className="desc">
+                참가를 취소하시겠습니까? <br />
+                <span>(마루민)</span>님을 기다리고 있는데, 아쉬워요!
+              </div>
+              <div className="btn_wrapper">
+                <div className="btn" id='btn_join_cancel'>
+                  참가 취소하기
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="modal" id='meetup_fail'>
+            <div className="modal_bg"></div>
+            <div className="contents">
+              <div className="title">
+                매칭 결과 안내
+              </div>
+              <div className="desc">
+                비슷한 시간대, 관심사로 매칭할 수 있는 멤버가 없어 매칭하지 못했습니다. <br />
+                아쉬운 소식을 전해드려 죄송합니다
+              </div>
+              <div className="btn_wrapper">
+                <div className="btn" id='btn_join_cancel'>
+                  확인
+                </div>
+              </div>
             </div>
           </div>
         </div> */}
