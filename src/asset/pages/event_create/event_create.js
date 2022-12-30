@@ -49,6 +49,9 @@ function EventCreate(props){
                   <div className="input_wrapper" id='input_upload'>
                   <input type="file" id='upload' />
                   <label htmlFor="upload"><span>Upload</span></label>
+                  <div className="text">
+                    *최소사이즈 776·180px
+                  </div>
                   </div>
                   
                 </div>
@@ -102,6 +105,167 @@ function EventCreate(props){
                 </div>
               </div>
               </div>
+              <div className="contents_container" id='c_c_01'>
+                <div className="title_wrapper">
+                <div className="title">
+                사전 등록 정보
+                <div className="toggle">
+                  <label htmlFor="">
+                  <input role="switch" type="checkbox" />
+                  </label>
+                </div>
+              </div>
+              <div className="subtitle">
+                모집기간과 참가자 정원을 추가로 입력하시면, 이벤트를 시작하기 전에 참가 희망자를 모집하고 팀 매칭을 진행할 수 있습니다.
+              </div>
+                </div>
+              <div className="contents">
+                <div className="input_container">
+                <div className="input">
+                  <div className="text_container">
+                  <div className="title">
+                    모집기간
+                  </div>
+                  <div className="desc">
+
+                  </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                  <div className="title">
+                    팀 매칭 결과 안내 일자
+                  </div>
+                  <div className="desc">
+
+                  </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                  <div className="title">
+                    참가자 정원
+                  </div>
+                  <div className="desc">
+                    
+                  </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                </div>
+              </div>
+              </div>
+              <div className="contents_container" id='c_c_02'>
+                <div className="title_wrapper">
+                <div className="title">
+                후기 정보
+                <div className="toggle">
+                  <label htmlFor="">
+                  <input role="switch" type="checkbox" />
+                  </label>
+                </div>
+              </div>
+              <div className="subtitle">
+                이벤트가 종료된 이후 참가자에게 후기를 요청 할 수 있씁니다. 필요한 정보를 입력해주세요.
+              </div>
+                </div>
+              <div className="contents">
+                <div className="input_container">
+                <div className="input">
+                  <div className="text_container">
+                  <div className="title">
+                    후기 작성 안내글
+                  </div>
+                  <div className="desc">
+
+                  </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                  <div className="title">
+                    관련 URL
+                  </div>
+                  <div className="desc">
+
+                  </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                  <div className="title">
+                    작성 기한
+                  </div>
+                  <div className="desc">
+                    
+                  </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                  <div className="title">
+                    수집할 데이터
+                  </div>
+                  <div className="desc">
+                    
+                  </div>
+                  </div>
+                  <div className="checkbox_container">
+                    <div className="checkbox">
+                      <input type="checkbox" id='check_00' />
+                      <label htmlFor="check_00"></label>
+                      <div className="text_wrapper">
+                      <div className="text">
+                        참가 목적 <strong>/ 텍스트 박스(최대 500자)</strong>
+                      </div>
+                      </div>
+                    </div>
+                    <div className="checkbox">
+                      <input type="checkbox" id='check_01' />
+                      <label htmlFor="check_01"></label>
+                      <div className="text_wrapper">
+                      <div className="text">
+                        참가 후기 <strong>/ 텍스트 박스(최대 500자)</strong>
+                      </div>
+                      </div>
+                    </div>
+                    <div className="checkbox">
+                      <input type="checkbox" id='check_02' />
+                      <label htmlFor="check_02"></label>
+                      <div className="text_wrapper">
+                      <div className="text">
+                        한줄평 <strong>/ 텍스트 박스(최대 100자)</strong>
+                      </div>
+                      </div>
+                    </div>
+                    <div className="checkbox">
+                      <input type="checkbox" id='check_03' />
+                      <label htmlFor="check_03"></label>
+                      <div className="text_wrapper">
+                      <div className="text">
+                        점수 <strong>/ 10점 만점</strong>
+                      </div>
+                      </div>
+                    </div>
+                    <div className="checkbox">
+                      <input type="checkbox" id='check_04' />
+                      <label htmlFor="check_04"></label>
+                      <div className="text_wrapper">
+                      <div className="text">
+                        인증샷 <strong>/ 이미지 파일 업로드 기능</strong>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+              </div>
               <div className="btn_wrapper">
                 <div className="btn">
                   입력 완료
@@ -109,7 +273,7 @@ function EventCreate(props){
               </div>
             </div>
           </div>
-                      <div className="modal" id='event_create_confirm'>
+          <div className="modal" id='event_create_confirm'>
             <div className="modal_bg"></div>
             <div className="contents">
               <div className="title">

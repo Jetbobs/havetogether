@@ -214,17 +214,18 @@ function EventDetail01(props){
             </div>
             <div className="contents">
               <div className="title">
-                MARU Meet Up
+                이벤트 취소
               </div>
               <div className="desc">
-                참가를 취소하시겠습니까? <br />
-                (마루민)님을 기다리고 있는데, 아쉬워요!
+                정말로 이벤트를 취소할까요? 확인을 선택하시면 이벤트가 취소되며, <br />
+                 참가신청한 멤버들에게 푸시 알림이 전송됩니다.
                 <div className="time">
                 
               </div>
               </div>
               <div className="btn_wrapper">
-                <div className="btn" id='btn_not_join'>참가 취소하기</div>
+                <div className="btn" id='btn_no'>아니요</div>
+                <div className="btn" id='btn_yes'>확인</div>
               </div>
             </div>
           </div>
