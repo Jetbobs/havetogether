@@ -1323,6 +1323,24 @@ div{
         display: flex;
         flex-direction: column;
         gap: 32px;
+        .detail{
+          display: flex;
+          justify-content: space-between;
+          background-color: color.$white;
+          padding: 8px 32px;
+          .text{
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.3;
+            a{
+              opacity: 0.54;
+            }
+          }
+
+        }
         #meetup_info_title{
           
           .bg{
@@ -1388,7 +1406,7 @@ div{
               #btn_join{
                 display: none;
               }
-              #btn_cancel{
+              #btn_cancel, #btn_event_cancel{
                 display: none;
                 background-color: color.$white;
                 color: color.$green;
@@ -2529,6 +2547,9 @@ div{
                 border: 1px solid color.$green;
               }
             }
+            #btn_enter_complete{
+              display: none;
+            }
           }
         }
       }
@@ -3454,8 +3475,65 @@ div{
           }
         }
       }
+      #event_create_confirm_01{
+        display: none;
+
+        .contents{
+          width: 512px;
+          height: 320px;
+          .title{
+            position: absolute;
+            left: 33px;
+            top: 32px;
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 1.6;
+          }
+          .desc{
+            position: absolute;
+            left: 33px;
+            top: 86px;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 1.6;
+            ul{
+              li{
+                list-style: disc;
+                list-style-position: inside;
+              }
+            }
+          }
+          .yellow{
+            color: color.$orange;
+            margin-top: 24px;
+          }
+          .btn_wrapper{
+            display: flex;
+            padding: 16px;
+            gap: 16px;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            .btn{
+              padding: 8px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: color.$white;
+              width: 232px;
+              height: 48px;
+              color: color.$green;
+              border: 1px solid color.$green;
+              border-radius: 10px;
+              font-weight: 900;
+              font-size: 14px;
+              line-height: 1.3;
+            }
+          }
+        }
+      }
       #event_cancel_01{
-        display: block;
+        display: none;
         .contents{
           width: 512px;
           height: 248px;

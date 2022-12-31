@@ -1,13 +1,24 @@
-import { Link } from "react-router-dom";
 import hostPic from '../../img/host_img00.png';
 import userPic from '../../img/pic.png';
 import userPic01 from '../../img/pic01.png';
 import userPic02 from '../../img/pic02.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { Link, useNavigate } from "react-router-dom";
 
 function EventDetail00(props) {
+  let navigate = useNavigate();
   return (
     <>
           <div id="meetup_detail">
+          <div className="detail">
+          <div className="text">
+            이벤트 상세정보
+          </div>
+          <div className="text" onClick={()=>{navigate()}}>
+          <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon> 이벤트 목록
+          </div>
+        </div>
         <div id="meetup_info_title">
           <div className="bg"></div>
           <div className="corp_info">
@@ -35,6 +46,9 @@ function EventDetail00(props) {
               </div>
               <div className="btn" id='btn_progress'>
                 매칭 진행 중
+              </div>
+              <div className="btn" id='btn_event_cancel'>
+                이벤트 취소하기
               </div>
             </div>
           </div>
@@ -449,6 +463,46 @@ function EventDetail00(props) {
           </div>
         </div>
       </div>
+      <div className="modal" id='event_cancel_01'>
+            <div className="modal_bg">
+            </div>
+            <div className="contents">
+              <div className="title">
+                이벤트 취소
+              </div>
+              <div className="desc">
+                정말로 이벤트를 취소할까요? 확인을 선택하시면 이벤트가 취소되며, <br />
+                 참가신청한 멤버들에게 푸시 알림이 전송됩니다.
+                <div className="time">
+                
+              </div>
+              </div>
+              <div className="btn_wrapper">
+                <div className="btn" id='btn_no'>아니요</div>
+                <div className="btn" id='btn_yes'>확인</div>
+              </div>
+            </div>
+          </div>
+          <div className="modal" id='event_edit_confirm'>
+            <div className="modal_bg">
+            </div>
+            <div className="contents">
+              <div className="title">
+                이벤트 정보 수정
+              </div>
+              <div className="desc">
+                정보 수정을 완료할까요? <br />
+                 완료 후 이벤트 상세보기 페이지로 이동합니다.
+                <div className="time">
+                
+              </div>
+              </div>
+              <div className="btn_wrapper">
+                <div className="btn" id='btn_continue'>수정 계속하기</div>
+                <div className="btn" id='btn_complete'>수정 완료</div>
+              </div>
+            </div>
+          </div>
     </>
   )
 }

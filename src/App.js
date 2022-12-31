@@ -20,6 +20,7 @@ import MemberInfo from './asset/pages/community/member_info';
 import Matching from './asset/pages/community/matching';
 //event_create
 import EventCreate from './asset/pages/event_create/event_create';
+import EventEdit from './asset/pages/event_create/event_edit';
 //pic
 import userPic from './asset/img/pic.png';
 import userPic01 from './asset/img/pic01.png';
@@ -125,9 +126,10 @@ function App() {
             </div>
           </>}>
             <Route path='create' element={<EventCreate></EventCreate>}></Route>
+            <Route path='edit' element={<EventEdit/>}></Route>
           </Route>
         </Routes>
-        {/* <div id="main">
+        <div id="main">
           <div id="side_menu">
             <div className="menu_container">
               <div className="container">
@@ -715,7 +717,7 @@ function App() {
             </div>
           </div>
 
-        </div> */}
+        </div>
       </div>
     </div>
   );

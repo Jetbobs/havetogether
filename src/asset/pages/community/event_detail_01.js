@@ -229,6 +229,26 @@ function EventDetail01(props){
               </div>
             </div>
           </div>
+          <div className="modal" id='event_edit_confirm'>
+            <div className="modal_bg">
+            </div>
+            <div className="contents">
+              <div className="title">
+                이벤트 정보 수정
+              </div>
+              <div className="desc">
+                정보 수정을 완료할까요? <br />
+                 완료 후 이벤트 상세보기 페이지로 이동합니다.
+                <div className="time">
+                
+              </div>
+              </div>
+              <div className="btn_wrapper">
+                <div className="btn" id='btn_continue'>수정 계속하기</div>
+                <div className="btn" id='btn_complete'>수정 완료</div>
+              </div>
+            </div>
+          </div>
           </>
     )
 }
