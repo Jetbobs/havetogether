@@ -126,7 +126,7 @@ function App() {
             </div>
           </>}>
             <Route path='create' element={<EventCreate></EventCreate>}></Route>
-            <Route path='edit' element={<EventEdit/>}></Route>
+            <Route path='edit' element={<EventEdit />}></Route>
           </Route>
         </Routes>
         <div id="main">
@@ -148,276 +148,239 @@ function App() {
               이벤트 만들기
             </div>
           </div>
-          <div id="event_edit">
+          <div id="side_menu_mp">
+            <div className="menu_container">
+              <div className="container">
+                <div className="menu" onClick={() => { navigate() }}>
+                  대시보드
+                </div>
+                <div className="menu" onClick={() => { navigate() }}>
+                  이벤트 참가 현황
+                </div>
+                <div className="menu" onClick={() => { navigate() }}>
+                  내 정보
+                </div>
+                <div className="menu" onClick={() => { navigate() }}>
+                  소망 상자
+                </div>
+                <div className="menu" onClick={() => { navigate() }}>
+                  설정
+                </div>
+              </div>
+            </div>
+            <div className="btn">
+              이벤트 만들기
+            </div>
+          </div>
+          <div id="dash_board">
             <div className="header" id='header'>
               <div className="container">
                 <div className="title">
-                  이벤트 정보 수정
+                  TOMAS님의 대시보드
                 </div>
                 <div className="subtitle">
-                이벤트 일자, 참가자 정원 이외의 정보를 수정하실 수 있습니다. 
+                  최근 <span>6</span>명의 마루민들을 만나셨네요! 앞으로도 많은 활동 부탁드려요!
                 </div>
               </div>
-              <Link>이벤트 만드는 방법 자세히 보기 <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></Link>
+              <Link><FontAwesomeIcon></FontAwesomeIcon></Link>
             </div>
             <div className="body" id='body'>
-              <div className="contents_container" id='c_c_00'>
-              <div className="title">
-                이벤트 필수 정보
-              </div>
-              <div className="contents">
-                <div className="input_container">
-                <div className="input">
-                  <div className="text_container">
-                  <div className="title">
-                    행사명
-                  </div>
-                  <div className="desc">
-
-                  </div>
-                  </div>
-                  <input type="text" />
-                </div>
-                <div className="input">
-                  <div className="text_container">
-                  <div className="title">
-                    커버 이미지
-                  </div>
-                  <div className="desc">
-
-                  </div>
-                  </div>
-                  <div className="input_wrapper" id='input_upload'>
-                  <input type="file" id='upload' />
-                  <label htmlFor="upload"><span>Upload</span></label>
-                  <div className="text">
-                    *최소사이즈 776·180px
-                  </div>
-                  </div>
-                  
-                </div>
-                <div className="input">
-                  <div className="text_container">
-                  <div className="title">
-                    간단한 이벤트 소개
-                  </div>
-                  <div className="desc">
-
-                  </div>
-                  </div>
-                  <div className="input_wrapper" id='input_textarea'>
-                  <textarea name="" id="" cols="30" rows="10"></textarea>
-                  </div>
-                  
-                </div>
-                <div className="input">
-                  <div className="text_container">
-                  <div className="title">
-                    관련 URL
-                  </div>
-                  <div className="desc">
-
-                  </div>
-                  </div>
-                  <input type="text" />
-                </div>
-                <div className="input">
-                  <div className="text_container">
-                  <div className="title">
-                    이벤트 일자
-                  </div>
-                  <div className="desc">
-                    * 이벤트 만들기 이후에는 수정 불가능
-                  </div>
-                  </div>
-                  <input type="text" />
-                </div>
-                <div className="input">
-                  <div className="text_container">
-                  <div className="title">
-                    참가자 정원
-                  </div>
-                  <div className="desc">
-                      *이벤트 만들기 이후에는 수정 불가능
-                  </div>
-                  </div>
-                  <input type="text" />
-                </div>
-                </div>
-              </div>
-              </div>
-              <div className="contents_container" id='c_c_01'>
-                <div className="title_wrapper">
-                <div className="title">
-                사전 등록 정보
-                <div className="toggle">
-                  <label htmlFor="">
-                  <input role="switch" type="checkbox" />
-                  </label>
-                </div>
-              </div>
-              <div className="subtitle">
-                모집기간과 참가자 정원을 추가로 입력하시면, 이벤트를 시작하기 전에 참가 희망자를 모집하고 팀 매칭을 진행할 수 있습니다.
-              </div>
-                </div>
-              <div className="contents">
-                <div className="input_container">
-                <div className="input">
-                  <div className="text_container">
-                  <div className="title">
-                    모집기간
-                  </div>
-                  <div className="desc">
-
-                  </div>
-                  </div>
-                  <input type="text" />
-                </div>
-                <div className="input">
-                  <div className="text_container">
-                  <div className="title">
-                    팀 매칭 결과 안내 일자
-                  </div>
-                  <div className="desc">
-
-                  </div>
-                  </div>
-                  <input type="text" />
-                </div>
-                <div className="input">
-                  <div className="text_container">
-                  <div className="title">
-                    참가자 정원
-                  </div>
-                  <div className="desc">
-                    
-                  </div>
-                  </div>
-                  <input type="text" />
-                </div>
-                </div>
-              </div>
-              </div>
-              <div className="contents_container" id='c_c_02'>
-                <div className="title_wrapper">
-                <div className="title">
-                후기 정보
-                <div className="toggle">
-                  <label htmlFor="">
-                  <input role="switch" type="checkbox" />
-                  </label>
-                </div>
-              </div>
-              <div className="subtitle">
-                이벤트가 종료된 이후 참가자에게 후기를 요청 할 수 있씁니다. 필요한 정보를 입력해주세요.
-              </div>
-                </div>
-              <div className="contents">
-                <div className="input_container">
-                <div className="input">
-                  <div className="text_container">
-                  <div className="title">
-                    후기 작성 안내글
-                  </div>
-                  <div className="desc">
-
-                  </div>
-                  </div>
-                  <input type="text" />
-                </div>
-                <div className="input">
-                  <div className="text_container">
-                  <div className="title">
-                    관련 URL
-                  </div>
-                  <div className="desc">
-
-                  </div>
-                  </div>
-                  <input type="text" />
-                </div>
-                <div className="input">
-                  <div className="text_container">
-                  <div className="title">
-                    작성 기한
-                  </div>
-                  <div className="desc">
-                    
-                  </div>
-                  </div>
-                  <input type="text" />
-                </div>
-                <div className="input">
-                  <div className="text_container">
-                  <div className="title">
-                    수집할 데이터
-                  </div>
-                  <div className="desc">
-                    
-                  </div>
-                  </div>
-                  <div className="checkbox_container">
-                    <div className="checkbox">
-                      <input type="checkbox" id='check_00' />
-                      <label htmlFor="check_00"></label>
-                      <div className="text_wrapper">
-                      <div className="text">
-                        참가 목적 <strong>/ 텍스트 박스(최대 500자)</strong>
+              <div className="contents_container">
+                <div className="dash_board_container">
+                  <div className="contents" id='profile'>
+                    <div className="pic_name">
+                      <div className="pic">
+                        <img src={userPic} alt="" />
                       </div>
+                      <div className="name_wrapper">
+                        <div className="name">
+                          TOMAS
+                        </div>
+                        <div className="sub">
+                          UNISTY CEO
+                        </div>
                       </div>
                     </div>
-                    <div className="checkbox">
-                      <input type="checkbox" id='check_01' />
-                      <label htmlFor="check_01"></label>
-                      <div className="text_wrapper">
-                      <div className="text">
-                        참가 후기 <strong>/ 텍스트 박스(최대 500자)</strong>
+                    <div className="intro">
+                      IT 커뮤니티와 IT 기업을 연결하는 일을 하고 있습니다.
+                    </div>
+                    <div className="tag">
+                      <div className="item">
+                        <span>기획</span>
                       </div>
+                      <div className="item">
+                        <span>브랜딩</span>
+                      </div>
+                      <div className="item">
+                        <span>서비스 디자인</span>
                       </div>
                     </div>
-                    <div className="checkbox">
-                      <input type="checkbox" id='check_02' />
-                      <label htmlFor="check_02"></label>
-                      <div className="text_wrapper">
-                      <div className="text">
-                        한줄평 <strong>/ 텍스트 박스(최대 100자)</strong>
+                    <div className="line"></div>
+                    <div className="contact">
+                      <div className="contact_i">
+                        이메일: hq@UNISTY.center
                       </div>
+                      <div className="contact_i">
+                        연락처 : 010-2731-0705
+                      </div>
+                      <div className="contact_i">
+                        소속단체
+                      </div>
+                      <div className="belong_group">
+                        <span className="b_g_i" id='maru180'>
+                          MARU 180
+                        </span>
+                        <span className="b_g_i" id='ict_coc'>
+                          ICT COC
+                        </span>
+                        <span className="b_g_i" id='d_camp'>
+                          D.camp
+                        </span>
                       </div>
                     </div>
-                    <div className="checkbox">
-                      <input type="checkbox" id='check_03' />
-                      <label htmlFor="check_03"></label>
-                      <div className="text_wrapper">
-                      <div className="text">
-                        점수 <strong>/ 10점 만점</strong>
+                  </div>
+                  <div className="contents" id='setting_info'>
+                    <div className="title">
+                      설정 정보
+                    </div>
+                    <div className="info" id='time'>
+                      <div className="title">
+                        선택하신 요일, 시간
                       </div>
+                      <div className="day_week_wrapper">
+                        <div className="day_week" id='monday'>
+                          <div className="text_wrapper">
+                            MM.DD <br /> 월요일
+                          </div>
+                            <div className="item active">
+                              11:30
+                            </div>
+                            <div className="item">
+                              12:00
+                            </div>
+                        </div>
+                        <div className="day_week" id='tuesday'>
+                          <div className="text_wrapper">
+                            MM.DD <br /> 월요일
+                          </div>
+                            <div className="item active">
+                              11:30
+                            </div>
+                            <div className="item">
+                              12:00
+                            </div>
+                        </div>
+                        <div className="day_week" id='wednesday'>
+                          <div className="text_wrapper">
+                            MM.DD <br /> 월요일
+                          </div>
+                            <div className="item active">
+                              11:30
+                            </div>
+                            <div className="item">
+                              12:00
+                            </div>
+                        </div>
+                        <div className="day_week" id='thursday'>
+                          <div className="text_wrapper">
+                            MM.DD <br /> 월요일
+                          </div>
+                            <div className="item active">
+                              11:30
+                            </div>
+                            <div className="item">
+                              12:00
+                            </div>
+                        </div>
+                        <div className="day_week" id='friday'>
+                          <div className="text_wrapper">
+                            MM.DD <br /> 월요일
+                          </div>
+                            <div className="item active">
+                              11:30
+                            </div>
+                            <div className="item">
+                              12:00
+                            </div>
+                        </div>
                       </div>
                     </div>
-                    <div className="checkbox">
-                      <input type="checkbox" id='check_04' />
-                      <label htmlFor="check_04"></label>
-                      <div className="text_wrapper">
-                      <div className="text">
-                        인증샷 <strong>/ 이미지 파일 업로드 기능</strong>
+                    <div className="info" id='hobby'>
+                      <div className="title">
+                        선택하신 관심사, 취미
                       </div>
+                      <div className="item_wrapper">
+                        <div className="item active">
+                          운동
+                        </div>
+                        <div className="item active">
+                          음악
+                        </div>
+                        <div className="item active">
+                          자기계발
+                        </div>
+                        <div className="item active">
+                          맛집
+                        </div>
+                      </div>
+                    </div>
+                    <div className="update_wrapper">
+                      <div className="text" id='update'>
+                        *<span>2022. 10. 20(목)</span> 업데이트
+                      </div>
+                      <div className="text" id='edit'>
+                        수정하기
+                      </div>
+                    </div>
+                  </div>
+                  <div className="contents" id='current_join'>
+                    <div className="title">
+                      참가 현황
+                    </div>
+                    <div className="item_wrapper">
+                      <div className="item" id='coming_event'>
+                        <div className="title">
+                          참가예정 이벤트
+                        </div>
+                        <div className="desc orange">
+                          NN개
+                        </div>
+                      </div>
+                      <div className="item" id='complete_event'>
+                        <div className="title">
+                          참가예정 이벤트
+                        </div>
+                        <div className="desc">
+                          NN개
+                        </div>
+                      </div>
+                      <div className="item" id='review'>
+                        <div className="title">
+                          참가예정 이벤트
+                        </div>
+                        <div className="desc orange">
+                          NN개
+                        </div>
+                      </div>
+                      <div className="item" id='reward'>
+                        <div className="title">
+                          참가예정 이벤트
+                        </div>
+                        <div className="desc gray">
+                          NN개
+                        </div>
+                      </div>
+                      <div className="item" id='met_ppl'>
+                        <div className="title">
+                          참가예정 이벤트
+                        </div>
+                        <div className="desc">
+                          NN개
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                </div>
-              </div>
-              </div>
-              <div className="btn_container">
-              <div className="btn_wrapper">
-                <div className="btn" id='btn_complete'>
-                  수정 완료
-                </div>
-              </div>
-              <div className="btn_wrapper">
-              <div className="btn" id='btn_cancel'>
-                  이벤트 취소하기
-                </div>
-              </div>
               </div>
             </div>
           </div>
@@ -430,10 +393,10 @@ function App() {
               </div>
               <div className="desc">
                 정보 수정을 완료할까요? <br />
-                 완료 후 이벤트 상세보기 페이지로 이동합니다.
+                완료 후 이벤트 상세보기 페이지로 이동합니다.
                 <div className="time">
-                
-              </div>
+
+                </div>
               </div>
               <div className="btn_wrapper">
                 <div className="btn" id='btn_continue'>수정 계속하기</div>
