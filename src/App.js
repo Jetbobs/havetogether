@@ -21,6 +21,8 @@ import Matching from './asset/pages/community/matching';
 //event_create
 import EventCreate from './asset/pages/event_create/event_create';
 import EventEdit from './asset/pages/event_create/event_edit';
+//my_page
+import DashBoard from './asset/pages/my_page/dash_baord';
 //pic
 import userPic from './asset/img/pic.png';
 import userPic01 from './asset/img/pic01.png';
@@ -128,6 +130,31 @@ function App() {
             <Route path='create' element={<EventCreate></EventCreate>}></Route>
             <Route path='edit' element={<EventEdit />}></Route>
           </Route>
+          <Route path='/my_page' element={<>
+            <div id="main">
+              <div id="side_menu">
+                <div className="menu_container">
+                  <div className="container">
+                    <div className="menu" onClick={() => { navigate() }}>
+                      커뮤니티 정보
+                    </div>
+                    <div className="menu" onClick={() => { navigate() }}>
+                      이벤트 정보
+                    </div>
+                    <div className="menu" onClick={() => { navigate() }}>
+                      멤버 보기
+                    </div>
+                  </div>
+                </div>
+                <div className="btn">
+                  이벤트 만들기
+                </div>
+              </div>
+              <Outlet></Outlet>
+            </div>
+          </>}>
+            <Route path='dash_board' element={<DashBoard />}></Route>
+          </Route>
         </Routes>
         <div id="main">
           <div id="side_menu">
@@ -172,212 +199,363 @@ function App() {
               이벤트 만들기
             </div>
           </div>
-          <div id="dash_board">
-            <div className="header" id='header'>
+          <div id="current_event_state">
+            <div id="info_title">
               <div className="container">
                 <div className="title">
-                  TOMAS님의 대시보드
+                  이벤트 참가 현황
                 </div>
-                <div className="subtitle">
-                  최근 <span>6</span>명의 마루민들을 만나셨네요! 앞으로도 많은 활동 부탁드려요!
+                <div className="state_container">
+                  <div className="state">
+                    참가예정 이벤트
+                    <div className="count orange">
+                      <span>NN</span>개
+                    </div>
+                  </div>
+                  <div className="state">
+                    참가완료 이벤트
+                    <div className="count green">
+                      <span>NN</span>개
+                    </div>
+                  </div>
+                  <div className="state">
+                    작성한 후기
+                    <div className="count green">
+                      <span>NN</span>개
+                    </div>
+                  </div>
+                  <div className="state">
+                    참가 리워드
+                    <div className="count green">
+                      <span>NN</span>개
+                    </div>
+                  </div>
                 </div>
               </div>
-              <Link><FontAwesomeIcon></FontAwesomeIcon></Link>
+              <div className="look">
+              </div>
             </div>
-            <div className="body" id='body'>
-              <div className="contents_container">
-                <div className="dash_board_container">
-                  <div className="contents" id='profile'>
-                    <div className="pic_name">
-                      <div className="pic">
-                        <img src={userPic} alt="" />
+            <div className='event_container' id="coming_event">
+              <div className="title">
+                진행중인 이벤트
+                 <strong><span>NN</span>개</strong>
+              </div>
+              <div className="container">
+                <div className="event" id='event_card_01'>
+                  <div className="wrapper wrapper_h">
+                    <div className="title title_h">
+                      MARU Meet Up
+                    </div>
+                    <div className="state state_h">
+                      <span>접속중</span>
+                    </div>
+                  </div>
+                  <div className="contents_wrapper">
+                    <div className="contents">
+                      <span>39</span>주차 마루 밋업 진행합니다! <br />
+                      관심사, 직군을 기반으로 점심식사를 <br />
+                      함께할 마루민을 매칭해드립니다. <br />
+                      커피도 제공하니 많은 참가 바랍니다!
+                    </div>
+                    <div className="writer">
+                      마루 요정 🧚
+                    </div>
+                    <div className="period">
+                      <span>2022. 10. 3(월)</span> ~<span>7(금)</span>
+                    </div>
+                    <div className="wrapper">
+                      <div className="group">
+                        <img src={groupImg} alt="" />
                       </div>
-                      <div className="name_wrapper">
-                        <div className="name">
-                          TOMAS
+                      <div className="apply_number">
+                        <span>4</span>명 참가신청
+                      </div>
+                    </div>
+                    <div className="btn">
+                      참가 취소
+                      <strong>
+                        <span></span>
+                      </strong>
+                    </div>
+                  </div>
+                </div>
+                <div className="event" id='event_card_02'>
+                  <div className="wrapper" style={{ padding: '32px 18px 0px 18px' }}>
+                    <div className="title">
+                      치맥하실 야근러 모집!!
+                    </div>
+                    <div className="state dp_n">
+                      <span>접속중</span>
+                    </div>
+                  </div>
+                  <div className="contents_wrapper">
+                    <div className="text_wrapper">
+                      <div className="contents">
+                        야근합니다! 신난다 야호 <br />
+                        루프탑에서 치킨 함께 드실 분 구합니다!<br />
+                        청년치킨에서 픽업할 거에요!!!
+                      </div>
+                      <div className="writer" style={{ marginBottom: '88px' }}>
+                        마루 요정 🧚
+                      </div>
+                    </div>
+                    <div className="etc_wrapper">
+                      <div className="period">
+                        <span>2022. 10. 3(월)</span> ~<span>7(금)</span>
+                      </div>
+                      <div className="wrapper">
+                        <div className="group">
+                          <img src={groupImg} alt="" />
                         </div>
-                        <div className="sub">
-                          UNISTY CEO
+                        <div className="apply_number">
+                          <span>4</span>명 참가신청
                         </div>
                       </div>
-                    </div>
-                    <div className="intro">
-                      IT 커뮤니티와 IT 기업을 연결하는 일을 하고 있습니다.
-                    </div>
-                    <div className="tag">
-                      <div className="item">
-                        <span>기획</span>
-                      </div>
-                      <div className="item">
-                        <span>브랜딩</span>
-                      </div>
-                      <div className="item">
-                        <span>서비스 디자인</span>
-                      </div>
-                    </div>
-                    <div className="line"></div>
-                    <div className="contact">
-                      <div className="contact_i">
-                        이메일: hq@UNISTY.center
-                      </div>
-                      <div className="contact_i">
-                        연락처 : 010-2731-0705
-                      </div>
-                      <div className="contact_i">
-                        소속단체
-                      </div>
-                      <div className="belong_group">
-                        <span className="b_g_i" id='maru180'>
-                          MARU 180
-                        </span>
-                        <span className="b_g_i" id='ict_coc'>
-                          ICT COC
-                        </span>
-                        <span className="b_g_i" id='d_camp'>
-                          D.camp
-                        </span>
+                      <div className="btn">
+                        참가취소
+                        <strong>
+                          <span></span>
+                        </strong>
                       </div>
                     </div>
                   </div>
-                  <div className="contents" id='setting_info'>
+                </div>
+              </div>
+            </div>
+            <div className='event_container' id="complete_event">
+              <div className="title">
+                종료된 이벤트
+              </div>
+              <div className="container">
+                <div className="event" id='event_card_00'>
+                  <div className="wrapper w_p_32_18">
                     <div className="title">
-                      설정 정보
+                      MARU Meet Up
                     </div>
-                    <div className="info" id='time'>
-                      <div className="title">
-                        선택하신 요일, 시간
+                    <div className="state black">
+                      <span>종료</span>
+                    </div>
+                  </div>
+                  <div className="contents_wrapper">
+                    <div className="contents">
+                      <span>39</span>주차 마루 밋업 진행합니다! <br />
+                      관심사, 직군을 기반으로 점심식사를 <br />
+                      함께할 마루민을 매칭해드립니다. <br />
+                      커피도 제공하니 많은 참가 바랍니다!
+                    </div>
+                    <div className="writer">
+                      마루 요정 🧚
+                    </div>
+                    <div className="period">
+                      <span>2022. 10. 3(월)</span> ~<span>7(금)</span>
+                    </div>
+                    <div className="wrapper">
+                      <div className="group">
+                        <img src={groupImg} alt="" />
                       </div>
-                      <div className="day_week_wrapper">
-                        <div className="day_week" id='monday'>
-                          <div className="text_wrapper">
-                            MM.DD <br /> 월요일
-                          </div>
-                            <div className="item active">
-                              11:30
-                            </div>
-                            <div className="item">
-                              12:00
-                            </div>
-                        </div>
-                        <div className="day_week" id='tuesday'>
-                          <div className="text_wrapper">
-                            MM.DD <br /> 월요일
-                          </div>
-                            <div className="item active">
-                              11:30
-                            </div>
-                            <div className="item">
-                              12:00
-                            </div>
-                        </div>
-                        <div className="day_week" id='wednesday'>
-                          <div className="text_wrapper">
-                            MM.DD <br /> 월요일
-                          </div>
-                            <div className="item active">
-                              11:30
-                            </div>
-                            <div className="item">
-                              12:00
-                            </div>
-                        </div>
-                        <div className="day_week" id='thursday'>
-                          <div className="text_wrapper">
-                            MM.DD <br /> 월요일
-                          </div>
-                            <div className="item active">
-                              11:30
-                            </div>
-                            <div className="item">
-                              12:00
-                            </div>
-                        </div>
-                        <div className="day_week" id='friday'>
-                          <div className="text_wrapper">
-                            MM.DD <br /> 월요일
-                          </div>
-                            <div className="item active">
-                              11:30
-                            </div>
-                            <div className="item">
-                              12:00
-                            </div>
-                        </div>
+                      <div className="apply_number">
+                        <span>4</span>명 참가신청
                       </div>
                     </div>
-                    <div className="info" id='hobby'>
-                      <div className="title">
-                        선택하신 관심사, 취미
+                    <div className="btn purple">
+                      후기작성
+                      <strong>
+                        <span></span>
+                      </strong>
+                    </div>
+                  </div>
+                </div>
+                <div className="event" id='event_card_01'>
+                  <div className="wrapper wrapper_h">
+                    <div className="title title_h">
+                      MARU Meet Up
+                    </div>
+                    <div className="state state_h black">
+                      <span>종료</span>
+                    </div>
+                  </div>
+                  <div className="contents_wrapper">
+                    <div className="contents">
+                      <span>39</span>주차 마루 밋업 진행합니다! <br />
+                      관심사, 직군을 기반으로 점심식사를 <br />
+                      함께할 마루민을 매칭해드립니다. <br />
+                      커피도 제공하니 많은 참가 바랍니다!
+                    </div>
+                    <div className="writer">
+                      마루 요정 🧚
+                    </div>
+                    <div className="period">
+                      <span>2022. 10. 3(월)</span> ~<span>7(금)</span>
+                    </div>
+                    <div className="wrapper">
+                      <div className="group">
+                        <img src={groupImg} alt="" />
                       </div>
-                      <div className="item_wrapper">
-                        <div className="item active">
-                          운동
-                        </div>
-                        <div className="item active">
-                          음악
-                        </div>
-                        <div className="item active">
-                          자기계발
-                        </div>
-                        <div className="item active">
-                          맛집
-                        </div>
+                      <div className="apply_number">
+                        <span>4</span>명 참가신청
                       </div>
                     </div>
-                    <div className="update_wrapper">
-                      <div className="text" id='update'>
-                        *<span>2022. 10. 20(목)</span> 업데이트
+                    <div className="btn purple">
+                      신청하기
+                      <strong>
+                        <span></span>
+                      </strong>
+                    </div>
+                  </div>
+                </div>
+                <div className="event" id='event_card_02'>
+                  <div className="wrapper" style={{ padding: '32px 18px 0px 18px' }}>
+                    <div className="title">
+                      치맥하실 야근러 모집!!
+                    </div>
+                    <div className="state dp_n">
+                      <span>접속중</span>
+                    </div>
+                  </div>
+                  <div className="contents_wrapper">
+                    <div className="text_wrapper">
+                      <div className="contents">
+                        야근합니다! 신난다 야호 <br />
+                        루프탑에서 치킨 함께 드실 분 구합니다!<br />
+                        청년치킨에서 픽업할 거에요!!!
                       </div>
-                      <div className="text" id='edit'>
-                        수정하기
+                      <div className="writer" style={{ marginBottom: '88px' }}>
+                        마루 요정 🧚
+                      </div>
+                    </div>
+                    <div className="etc_wrapper">
+                      <div className="period">
+                        <span>2022. 10. 3(월)</span> ~<span>7(금)</span>
+                      </div>
+                      <div className="wrapper">
+                        <div className="group">
+                          <img src={groupImg} alt="" />
+                        </div>
+                        <div className="apply_number">
+                          <span>4</span>명 참가신청
+                        </div>
+                      </div>
+                      <div className="btn green">
+                        리워드 사용
+                        <strong>
+                          <span></span>
+                        </strong>
                       </div>
                     </div>
                   </div>
-                  <div className="contents" id='current_join'>
+                </div>
+                <div className="event" id='event_card_03'>
+                  <div className="wrapper" style={{ padding: '32px 18px 0px 18px' }}>
                     <div className="title">
-                      참가 현황
+                      개발 스터디원 모집
                     </div>
-                    <div className="item_wrapper">
-                      <div className="item" id='coming_event'>
-                        <div className="title">
-                          참가예정 이벤트
+                    <div className="state dp_n">
+                      <span>접속중</span>
+                    </div>
+                  </div>
+                  <div className="contents_wrapper">
+                    <div className="text_wrapper">
+                      <div className="contents">
+                        요즘 대세 리액트 네이티브 공부할 마루민 모집합니다. 심화과정 공부할 예정이에요!
+                      </div>
+                      <div className="writer" style={{ marginBottom: '88px' }}>
+                        마루 요정 🧚
+                      </div>
+                    </div>
+                    <div className="etc_wrapper">
+                      <div className="period">
+                        <span>2022. 10. 3(월)</span> ~<span>7(금)</span>
+                      </div>
+                      <div className="wrapper">
+                        <div className="group">
+                          <img src={groupImg} alt="" />
                         </div>
-                        <div className="desc orange">
-                          NN개
+                        <div className="apply_number">
+                          <span>4</span>명 참가신청
                         </div>
                       </div>
-                      <div className="item" id='complete_event'>
-                        <div className="title">
-                          참가예정 이벤트
-                        </div>
-                        <div className="desc">
-                          NN개
-                        </div>
+                      <div className="btn green">
+                        리워드 사용
+                        <strong>
+                          <span></span>
+                        </strong>
                       </div>
-                      <div className="item" id='review'>
-                        <div className="title">
-                          참가예정 이벤트
-                        </div>
-                        <div className="desc orange">
-                          NN개
-                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="event disable" id='event_card_00'>
+                  <div className="wrapper w_p_32_18">
+                    <div className="title">
+                      MARU Meet Up
+                    </div>
+                    <div className="state black">
+                      <span>종료</span>
+                    </div>
+                  </div>
+                  <div className="contents_wrapper">
+                    <div className="contents">
+                      <span>39</span>주차 마루 밋업 진행합니다! <br />
+                      관심사, 직군을 기반으로 점심식사를 <br />
+                      함께할 마루민을 매칭해드립니다. <br />
+                      커피도 제공하니 많은 참가 바랍니다!
+                    </div>
+                    <div className="writer">
+                      마루 요정 🧚
+                    </div>
+                    <div className="period">
+                      <span>2022. 10. 3(월)</span> ~<span>7(금)</span>
+                    </div>
+                    <div className="wrapper">
+                      <div className="group">
+                        <img src={groupImg} alt="" />
                       </div>
-                      <div className="item" id='reward'>
-                        <div className="title">
-                          참가예정 이벤트
-                        </div>
-                        <div className="desc gray">
-                          NN개
-                        </div>
+                      <div className="apply_number">
+                        <span>4</span>명 참가신청
                       </div>
-                      <div className="item" id='met_ppl'>
-                        <div className="title">
-                          참가예정 이벤트
-                        </div>
-                        <div className="desc">
-                          NN개
-                        </div>
+                    </div>
+                    <div className="btn green">
+                      이벤트 상세정보
+                      <strong>
+                        <span></span>
+                      </strong>
+                    </div>
+                  </div>
+                </div>
+                <div className="event disable" id='event_card_01'>
+                  <div className="wrapper wrapper_h">
+                    <div className="title title_h">
+                      MARU Meet Up
+                    </div>
+                    <div className="state state_h black">
+                      <span>종료</span>
+                    </div>
+                  </div>
+                  <div className="contents_wrapper">
+                    <div className="contents">
+                      <span>39</span>주차 마루 밋업 진행합니다! <br />
+                      관심사, 직군을 기반으로 점심식사를 <br />
+                      함께할 마루민을 매칭해드립니다. <br />
+                      커피도 제공하니 많은 참가 바랍니다!
+                    </div>
+                    <div className="writer">
+                      마루 요정 🧚
+                    </div>
+                    <div className="period">
+                      <span>2022. 10. 3(월)</span> ~<span>7(금)</span>
+                    </div>
+                    <div className="wrapper">
+                      <div className="group">
+                        <img src={groupImg} alt="" />
                       </div>
+                      <div className="apply_number">
+                        <span>4</span>명 참가신청
+                      </div>
+                    </div>
+                    <div className="btn green">
+                      이벤트 상세정보
+                      <strong>
+                        <span></span>
+                      </strong>
                     </div>
                   </div>
                 </div>
