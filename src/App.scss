@@ -3216,6 +3216,924 @@ div{
           }
         }
       }
+      #my_page_info{
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        color: #202020;
+        .header{
+          padding: 16px 32px;
+          background-color: color.$white;
+          border-radius: 10px;
+          .title{
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 1.6;
+            padding-bottom: 20px;
+          }
+          .subtitle{
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 400;
+          }
+          a{
+            font-size: 12px;
+            line-height: 1.6;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            color: inherit;
+            svg{
+              padding-left: 8px;
+            }
+          }
+        }
+        .profile{
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: color.$white;
+          border-radius: 10px;
+          gap: 16px;
+          .pic_name_container{
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            gap: 24px;
+            .pic{
+              width: 80px;
+              height: 80px;
+              border-radius: 50%;
+            }
+            .name_container{
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              gap: 8px;
+              .name{
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 1.3;
+              }
+              .job{
+                font-size: 10px;
+                font-weight: 500;
+                line-height: 1.3;
+              }
+            }
+          }
+          .intro{
+            width: 100%;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 1.3;
+          }
+          .tag{
+            width: 100%;
+              display: flex;
+              gap: 4px;
+              padding-bottom: 16px;
+              border-bottom: 1px solid #ccc;
+            .tag_i{
+              border-radius: 10px;
+              border: 0.5px solid #000;
+              font-size: 10px;
+              font-weight: 500;
+              line-height: 1.3;
+              padding: 2px 4px;
+            }
+          }
+          .contact{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            .contact_i{
+              font-weight: 500;
+              font-size: 10px;
+              color: #202020;
+            }
+            .belong_group{
+              display: flex;
+              gap: 8px;
+              .b_g_i{
+                font-size: 10px;
+                line-height: 1.3;
+                font-weight: bold;
+                color: color.$white;
+                padding: 4px;
+                border-radius: 10px;
+              }
+              #maru180{
+                background-color: #0e2b36;
+              }
+              #ict_coc{
+                background-color: #004076;
+              }
+              #d_camp{
+                background-color: #ff7800;
+              }
+            }
+          }
+        }
+        .contents{
+          @extend .login_w;
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: color.$white;
+          border-radius: 10px;
+          gap: 8px;
+          .title{
+            font-size: 16px;
+            font-weight: 900;
+            text-align: left;
+            width: 100%;
+            padding: 8px;
+          }
+          .input_container{
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+            .input{
+              width: 100%;
+              overflow: initial;
+              @extend .input_set;
+              .input_title{
+                display: flex;
+                font-size: 10px;
+                font-weight: 900;
+              }
+              .input_desc{
+                padding-left: 50px;
+                font-size: 8px;
+                color: #808080;
+                font-weight: 900;
+              }
+              input[type="file"]{
+                display: none;
+              }
+              label{
+                padding: 8px;
+                background-color: #808080;
+                border-radius: 4px;
+                color: color.$white;
+                font-size: 10px;
+                font-weight: 900;
+                cursor: pointer;
+              }
+              .btn_upload{
+                display: flex;
+                align-items: center;
+              }
+              textarea{
+                width: 100%;
+                border: 1px solid #808080;
+                border-radius: 4px;
+              }
+            }
+            #phone, #u_email{
+              .input_desc{
+                color: color.$orange;
+              }
+            }
+          }
+        }
+        .contents_more{
+          @extend .login_w;
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: color.$white;
+          border-radius: 10px;
+          gap: 8px;
+          .container{
+            .title{
+              padding: 8px 0px;
+            }
+          }
+          .title{
+            font-size: 16px;
+            font-weight: 900;
+            text-align: left;
+            width: 100%;
+            padding: 8px;
+          }
+          .input_container{
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            width: 100%;
+            .input{
+              width: 100%;
+              overflow: initial;
+              @extend .input_set;
+              .input_title{
+                display: flex;
+                font-size: 10px;
+                font-weight: 900;
+              }
+              .input_desc{
+                padding-left: 50px;
+                font-size: 8px;
+                color: #808080;
+                font-weight: 900;
+              }
+              input[type="file"]{
+                display: none;
+              }
+              label{
+                padding: 8px;
+                background-color: #808080;
+                border-radius: 4px;
+                color: color.$white;
+                font-size: 10px;
+                font-weight: 900;
+                cursor: pointer;
+              }
+              .btn_upload{
+                display: flex;
+                align-items: center;
+              }
+              textarea{
+                width: 100%;
+                border: 1px solid #808080;
+                border-radius: 4px;
+              }
+            }
+            #email{
+              .input_desc{
+                color: color.$orange
+              }
+            }
+            .input_btn{
+              .title{
+                font-size: 10.1px;
+                padding: 4px;
+              }
+              .input_btn_container{
+                display: flex;
+                gap: 5.05px;
+                line-height: 1.6;
+                .input_btn_i{
+                  span{
+                    display: flex;
+                    box-sizing: border-box;
+                    color: #969696;
+                    font-size: 10.1px;
+                    font-weight: 600;
+                    line-height: 1.6;
+                    padding: 3px 10.1px;
+                    border: 0.63px solid #969696;
+                    border-radius: 5.05px;
+                    cursor: pointer;
+                  }
+                }
+                .input_btn_d{
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 10.1px;
+                  .title{
+                    font-size: 8.83px;
+                    font-weight: bold;
+                    line-height: 1.6;
+                    text-align: center;
+                  }
+                  .input_time{
+                    span{
+                      display: flex;
+                      box-sizing: border-box;
+                      color: #969696;
+                      font-size: 10.1px;
+                      font-weight: 600;
+                      line-height: 1.6;
+                      padding: 3px 10.1px;
+                      border: 0.63px solid #969696;
+                      border-radius: 5.05px;
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+            }
+            #week{
+              .title{
+                margin-bottom: 8px;
+              }
+            }
+            #mbti{
+              display: flex;
+              flex-wrap: wrap;
+              flex-direction: column;
+              gap: 4px;
+            }
+          }
+          .subtitle{
+            width: 100%;
+            font-size: 10px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+          }
+        }
+        .btn_wrapper{
+          display: flex;
+          .btn_container{
+            padding: 8px 32px;
+            display: flex;
+            justify-self: center;
+            .btn{
+              border-radius: 10px;
+              padding: 8px;
+              width: 184px;
+              height: 48px;
+              color: color.$white;
+              background-color: color.$green;
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+          #edit{
+            display: none;
+          }
+          #complete{
+            display: block;
+          }
+          #cancel{
+            display: block;
+            .btn{
+              background-color: color.$white;
+              color: color.$green;
+              border: 1px solid color.$green;
+            }
+          }
+        }
+      }
+      #wish_box{
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        color: #202020;
+        .header{
+          padding: 16px 32px;
+          background-color: color.$white;
+          border-radius: 10px;
+          .title{
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 1.6;
+            padding-bottom: 20px;
+          }
+          .subtitle{
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 500;
+          }
+          a{
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1.6;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            color: inherit;
+            svg{
+              padding-left: 8px;
+            }
+          }
+        }
+        .contents{
+          @extend .login_w;
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: color.$white;
+          border-radius: 10px;
+          gap: 8px;
+          .title{
+            flex-direction: column;
+            display: flex;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 900;
+            text-align: left;
+            width: 100%;
+            padding: 8px;
+            .subtitle{
+              font-size: 10px;
+              font-weight: 400;
+              line-height: 1.6;
+            }
+          }
+          .input_container{
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+            .input{
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+              width: 100%;
+              .input_title{
+                padding: 4px;
+                display: flex;
+                justify-content: start;
+                flex-direction: row;
+                font-weight: 900;
+                font-size: 10px;
+                line-height: 1.6;
+              }
+              .input_textarea{
+                textarea{
+                  box-sizing: border-box;
+                  width: 480px;
+                  height: 48px;
+                  width: 100%;
+                  padding: 8px;
+                  resize: none;
+                  border: 0.5px solid #808080;
+                  border-radius: 4px;
+                }
+              }
+            }
+          }
+
+        }
+        .contents_more{
+          @extend .login_w;
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: color.$white;
+          border-radius: 10px;
+          gap: 8px;
+          .container{
+            .title{
+              padding: 8px 0px;
+            }
+          }
+          .title{
+            font-size: 16px;
+            font-weight: 900;
+            text-align: left;
+            width: 100%;
+            padding: 8px;
+          }
+          .input_container{
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            width: 100%;
+            .input{
+              width: 100%;
+              overflow: initial;
+              @extend .input_set;
+              .input_title{
+                display: flex;
+                font-size: 10px;
+                font-weight: 900;
+              }
+              .input_desc{
+                padding-left: 50px;
+                font-size: 8px;
+                color: #808080;
+                font-weight: 900;
+              }
+              input[type="file"]{
+                display: none;
+              }
+              label{
+                padding: 8px;
+                background-color: #808080;
+                border-radius: 4px;
+                color: color.$white;
+                font-size: 10px;
+                font-weight: 900;
+                cursor: pointer;
+              }
+              .btn_upload{
+                display: flex;
+                align-items: center;
+              }
+              textarea{
+                width: 100%;
+                border: 1px solid #808080;
+                border-radius: 4px;
+              }
+            }
+            #email{
+              .input_desc{
+                color: color.$orange
+              }
+            }
+            .input_btn{
+              .title{
+                font-size: 10.1px;
+                padding: 4px;
+              }
+              .input_btn_container{
+                display: flex;
+                gap: 5.05px;
+                line-height: 1.6;
+                .input_btn_i{
+                  span{
+                    display: flex;
+                    box-sizing: border-box;
+                    color: #969696;
+                    font-size: 10.1px;
+                    font-weight: 600;
+                    line-height: 1.6;
+                    padding: 3px 10.1px;
+                    border: 0.63px solid #969696;
+                    border-radius: 5.05px;
+                    cursor: pointer;
+                  }
+                }
+                .input_btn_d{
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 10.1px;
+                  .title{
+                    font-size: 8.83px;
+                    font-weight: bold;
+                    line-height: 1.6;
+                    text-align: center;
+                  }
+                  .input_time{
+                    span{
+                      display: flex;
+                      box-sizing: border-box;
+                      color: #969696;
+                      font-size: 10.1px;
+                      font-weight: 600;
+                      line-height: 1.6;
+                      padding: 3px 10.1px;
+                      border: 0.63px solid #969696;
+                      border-radius: 5.05px;
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+            }
+            #week{
+              .title{
+                margin-bottom: 8px;
+              }
+            }
+            #mbti{
+              display: flex;
+              flex-wrap: wrap;
+              flex-direction: column;
+              gap: 4px;
+            }
+          }
+          .subtitle{
+            width: 100%;
+            font-size: 10px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+          }
+        }
+        .btn_wrapper{
+          display: flex;
+          .btn_container{
+            padding: 8px 32px;
+            display: flex;
+            justify-self: center;
+            .btn{
+              border-radius: 10px;
+              padding: 8px;
+              width: 184px;
+              height: 48px;
+              color: color.$white;
+              background-color: color.$green;
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+          #enter{
+            display: none;
+          }
+          #complete{
+            display: block;
+          }
+          #cancel{
+            display: block;
+            .btn{
+              background-color: color.$white;
+              color: color.$green;
+              border: 1px solid color.$green;
+            }
+          }
+        }
+      }
+      #my_page_setting{
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        color: #202020;
+        .header{
+          padding: 16px 32px;
+          background-color: color.$white;
+          border-radius: 10px;
+          .title{
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 1.6;
+            padding-bottom: 20px;
+          }
+          .subtitle{
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 500;
+          }
+          a{
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1.6;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            color: inherit;
+            svg{
+              padding-left: 8px;
+            }
+          }
+        }
+        .contents{
+          @extend .login_w;
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: color.$white;
+          border-radius: 10px;
+          gap: 8px;
+          .title{
+            flex-direction: column;
+            display: flex;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 900;
+            text-align: left;
+            width: 100%;
+            padding: 8px;
+            .subtitle{
+              font-size: 10px;
+              font-weight: 400;
+              line-height: 1.6;
+            }
+            .sub_text{
+              font-size: 10px;
+              font-weight: bold;
+              line-height: 1.6;
+              color: color.$orange;
+              margin-top: 16px;
+              cursor: pointer;
+            }
+          }
+          .checkbox_container{
+            width: 100%;
+            .checkbox{
+              padding: 4px;
+              display: flex;
+              input{
+                display: none;
+              }
+              label{
+                margin: 0;
+                width: 18px;
+                display: inline-block;
+                box-sizing: border-box;
+                height: 18px;
+                position: relative;
+                border: 2px solid rgba($color: #000000, $alpha: 0.54);
+              }
+              input:checked + label::before{
+                content: '✔';
+                font-size: 10px;
+                display: flex;
+                position: absolute;
+                left: -1px;
+                top: -1px;
+                justify-content: center;
+                align-items: center;
+                color: color.$white;
+                background-color: color.$purple01;
+                width: 16px;
+                height: 16px;
+              }
+              input:checked + label{
+                border: 2px solid rgba($color: #000000, $alpha: 0.54);
+              }
+              .text_wrapper{
+                display: flex;
+                padding: 0px 8px;
+                .text{
+                  font-weight: 900;
+                  font-size: 10px;
+                  line-height: 1.6;
+                  strong{
+                    color: #7a7a7a;
+                  }
+                }
+              }
+            }
+          }
+
+        }
+        .contents_more{
+          @extend .login_w;
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: color.$white;
+          border-radius: 10px;
+          gap: 8px;
+          .container{
+            .title{
+              padding: 8px 0px;
+            }
+          }
+          .title{
+            font-size: 16px;
+            font-weight: 900;
+            text-align: left;
+            width: 100%;
+            padding: 8px;
+          }
+          .input_container{
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            width: 100%;
+            .input{
+              width: 100%;
+              overflow: initial;
+              @extend .input_set;
+              .input_title{
+                display: flex;
+                font-size: 10px;
+                font-weight: 900;
+              }
+              .input_desc{
+                padding-left: 50px;
+                font-size: 8px;
+                color: #808080;
+                font-weight: 900;
+              }
+              input[type="file"]{
+                display: none;
+              }
+              label{
+                padding: 8px;
+                background-color: #808080;
+                border-radius: 4px;
+                color: color.$white;
+                font-size: 10px;
+                font-weight: 900;
+                cursor: pointer;
+              }
+              .btn_upload{
+                display: flex;
+                align-items: center;
+              }
+              textarea{
+                width: 100%;
+                border: 1px solid #808080;
+                border-radius: 4px;
+              }
+            }
+            #email{
+              .input_desc{
+                color: color.$orange
+              }
+            }
+            .input_btn{
+              .title{
+                font-size: 10.1px;
+                padding: 4px;
+              }
+              .input_btn_container{
+                display: flex;
+                gap: 5.05px;
+                line-height: 1.6;
+                .input_btn_i{
+                  span{
+                    display: flex;
+                    box-sizing: border-box;
+                    color: #969696;
+                    font-size: 10.1px;
+                    font-weight: 600;
+                    line-height: 1.6;
+                    padding: 3px 10.1px;
+                    border: 0.63px solid #969696;
+                    border-radius: 5.05px;
+                    cursor: pointer;
+                  }
+                }
+                .input_btn_d{
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 10.1px;
+                  .title{
+                    font-size: 8.83px;
+                    font-weight: bold;
+                    line-height: 1.6;
+                    text-align: center;
+                  }
+                  .input_time{
+                    span{
+                      display: flex;
+                      box-sizing: border-box;
+                      color: #969696;
+                      font-size: 10.1px;
+                      font-weight: 600;
+                      line-height: 1.6;
+                      padding: 3px 10.1px;
+                      border: 0.63px solid #969696;
+                      border-radius: 5.05px;
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+            }
+            #week{
+              .title{
+                margin-bottom: 8px;
+              }
+            }
+            #mbti{
+              display: flex;
+              flex-wrap: wrap;
+              flex-direction: column;
+              gap: 4px;
+            }
+          }
+          .subtitle{
+            width: 100%;
+            font-size: 10px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+          }
+        }
+        .btn_wrapper{
+          display: flex;
+          .btn_container{
+            padding: 8px 32px;
+            display: flex;
+            justify-self: center;
+            .btn{
+              border-radius: 10px;
+              padding: 8px;
+              width: 184px;
+              height: 48px;
+              color: color.$white;
+              background-color: color.$green;
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+          #enter{
+            display: none;
+          }
+          #complete{
+            display: block;
+          }
+          #cancel{
+            display: block;
+            .btn{
+              background-color: color.$white;
+              color: color.$green;
+              border: 1px solid color.$green;
+            }
+          }
+        }
+      }
       //modal
       .modal{
         .modal_bg{
@@ -4267,6 +5185,111 @@ div{
             position: absolute;
             left: 0px;
             bottom: 0px;
+            .btn{
+              font-weight: 900;
+              padding: 8px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: color.$white;
+              width: 232px;
+              height: 48px;
+              color: color.$green;
+              border: 1px solid color.$green;
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+      //modal_my_page
+      #enter_cancel{
+        display: none;
+
+        .contents{
+          width: 512px;
+          height: 248px;
+          .title{
+            position: absolute;
+            left: 33px;
+            top: 32px;
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 1.6;
+          }
+          .desc{
+            position: absolute;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 1.6;
+            top: 86px;
+            left: 33px;
+          }
+          .icon{
+            position: absolute;
+            right: 32px;
+            top: 32px;
+            padding: 5px;
+            a{
+              width: 24px;
+              height: 24px;
+            }
+          }
+          .btn_wrapper{
+            display: flex;
+            padding: 16px;
+            gap: 16px;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            .btn{
+              font-weight: 900;
+              padding: 8px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: color.$white;
+              width: 232px;
+              height: 48px;
+              color: color.$green;
+              border: 1px solid color.$green;
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+      #account_delete{
+        display: block;
+
+        .contents{
+          .title{
+            display: flex;
+            justify-content: space-between;
+            padding: 32px;
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 1.6;
+          }
+          .desc{
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 1.6;
+            color: color.$orange;
+            padding: 16px 32px;
+          }
+          .icon{
+            position: absolute;
+            right: 32px;
+            top: 32px;
+            padding: 5px;
+            a{
+              width: 24px;
+              height: 24px;
+            }
+          }
+          .btn_wrapper{
+            display: flex;
+            padding: 16px;
+            gap: 16px;
             .btn{
               font-weight: 900;
               padding: 8px;
