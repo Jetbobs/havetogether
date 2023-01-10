@@ -380,7 +380,7 @@ function MyPageInfo(props){
         </div>
         <div className="input_btn">
           <div className="title">
-            취미를 알려주세요.
+            대화성향을 알려주세요.
           </div>
           <div className="input_btn_container">
             <div className="input_btn_i">

@@ -181,7 +181,7 @@ function DashBoard(props){
                       </div>
                       <div className="item" id='complete_event'>
                         <div className="title">
-                          참가예정 이벤트
+                          참가완료 이벤트
                         </div>
                         <div className="desc">
                           NN개
@@ -189,7 +189,7 @@ function DashBoard(props){
                       </div>
                       <div className="item" id='review'>
                         <div className="title">
-                          참가예정 이벤트
+                          작성한 후기
                         </div>
                         <div className="desc orange">
                           NN개
@@ -197,7 +197,7 @@ function DashBoard(props){
                       </div>
                       <div className="item" id='reward'>
                         <div className="title">
-                          참가예정 이벤트
+                          참가 리워드
                         </div>
                         <div className="desc gray">
                           NN개
@@ -205,7 +205,7 @@ function DashBoard(props){
                       </div>
                       <div className="item" id='met_ppl'>
                         <div className="title">
-                          참가예정 이벤트
+                          만난 사람들
                         </div>
                         <div className="desc">
                           NN개

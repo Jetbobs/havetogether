@@ -27,6 +27,10 @@ import CurrentEventState from './asset/pages/my_page/current_event_state';
 import MyPageInfo from './asset/pages/my_page/my_page_info';
 import WishBox from './asset/pages/my_page/wish_box';
 import MyPageSetting from './asset/pages/my_page/my_page_setting';
+import DashBoardManager from './asset/pages/my_page/dash_board_manager';
+import CurrentEventStateManager from './asset/pages/my_page/current_event_state_manager';
+import MyPageInfoManager from './asset/pages/my_page/my_page_info_manager';
+import MyPageSettingManager from './asset/pages/my_page/my_page_setting_manager';
 //pic
 import userPic from './asset/img/pic.png';
 import userPic01 from './asset/img/pic01.png';
@@ -37,6 +41,7 @@ import hostPic from './asset/img/host_img00.png';
 import { Container, Row, Col } from 'react-bootstrap';
 import ResponsiveExample from './asset/pages/test';
 import AutoLayoutExample from './asset/pages/test2';
+import MemberInfoManager from './asset/pages/my_page/member_info_manager';
 
 function App() {
 
@@ -168,9 +173,14 @@ function App() {
             <Route path='my_page_info' element={<MyPageInfo/>}></Route>
             <Route path='wish_box' element={<WishBox/>}></Route>
             <Route path='my_page_setting' element={<MyPageSetting/>}></Route>
+            <Route path='dash_board_manager' element={<DashBoardManager/>}></Route>
+            <Route path='current_event_state_manager' element={<CurrentEventStateManager/>}></Route>
+            <Route path='member_info_manager' element={<MemberInfoManager/>}></Route>
+            <Route path='my_page_info_manager' element={<MyPageInfoManager/>}></Route>
+            <Route path='my_page_setting_manager' element={<MyPageSettingManager/>}></Route>
           </Route>
         </Routes>
-        {/* <div id="main">
+        <div id="main">
           <div id="side_menu">
             <div className="menu_container">
               <div className="container">
@@ -213,7 +223,7 @@ function App() {
               이벤트 만들기
             </div>
           </div>
-          <div id="my_page_setting">
+          <div id="my_page_setting_manager">
             <div className="header">
               <div className="container">
                 <div className="title">
@@ -239,7 +249,7 @@ function App() {
                       <label htmlFor="check_00"></label>
                       <div className="text_wrapper">
                       <div className="text">
-                        커뮤니티 매니저가 주최하는 이벤트 소식 <strong></strong>
+                        커뮤니티 매니저가 주최하는 이벤트 소식 - 수신 <strong></strong>
                       </div>
                       </div>
                     </div>
@@ -248,7 +258,7 @@ function App() {
                       <label htmlFor="check_01"></label>
                       <div className="text_wrapper">
                       <div className="text">
-                        멤버들이 주최하는 이벤트 소식(점심) <strong></strong>
+                        멤버들이 주최하는 이벤트 소식(점심) - 수신<strong></strong>
                       </div>
                       </div>
                     </div>
@@ -257,7 +267,7 @@ function App() {
                       <label htmlFor="check_02"></label>
                       <div className="text_wrapper">
                       <div className="text">
-                        멤버들이 주최하는 이벤트 소식(저녁) <strong></strong>
+                        멤버들이 주최하는 이벤트 소식(저녁) - 수신 <strong></strong>
                       </div>
                       </div>
                     </div>
@@ -266,7 +276,7 @@ function App() {
                       <label htmlFor="check_03"></label>
                       <div className="text_wrapper">
                       <div className="text">
-                        Have Together의 기능 업데이트 정보 <strong></strong>
+                        Have Together의 기능 업데이트 정보 - 수신 <strong></strong>
                       </div>
                       </div>
                     </div>
@@ -275,7 +285,7 @@ function App() {
                       <label htmlFor="check_04"></label>
                       <div className="text_wrapper">
                       <div className="text">
-                        이벤트 참가, 네트워킹을 위한 프로필 업데이트 입력 요청 <strong></strong>
+                        한 달 동안 방문하지 않은 멤버에게 프로필 업데이트 요청 - 발신 <strong></strong>
                       </div>
                       </div>
                     </div>
@@ -285,11 +295,13 @@ function App() {
               <div className="title">
                 계정 탈퇴
                 <div className="subtitle">
-                사용하고 계신 계정은 <span id='account'>contact@UNISTY.center</span>입니다 <br />
+                사용하고 계신 <span>관리자계정은</span> <span id='account'>maru180@asan-nanum.org</span>입니다 <br />
                 연락처는 <span id='phone'>010-2731-0705</span>입니다.
               </div>
               <div className="sub_text">
-                계정을 탈퇴하겠습니다.
+                * <br />
+                관리자 계정의 경우, 개별 삭제가 불가능합니다. <br />
+                10loco.official@gmail.com으로 연락주세요!
               </div>
               </div>
 
@@ -612,7 +624,7 @@ function App() {
                 </div>
               </div>
             </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );
