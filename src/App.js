@@ -13,7 +13,7 @@ import InfoInputMore from './asset/pages/login/info_input_more';
 import MyInfo from './asset/pages/login/my_info';
 //community
 import CommuInfo from './asset/pages/community/commu_info';
-import EventDetail00 from './asset/pages/community/commu_detail';
+import EventDetail00 from './asset/pages/community/event_detail_00';
 import EventDetail01 from './asset/pages/community/event_detail_01';
 import EventInfo from './asset/pages/community/event_info';
 import MemberInfo from './asset/pages/community/member_info';

@@ -2,6 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import userPic from '../../img/pic.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import '../../css/pages/my_page/dash_board_style.scss';
+
 function DashBoard(props){
     return(
         <>

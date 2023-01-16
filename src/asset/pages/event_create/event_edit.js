@@ -2,6 +2,7 @@ import {Link, useNavigate} from 'react-router-dom';
 //fontawesome
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCircleUser,faEllipsisVertical,faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import '../../css/pages/event_create/event_edit_style.scss';
 
 function EventEdit(props){
     return(

@@ -1,0 +1,78 @@
+@use '../../../../App.scss';
+@use '../../common/color.scss';
+@use '../../common/text.scss';
+@use '../../common/button.scss';
+@use '../../common/input.scss';
+@use '../../common/common.scss';
+
+#login{
+    @extend .login_set;
+    a{
+      color: #202020;
+    }
+    .header{
+      @extend .login_w;
+      padding: 16px 32px;
+      background-color: color.$white;
+      border-radius: 10px;
+      .container{
+        padding: 8px;
+        .title{
+          @extend .title;
+          padding-bottom: 20px;
+        }
+        .subtitle{
+          @extend .subtitle;
+        }
+      }
+      a{
+        font-size: 12px;
+        line-height: 1.6;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        svg{
+          padding-left: 8px;
+        }
+      }
+    }
+    .contents{
+      @extend .login_w;
+      padding: 32px 87px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: color.$white;
+      border-radius: 10px;
+      .container{
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        @extend .input_set;
+        .input{
+          .title{
+            @extend .input_title;
+          }
+        }
+        .btn{
+          @extend .btn;
+        }
+        .find_container{
+          display: flex;
+          justify-content: center;
+          gap: 36px;
+          .find{
+            padding: 18px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 400;
+            text-decoration: underline;
+            color: #555;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }

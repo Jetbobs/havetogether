@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import groupImg from '../../img/group_img_00.png';
+import '../../css/pages/community/event_info_style.scss';
 
 function EventInfo(props){
     return(

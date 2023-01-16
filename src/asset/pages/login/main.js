@@ -1,7 +1,14 @@
+
 import {Link, useNavigate} from 'react-router-dom';
 //fontawesome
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCircleUser,faEllipsisVertical,faArrowRight} from '@fortawesome/free-solid-svg-icons';
+//scss
+import '../../css/pages/login/main_style.scss';
+
+
+
+
 
 function LoginMain(){
 

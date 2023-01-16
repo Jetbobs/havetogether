@@ -1,0 +1,123 @@
+@use '../../../../App.scss';
+@use '../../common/color.scss';
+@use '../../common/text.scss';
+@use '../../common/button.scss';
+@use '../../common/input.scss';
+@use '../../common/common.scss';
+
+#member_info{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    #info_title{
+      padding: 16px 32px;
+      background-color: color.$white;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      .container{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        .subtitle{
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 1.6;
+        }
+      }
+      .look{
+        display: flex;
+        justify-content: end;
+      }
+      a{
+        color: inherit;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+    }
+    #contents{
+      #header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #000;
+        #tab{
+          display: flex;
+          .tab{
+            opacity: 0.5;
+            padding: 16px;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 1.6;
+            color: #202020;
+          }
+          .active{
+            opacity: 1.0;
+            color: #000;
+          }
+        }
+        #search{
+          color: #202020;
+          font-size: 14px;
+          font-weight: bold;
+          opacity: 0.5;
+        }
+      }
+      #tab_member{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .member{
+          padding: 16px;
+          background-color: color.$white;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          margin: 16px 0px;
+          .pic_name{
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            .container{
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              .name{
+                font-size: 14px;
+                line-height: 1.3;
+                font-weight: bold;
+              }
+              .job{
+                font-size: 10px;
+                font-weight: 600;
+                line-height: 1.3;
+              }
+            }
+          }
+          .intro{
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 1.3;
+          }
+          .tag{
+            display: flex;
+            gap: 4px;
+            .item{
+              span{
+                padding: 2px 4px;
+                font-size: 10px;
+                line-height: 1.3;
+                font-weight: 600;
+                border: 1px solid #000;
+                border-radius: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

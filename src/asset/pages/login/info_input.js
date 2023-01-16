@@ -2,7 +2,7 @@ import {Link, useNavigate} from 'react-router-dom';
 //fontawesome
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCircleUser,faEllipsisVertical,faArrowRight} from '@fortawesome/free-solid-svg-icons';
-
+import '../../css/pages/login/info_input_style.scss';
 
 function InfoInput(){
     return(

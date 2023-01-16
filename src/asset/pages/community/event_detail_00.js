@@ -5,6 +5,7 @@ import userPic02 from '../../img/pic02.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from "react-router-dom";
+import '../../css/pages/community/event_detail_00_style.scss';
 
 function EventDetail00(props) {
   let navigate = useNavigate();

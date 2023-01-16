@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import hostPic from '../../img/host_img00.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import '../../css/pages/my_page/dash_board_manager_style.scss';
 
 function DashBoardManager(props){
     return(

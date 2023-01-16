@@ -1,4 +1,5 @@
 import groupImg from '../../img/group_img_00.png';
+import '../../css/pages/my_page/current_event_state_style.scss';
 
 function CurrentEventState(props){
     return(

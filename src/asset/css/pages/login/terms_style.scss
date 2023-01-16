@@ -1,0 +1,71 @@
+@use '../../../../App.scss';
+@use '../../common/color.scss';
+@use '../../common/text.scss';
+@use '../../common/button.scss';
+@use '../../common/input.scss';
+@use '../../common/common.scss';
+
+#terms{
+    @extend .login_set;
+    .header{
+      @extend .login_w;
+      padding: 16px 32px;
+      background-color: color.$white;
+      border-radius: 10px;
+      .container{
+        .title{
+          @extend .title;
+          padding-bottom: 20px;
+        }
+        .subtitle{
+          @extend .subtitle;
+        }
+      }
+    }
+    .contents{
+      padding: 32px 87px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: color.$white;
+      border-radius: 10px;
+      @extend .login_w;
+      .container{
+        padding: 16px 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .c_header{
+          width: 100%;
+          font-weight: bold;
+          text-align: center;
+          padding-bottom: 16px;
+          border-bottom: 1px solid #d9d9d9;
+          p{
+            padding: 8px;
+            font-size: 14px;
+          }
+        }
+        .c_terms{
+          border-bottom: 1px solid #d9d9d9;
+          padding-bottom: 16px;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          .c_terms_title{
+            @extend .terms_title;
+          }
+          .c_terms_subtitle{
+            @extend .terms_subtitle;
+          }
+          .c_terms_text{
+           @extend .terms_text;
+          }
+        }
+      }
+      .btn{
+        @extend .btn;
+        margin: 16px;
+      }
+    }
+  }

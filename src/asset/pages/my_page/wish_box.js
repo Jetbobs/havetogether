@@ -1,6 +1,8 @@
 import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass, faX } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon, Outlet } from '@fortawesome/react-fontawesome';
+import '../../css/pages/my_page/wish_box_style.scss';
+
 function WishBox(props){
     return(
         <>

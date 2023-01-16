@@ -1,4 +1,5 @@
 import {Link, useNavigate} from 'react-router-dom';
+import '../../css/pages/login/terms_style.scss';
 
 function Terms(props){
     

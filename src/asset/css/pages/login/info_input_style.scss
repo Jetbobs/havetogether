@@ -1,0 +1,107 @@
+@use '../../../../App.scss';
+@use '../../common/color.scss';
+@use '../../common/text.scss';
+@use '../../common/button.scss';
+@use '../../common/input.scss';
+@use '../../common/common.scss';
+
+#info_input{
+    @extend .login_set;
+    .header{
+      @extend .login_w;
+      padding: 16px 32px;
+      background-color: color.$white;
+      border-radius: 10px;
+      .title{
+        @extend .title;
+        padding-bottom: 20px;
+      }
+      .subtitle{
+        @extend .subtitle;
+      }
+      a{
+        font-size: 12px;
+        line-height: 1.6;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        color: inherit;
+        svg{
+          padding-left: 8px;
+        }
+      }
+    }
+    .contents{
+      @extend .login_w;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: color.$white;
+      border-radius: 10px;
+      gap: 8px;
+      .title{
+        font-size: 16px;
+        font-weight: 900;
+        text-align: left;
+        width: 100%;
+        padding: 8px;
+      }
+      .input_container{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        .input{
+          width: 100%;
+          overflow: initial;
+          @extend .input_set;
+          .input_title{
+            display: flex;
+            font-size: 10px;
+            font-weight: 900;
+          }
+          .input_desc{
+            padding-left: 50px;
+            font-size: 8px;
+            color: #808080;
+            font-weight: 900;
+          }
+          input[type="file"]{
+            display: none;
+          }
+          label{
+            padding: 8px;
+            background-color: #808080;
+            border-radius: 4px;
+            color: color.$white;
+            font-size: 10px;
+            font-weight: 900;
+            cursor: pointer;
+          }
+          .btn_upload{
+            display: flex;
+            align-items: center;
+          }
+          textarea{
+            width: 100%;
+            border: 1px solid #808080;
+            border-radius: 4px;
+          }
+        }
+        #phone, #u_email{
+          .input_desc{
+            color: color.$orange;
+          }
+        }
+      }
+    }
+    .btn_container{
+      padding: 4px 32px;
+      display: flex;
+      justify-self: center;
+      .btn{
+        margin-bottom: 100px;
+      } 
+    }
+  }

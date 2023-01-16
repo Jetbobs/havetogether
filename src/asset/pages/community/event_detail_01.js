@@ -3,6 +3,7 @@ import hostPic from '../../img/host_img00.png';
 import userPic from '../../img/pic.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import '../../css/pages/community/event_detail_01_style.scss';
 
 function EventDetail01(props){
   let navigate = useNavigate();

@@ -3,6 +3,7 @@ import {Link, useNavigate} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCircleUser,faEllipsisVertical,faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import userPic from '../../img/pic.png';
+import '../../css/pages/my_page/my_page_info_style.scss';
 
 function MyPageInfo(props){
     return(

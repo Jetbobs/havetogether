@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 //fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import '../../css/pages/my_page/member_info_manager_style.scss';
 
 
 function MemberInfoManager(props){
