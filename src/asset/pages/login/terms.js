@@ -1,5 +1,6 @@
 import {Link, useNavigate} from 'react-router-dom';
 import '../../css/pages/login/terms_style.scss';
+import LoginHeaderNol from '../../../components/login/login_header_noL';
 
 function Terms(props){
     
@@ -7,7 +8,7 @@ function Terms(props){
 
     return(
         <div id="terms">
-        <div className="header">
+        {/* <div className="header">
           <div className="container">
             <div className="title">
               회원가입
@@ -16,7 +17,8 @@ function Terms(props){
               Have Together 서비스 이용약관을 확인해주세요.
             </div>
           </div>
-        </div>
+        </div> */}
+        <LoginHeaderNol n={0}></LoginHeaderNol>
         <div className="contents">
           <div className="container">
           <div className="c_header">

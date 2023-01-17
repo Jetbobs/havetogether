@@ -9,6 +9,7 @@
     @extend .login_set;
     .header{
       @extend .login_w;
+      white-space: pre-wrap;
       padding: 16px 32px;
       background-color: color.$white;
       border-radius: 10px;

@@ -1,32 +1,33 @@
 
 import {Link, useNavigate} from 'react-router-dom';
+import { useState } from 'react';
 //fontawesome
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCircleUser,faEllipsisVertical,faArrowRight} from '@fortawesome/free-solid-svg-icons';
 //scss
-import '../../css/pages/login/main_style.scss';
+import '../../css/pages/login/login_style.scss';
+//data
+import meetUp from '../../data/meetup';
+//components
+import LoginHeader from '../../../components/login/login_header';
+import BasicButton from '../../../components/common/basic_button';
 
 
 
 
 
-function LoginMain(){
 
+function Login(){
+    let [meetup] = useState(meetUp);
+    console.log(meetup[0].link_icon)
     let navigate = useNavigate();
+    let [buttonName, buttonNameSet] = useState(['로그인','회원가입']);
+    let [buttonId, buttonIdSet] = useState(['login','signup']);
+    console.log(buttonName)
 
     return(
         <div id='login'>
-        <section className="header">
-          <div className="container">
-          <div className="title">
-            스타트업 점심시간 네트워킹
-          </div>
-          <div className="subtitle">
-            다양한 이벤트에 참여하시고, 다채로운 분들과 네트워킹하실 수 있습니다! <br /> 지금 Have Together에 가입하세요 :)
-          </div>
-          </div>
-          <Link>Have Together 서비스 소개서 보기 <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></Link>
-        </section>
+        <LoginHeader n={0}></LoginHeader>
         <section className='contents'>
           <div className="container">
           <div className="input" id='email'>
@@ -43,12 +44,21 @@ function LoginMain(){
           </div>
           </div>
           <div className="container">
-            <div className="btn" onClick={()=>{navigate()}} id='login'>
+            {/* <div className="btn" onClick={()=>{navigate()}} id='login'>
               로그인
             </div>
             <div className="btn" onClick={()=>{navigate()}} id='signup'>
               회원가입
-            </div>
+            </div> */}
+            {
+              buttonName.map((e,i)=>{
+                console.log(e);
+                console.log(i);
+                return(
+                  <BasicButton buttonName={buttonName} buttonId={buttonId} i={i}></BasicButton>
+                )
+              })
+            }
             <div className="find_container">
               <div className="find" onClick={()=>{navigate()}}>비밀번호 찾기</div>
               <div className="find" onClick={()=>{navigate()}}>아이디 찾기</div>
@@ -59,4 +69,4 @@ function LoginMain(){
     )
 }
 
-export default LoginMain;
+export default Login;

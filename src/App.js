@@ -6,7 +6,7 @@ import GlobalStyles from './components/GlobalStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass, faX } from '@fortawesome/free-solid-svg-icons';
 //login
-import LoginMain from './asset/pages/login/main';
+import Login from './asset/pages/login/login';
 import Terms from './asset/pages/login/terms';
 import InfoInput from './asset/pages/login/info_input';
 import InfoInputMore from './asset/pages/login/info_input_more';
@@ -74,7 +74,7 @@ function App() {
           </div>
         </header>
         <Routes>
-          <Route path='/login' element={<LoginMain></LoginMain>}>
+          <Route path='/login' element={<Login></Login>}>
           </Route>
           <Route path='/terms' element={<Terms></Terms>}></Route>
           <Route path='/info_input' element={<InfoInput />}></Route>
