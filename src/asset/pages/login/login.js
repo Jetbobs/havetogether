@@ -19,12 +19,9 @@ import BasicButton from '../../../components/common/basic_button';
 
 function Login(){
     let [meetup] = useState(meetUp);
-    console.log(meetup[0].link_icon)
-    let navigate = useNavigate();
-    let [buttonName, buttonNameSet] = useState(['로그인','회원가입']);
-    let [buttonId, buttonIdSet] = useState(['login','signup']);
-    console.log(buttonName)
 
+    let navigate = useNavigate();
+    let [button, buttonSet] = useState([{'name' : '로그인', 'id' : 'login'},{'name' : '회원가입', 'id' : 'signup'}]);
     return(
         <div id='login'>
         <LoginHeader n={0}></LoginHeader>
@@ -51,11 +48,11 @@ function Login(){
               회원가입
             </div> */}
             {
-              buttonName.map((e,i)=>{
+              button.map((e,i)=>{
                 console.log(e);
                 console.log(i);
                 return(
-                  <BasicButton buttonName={buttonName} buttonId={buttonId} i={i}></BasicButton>
+                  <BasicButton button={button} i={i}></BasicButton>
                 )
               })
             }

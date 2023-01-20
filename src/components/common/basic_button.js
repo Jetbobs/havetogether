@@ -4,8 +4,8 @@ import meetUp from '../../asset/data/meetup';
 function BasicButton(props){
     let navigate = useNavigate();
     return(
-        <div className="btn" onClick={()=>{navigate()}} id={props.buttonId[props.i]}>
-        {props.buttonName[props.i]}
+        <div className="btn" onClick={()=>{navigate()}} id={props.button[props.i].id}>
+        {props.button[props.i].name}
       </div>
     )
 }

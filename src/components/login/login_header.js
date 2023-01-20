@@ -11,7 +11,6 @@ function LoginHeader(props){
     let state = useSelector((state) => {return state})
 
     let dispatch = useDispatch();
-    console.log(state)
     let title = state.loginHeader[props.n].title;
     let subtitle = state.loginHeader[props.n].subtitle;
     let link_title = state.loginHeader[props.n].link_title;
