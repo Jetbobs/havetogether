@@ -6,7 +6,7 @@
 @use '../../common/common.scss';
 
 #commu_info{
-    width: 75%;
+    width: calc(100% - 248px);
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -14,7 +14,7 @@
       
       .bg{
         height: 180px;
-        background-image: url(./asset/img/commu_bg_01.png);
+        background-image: url('../../../img/commu_bg_01.png');
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
       }
@@ -55,32 +55,32 @@
         line-height: 1.6;
         padding: 8px;
       }
-      .container{
-        display: flex;
-        .item{
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-          padding: 12px;
-          .title{
-            font-size: 14px;
-            line-height: 1.3;
-            font-weight: bold;
-            padding: 0;
-          }
-          .count{
-            color: #0e2b36;
-            font-size: 14px;
-            line-height: 1.3;
-            font-weight: 400;
-          }
-        }
-        #progressing_event{
-          .count{
-            color: color.$orange;
-          }
-        }
-      }
+      // .container{
+      //   display: flex;
+      //   .item{
+      //     display: flex;
+      //     flex-direction: column;
+      //     gap: 8px;
+      //     padding: 12px;
+      //     .title{
+      //       font-size: 14px;
+      //       line-height: 1.3;
+      //       font-weight: bold;
+      //       padding: 0;
+      //     }
+      //     .count{
+      //       color: #0e2b36;
+      //       font-size: 14px;
+      //       line-height: 1.3;
+      //       font-weight: 400;
+      //     }
+      //   }
+      //   #progressing_event{
+      //     .count{
+      //       color: color.$orange;
+      //     }
+      //   }
+      // }
     }
     #event{
       .title{
@@ -91,10 +91,9 @@
       }
       .container{
         display: flex;
-        justify-content: space-between;
         gap: 16px;
         .event{
-          flex: 1;
+          width: 248px;
           border: 2px solid #ebebeb;
           border-radius: 16.53px;
           background-color: color.$white;
@@ -135,7 +134,7 @@
             border-top-left-radius: 16.53px;
             border-top-right-radius: 16.53px;
             padding: 0px 18px 12px 18px;
-            background-image: url(./asset/img/commu_bg_02.png);
+            background-image: url(../../../img/commu_bg_02.png);
           }
           .w_p_32_18{
             padding: 32px 18px;

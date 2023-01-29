@@ -5,10 +5,24 @@ import userPic02 from '../../img/pic02.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from "react-router-dom";
+//css
 import '../../css/pages/community/event_detail_00_style.scss';
+//components
+import BgWBtn from '../../../components/bg/bg_w_btn';
+import { useState } from 'react';
+import UserCard from '../../../components/common/card/user_card';
+//data
+import bgWBtnData from '../../data/bg/bg_w_btn_data';
+import userCardData from '../../data/card/user_card_data';
+
+
 
 function EventDetail00(props) {
+
   let navigate = useNavigate();
+  let [bg, bgSet] = useState(bgWBtnData);
+  let [user, userSet] = useState(userCardData);
+
   return (
     <>
           <div id="meetup_detail">
@@ -20,7 +34,7 @@ function EventDetail00(props) {
           <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon> 이벤트 목록
           </div>
         </div>
-        <div id="meetup_info_title">
+        {/* <div id="meetup_info_title">
           <div className="bg"></div>
           <div className="corp_info">
             <div className="title">
@@ -53,7 +67,8 @@ function EventDetail00(props) {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+        <BgWBtn bg={bg} i={0}></BgWBtn>
         <div className="contents">
           <div className="info_container" id='host_info'>
             <div className="title">
@@ -90,6 +105,7 @@ function EventDetail00(props) {
                   </div>
                 </div>
               </div>
+              <UserCard user={user} i={0}></UserCard>
             </div>
           </div>
           <div className="info_container" id='participant_info'>
@@ -98,93 +114,9 @@ function EventDetail00(props) {
               <span>가장 먼저 참가신청 해보세요!</span>
             </div>
             <div className="card_container">
-              <div className="card">
-                <div className="pic_name">
-                  <div className="pic">
-                    <img src={userPic} alt="" />
-                  </div>
-                  <div className="name_wrapper">
-                    <div className="name">
-                      TOMAS
-                    </div>
-                    <div className="sub">
-                      UNISTY CEO
-                    </div>
-                  </div>
-                </div>
-                <div className="intro">
-                  IT 커뮤니티와 IT 기업을 연결하는 일을 하고 있습니다.
-                </div>
-                <div className="tag">
-                  <div className="item">
-                    <span>기획</span>
-                  </div>
-                  <div className="item">
-                    <span>브랜딩</span>
-                  </div>
-                  <div className="item">
-                    <span>서비스 디자인</span>
-                  </div>
-                </div>
-              </div>
-              <div className="card">
-                <div className="pic_name">
-                  <div className="pic">
-                    <img src={userPic01} alt="" />
-                  </div>
-                  <div className="name_wrapper">
-                    <div className="name">
-                      Brian
-                    </div>
-                    <div className="sub">
-                      Company Developer
-                    </div>
-                  </div>
-                </div>
-                <div className="intro">
-                  software like Aldus PageMaker including versions of Loem Ipsum
-                </div>
-                <div className="tag">
-                <div className="item">
-                    <span>기획</span>
-                  </div>
-                  <div className="item">
-                    <span>브랜딩</span>
-                  </div>
-                  <div className="item">
-                    <span>서비스 디자인</span>
-                  </div>
-                </div>
-              </div>
-              <div className="card">
-                <div className="pic_name">
-                  <div className="pic">
-                    <img src={userPic02} alt="" />
-                  </div>
-                  <div className="name_wrapper">
-                    <div className="name">
-                      Samanda
-                    </div>
-                    <div className="sub">
-                      SAM CEO
-                    </div>
-                  </div>
-                </div>
-                <div className="intro">
-                  It is a long established fact that a reader will be distracted
-                </div>
-                <div className="tag">
-                <div className="item">
-                    <span>기획</span>
-                  </div>
-                  <div className="item">
-                    <span>브랜딩</span>
-                  </div>
-                  <div className="item">
-                    <span>서비스 디자인</span>
-                  </div>
-                </div>
-              </div>
+            <UserCard user={user} i={1}></UserCard>
+            <UserCard user={user} i={2}></UserCard>
+            <UserCard user={user} i={3}></UserCard>
             </div>
           </div>
         </div>

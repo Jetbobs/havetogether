@@ -5,6 +5,8 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCircleUser,faEllipsisVertical,faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import meetUp from '../../asset/data/meetup';
 import { useDispatch, useSelector } from 'react-redux';
+//css
+import '../../asset/css/components/login/login_header_style.scss';
 
 function LoginHeaderNol(props){
 

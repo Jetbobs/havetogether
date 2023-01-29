@@ -41,16 +41,8 @@ function Login(){
           </div>
           </div>
           <div className="container">
-            {/* <div className="btn" onClick={()=>{navigate()}} id='login'>
-              로그인
-            </div>
-            <div className="btn" onClick={()=>{navigate()}} id='signup'>
-              회원가입
-            </div> */}
             {
               button.map((e,i)=>{
-                console.log(e);
-                console.log(i);
                 return(
                   <BasicButton button={button} i={i}></BasicButton>
                 )

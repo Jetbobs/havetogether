@@ -1,3 +1,6 @@
+//css
+import '../../asset/css/components/login/login_date_button_style.scss';
+
 function LoginDateButton(props){
 
     let id = props.dateButton[props.i].id;

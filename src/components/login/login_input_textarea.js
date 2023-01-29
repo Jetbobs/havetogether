@@ -1,3 +1,6 @@
+//css
+import '../../asset/css/components/login/login_input_style.scss';
+
 function LoginInfoInputTextarea(props){
 
     let id = props.infoInputTextarea[props.i].id;

@@ -1,0 +1,54 @@
+@use '../../../../App.scss';
+@use '../../common/color.scss';
+@use '../../common/text.scss';
+@use '../../common/button.scss';
+@use '../../common/input.scss';
+@use '../../common/common.scss';
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: color.$white;
+    border-radius: 10px;
+    width: 248px;
+    padding: 20px;
+    .pic_name{
+      width: 173px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      .name_wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .name{
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 1.3;
+        }
+        .sub{
+          font-size: 10px;
+          font-weight: 600;
+          line-height: 1.3;
+        }
+      }
+    }
+    .intro{
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .tag{
+      display: flex;
+      gap: 4px;
+      span{
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 1.3;
+        border: 1px solid #000;
+        border-radius: 10px;
+        padding: 2px 4px;
+      }
+    }
+  }

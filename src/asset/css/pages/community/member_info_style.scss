@@ -47,6 +47,7 @@
         #tab{
           display: flex;
           .tab{
+            cursor: pointer;
             opacity: 0.5;
             padding: 16px;
             font-size: 14px;
@@ -70,6 +71,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        padding-top: 24px;
         .member{
           padding: 16px;
           background-color: color.$white;

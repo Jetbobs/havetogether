@@ -1,0 +1,36 @@
+@use '../../../../App.scss';
+@use '../../common/color.scss';
+@use '../../common/text.scss';
+@use '../../common/button.scss';
+@use '../../common/input.scss';
+@use '../../common/common.scss';
+
+#info_title{
+    padding: 16px 32px;
+    background-color: color.$white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    white-space: break-spaces;
+    .container{
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      .subtitle{
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    }
+    .look{
+      display: flex;
+      justify-content: end;
+    }
+    a{
+      color: inherit;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+  }

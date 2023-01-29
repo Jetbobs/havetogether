@@ -7,31 +7,31 @@
 
 #info_input{
     @extend .login_set;
-    .header{
-      @extend .login_w;
-      white-space: pre-wrap;
-      padding: 16px 32px;
-      background-color: color.$white;
-      border-radius: 10px;
-      .title{
-        @extend .title;
-        padding-bottom: 20px;
-      }
-      .subtitle{
-        @extend .subtitle;
-      }
-      a{
-        font-size: 12px;
-        line-height: 1.6;
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        color: inherit;
-        svg{
-          padding-left: 8px;
-        }
-      }
-    }
+    // .header{
+    //   @extend .login_w;
+    //   white-space: pre-wrap;
+    //   padding: 16px 32px;
+    //   background-color: color.$white;
+    //   border-radius: 10px;
+    //   .title{
+    //     @extend .title;
+    //     padding-bottom: 20px;
+    //   }
+    //   .subtitle{
+    //     @extend .subtitle;
+    //   }
+    //   a{
+    //     font-size: 12px;
+    //     line-height: 1.6;
+    //     display: flex;
+    //     justify-content: end;
+    //     align-items: center;
+    //     color: inherit;
+    //     svg{
+    //       padding-left: 8px;
+    //     }
+    //   }
+    // }
     .contents{
       @extend .login_w;
       padding: 16px;
@@ -53,44 +53,44 @@
         flex-direction: column;
         gap: 16px;
         width: 100%;
-        .input{
-          width: 100%;
-          overflow: initial;
-          @extend .input_set;
-          .input_title{
-            display: flex;
-            font-size: 10px;
-            font-weight: 900;
-          }
-          .input_desc{
-            padding-left: 50px;
-            font-size: 8px;
-            color: #808080;
-            font-weight: 900;
-          }
-          input[type="file"]{
-            display: none;
-          }
-          label{
-            padding: 8px;
-            background-color: #808080;
-            border-radius: 4px;
-            color: color.$white;
-            font-size: 10px;
-            font-weight: 900;
-            cursor: pointer;
-          }
-          .btn_upload{
-            display: flex;
-            align-items: center;
-          }
-          textarea{
-            resize: none;
-            width: 100%;
-            border: 1px solid #808080;
-            border-radius: 4px;
-          }
-        }
+        // .input{
+        //   width: 100%;
+        //   overflow: initial;
+        //   @extend .input_set;
+        //   .input_title{
+        //     display: flex;
+        //     font-size: 10px;
+        //     font-weight: 900;
+        //   }
+        //   .input_desc{
+        //     padding-left: 50px;
+        //     font-size: 8px;
+        //     color: #808080;
+        //     font-weight: 900;
+        //   }
+        //   input[type="file"]{
+        //     display: none;
+        //   }
+        //   label{
+        //     padding: 8px;
+        //     background-color: #808080;
+        //     border-radius: 4px;
+        //     color: color.$white;
+        //     font-size: 10px;
+        //     font-weight: 900;
+        //     cursor: pointer;
+        //   }
+        //   .btn_upload{
+        //     display: flex;
+        //     align-items: center;
+        //   }
+        //   textarea{
+        //     resize: none;
+        //     width: 100%;
+        //     border: 1px solid #808080;
+        //     border-radius: 4px;
+        //   }
+        // }
         #phone, #u_email{
           .input_desc{
             color: color.$orange;
