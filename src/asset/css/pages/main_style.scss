@@ -1,0 +1,117 @@
+@use '../../../App.scss';
+@use '../common/color.scss';
+@use '../common/text.scss';
+@use '../common/button.scss';
+@use '../common/input.scss';
+@use '../common/common.scss';
+
+
+#landing {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: color.$white;
+    h3{
+        font-size: 21px;
+        line-height: 24px;
+        font-weight: bold;
+    }
+    #sec_00 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 48px 24px;
+        gap: 16px;
+        .text_container{
+            padding: 31.5px 43.5px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            .subtitle{
+                font-size: 18px;
+                line-height: 1.5;
+                font-weight: 400;
+            }
+            .title{
+                display: flex;
+                flex-direction: column;
+                h2{
+                    font-size: 32px;
+                }
+                span{
+                    font-size: 18px;
+                }
+            }
+            .btn_container{
+                display: flex;
+                gap: 8px;
+                .btn{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 8px;
+                    font-size: 14px;
+                }
+                .purple{
+                    width: 176px;
+                    background-color: color.$purple01;
+                    color: color.$white;
+                }
+                .yellow{
+                    width: 65px;
+                    background-color: #F8D110;
+                    color: #000;
+                }
+            }
+        }
+    }
+    #sec_01{
+        padding: 24px;
+        display: flex;
+        justify-content: center;
+        .text_container{
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            .text{
+                padding: 8px;
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 24px;
+                color: color.$purple01;
+                box-shadow: 1px 1px 0px rgba(117, 70, 215, 0.2);
+            }
+        }
+    }
+    #sec_02{
+        padding: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #sec_03,#sec_04,#sec_05,#sec_06{
+        padding: 36px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .text_container{
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            .sub_text{
+                display: flex;
+                align-items: center;
+
+            }
+        }
+    }
+    .img_container{
+        img{
+            width: 336px;
+            height: 280px;
+        }
+    }
+}
