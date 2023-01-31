@@ -17,7 +17,7 @@ import infoInputDataTextarea from '../../data/login/info_input/info_input_textar
 
 
 function InfoInput() {
-  let [button, buttonSet] = useState([{ 'name': '입력완료', 'id': 'complete' }]);
+  let [button, buttonSet] = useState([{ 'name': '입력완료', 'id': 'complete', link : ''}]);
   let input_array_0 = ['belong', 'work_location', 'work_position', 'phone'];
   let input_array_1 = ['u_email', 'u_pw']
   let input_file_array_0 = ['my_picture']
@@ -70,6 +70,7 @@ function InfoInput() {
       <div className="btn_container">
         {
           button.map((e, i) => {
+            console.log(button[0].link)
             return (
               <BasicButton button={button} i={i}></BasicButton>
             )

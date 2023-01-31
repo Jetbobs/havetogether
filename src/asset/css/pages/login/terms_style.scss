@@ -63,9 +63,13 @@
           }
         }
       }
-      .btn{
-        @extend .btn;
-        margin: 16px;
+      a{
+        display: block;
+        margin-top: 16px;
+        width: 100%;
+        .btn{
+          @extend .btn;
+        }
       }
     }
   }

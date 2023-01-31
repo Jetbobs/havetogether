@@ -62,9 +62,9 @@ function Terms(props){
             </div>
           </div>
           </div>
-          <div className="btn">
+          <Link to='/info_input'><div className="btn">
             동의하고 계속하기
-          </div>
+          </div></Link>
         </div>
       </div>
     )

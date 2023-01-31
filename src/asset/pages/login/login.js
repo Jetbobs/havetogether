@@ -21,7 +21,7 @@ function Login(){
     let [meetup] = useState(meetUp);
 
     let navigate = useNavigate();
-    let [button, buttonSet] = useState([{'name' : '로그인', 'id' : 'login'},{'name' : '회원가입', 'id' : 'signup'}]);
+    let [button, buttonSet] = useState([{ name : '로그인', id : 'login', link : ''},{ name : '회원가입', id : 'signup', link : '/terms'}]);
     return(
         <div id='login'>
         <LoginHeader n={0}></LoginHeader>

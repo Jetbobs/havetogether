@@ -15,7 +15,7 @@ function EventCard00(props) {
 
 
     return (
-        <div className="event">
+        <div className="event event_00">
             <div className="wrapper w_p_32_18">
                 <div className="title">
                     {title}

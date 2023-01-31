@@ -25,49 +25,15 @@ function EventDetail00(props) {
 
   return (
     <>
-          <div id="meetup_detail">
-          <div className="detail">
+      <div id="meetup_detail">
+        <div className="detail">
           <div className="text">
             이벤트 상세정보
           </div>
-          <div className="text" onClick={()=>{navigate()}}>
-          <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon> 이벤트 목록
-          </div>
+          <Link to='/community/event_info'><div className="text" onClick={() => { navigate() }}>
+            <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon> 이벤트 목록
+          </div></Link>
         </div>
-        {/* <div id="meetup_info_title">
-          <div className="bg"></div>
-          <div className="corp_info">
-            <div className="title">
-              MARU Meet Up
-              <Link>마루밋업 더 자세히 알아보기</Link>
-            </div>
-            <div className="subtitle">
-              <span>39</span>주차 마루 밋업 진행합니다! 관심사, 직군을 기반으로 점심식사를 함께할 마루민을 매칭해드립니다. <br />
-              밋업 이후 바로 드실 수 있도록 커피도 제공하니 많은 참가 바랍니다!
-            </div>
-            <div className="info">
-              <ul>
-                <li>- 일자 : 2022. 10. 24(월) ~ 28(금)</li>
-                <li>- 신청기간 : 2022. 10. 17(월) ~ 19(수)</li>
-                <li>- 매칭결과 안내 : 2022. 10. 20(목)</li>
-              </ul>
-            </div>
-            <div className="btn_wrapper">
-              <div className="btn" id='btn_join'>
-                참가하기 <strong>D-<span>3</span></strong>
-              </div>
-              <div className="btn" id='btn_cancel'>
-                참가 취소
-              </div>
-              <div className="btn" id='btn_progress'>
-                매칭 진행 중
-              </div>
-              <div className="btn" id='btn_event_cancel'>
-                이벤트 취소하기
-              </div>
-            </div>
-          </div>
-        </div> */}
         <BgWBtn bg={bg} i={0}></BgWBtn>
         <div className="contents">
           <div className="info_container" id='host_info'>
@@ -114,9 +80,9 @@ function EventDetail00(props) {
               <span>가장 먼저 참가신청 해보세요!</span>
             </div>
             <div className="card_container">
-            <UserCard user={user} i={1}></UserCard>
-            <UserCard user={user} i={2}></UserCard>
-            <UserCard user={user} i={3}></UserCard>
+              <UserCard user={user} i={1}></UserCard>
+              <UserCard user={user} i={2}></UserCard>
+              <UserCard user={user} i={3}></UserCard>
             </div>
           </div>
         </div>
@@ -397,45 +363,45 @@ function EventDetail00(props) {
         </div>
       </div>
       <div className="modal" id='event_cancel_01'>
-            <div className="modal_bg">
-            </div>
-            <div className="contents">
-              <div className="title">
-                이벤트 취소
-              </div>
-              <div className="desc">
-                정말로 이벤트를 취소할까요? 확인을 선택하시면 이벤트가 취소되며, <br />
-                 참가신청한 멤버들에게 푸시 알림이 전송됩니다.
-                <div className="time">
-                
-              </div>
-              </div>
-              <div className="btn_wrapper">
-                <div className="btn" id='btn_no'>아니요</div>
-                <div className="btn" id='btn_yes'>확인</div>
-              </div>
+        <div className="modal_bg">
+        </div>
+        <div className="contents">
+          <div className="title">
+            이벤트 취소
+          </div>
+          <div className="desc">
+            정말로 이벤트를 취소할까요? 확인을 선택하시면 이벤트가 취소되며, <br />
+            참가신청한 멤버들에게 푸시 알림이 전송됩니다.
+            <div className="time">
+
             </div>
           </div>
-          <div className="modal" id='event_edit_confirm'>
-            <div className="modal_bg">
-            </div>
-            <div className="contents">
-              <div className="title">
-                이벤트 정보 수정
-              </div>
-              <div className="desc">
-                정보 수정을 완료할까요? <br />
-                 완료 후 이벤트 상세보기 페이지로 이동합니다.
-                <div className="time">
-                
-              </div>
-              </div>
-              <div className="btn_wrapper">
-                <div className="btn" id='btn_continue'>수정 계속하기</div>
-                <div className="btn" id='btn_complete'>수정 완료</div>
-              </div>
+          <div className="btn_wrapper">
+            <div className="btn" id='btn_no'>아니요</div>
+            <div className="btn" id='btn_yes'>확인</div>
+          </div>
+        </div>
+      </div>
+      <div className="modal" id='event_edit_confirm'>
+        <div className="modal_bg">
+        </div>
+        <div className="contents">
+          <div className="title">
+            이벤트 정보 수정
+          </div>
+          <div className="desc">
+            정보 수정을 완료할까요? <br />
+            완료 후 이벤트 상세보기 페이지로 이동합니다.
+            <div className="time">
+
             </div>
           </div>
+          <div className="btn_wrapper">
+            <div className="btn" id='btn_continue'>수정 계속하기</div>
+            <div className="btn" id='btn_complete'>수정 완료</div>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

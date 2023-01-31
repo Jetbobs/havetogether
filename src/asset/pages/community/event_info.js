@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import groupImg from '../../img/group_img_00.png';
 import '../../css/pages/community/event_info_style.scss';
+import $ from'jquery';
 //components
 import Header from "../../../components/common/header/header";
 import EventCard00 from "../../../components/common/card/event_card_00";
@@ -15,7 +16,6 @@ function EventInfo(props) {
 
   let [header, headerSet] = useState(headerData);
   let [card, cardSet] = useState(cardData);
-
   return (
     <div id="event_info">
       <Header header={header} i={0}></Header>
@@ -25,9 +25,9 @@ function EventInfo(props) {
           <strong><span>NN</span>개</strong>
         </div>
         <div className="container">
-          <EventCard00 card={card} i={0}></EventCard00>
-          <EventCard01 card={card} i={0}></EventCard01>
-          <EventCard02 card={card} i={0}></EventCard02>
+          <Link to='/community/event_detail_00'><EventCard00 card={card} i={0}></EventCard00></Link>
+          <Link to='/community/event_detail_00'><EventCard01 card={card} i={0}></EventCard01></Link>
+          <Link to='/community/event_detail_00'><EventCard02 card={card} i={0}></EventCard02></Link>
         </div>
       </div>
       <div id="end_event">
@@ -35,9 +35,9 @@ function EventInfo(props) {
           종료된 이벤트
         </div>
         <div className="container">
-          <EventCard00 card={card} i={0}></EventCard00>
-          <EventCard01 card={card} i={0}></EventCard01>
-          <EventCard02 card={card} i={0}></EventCard02>
+        <Link to='/community/event_detail_00'><EventCard00 card={card} i={0}></EventCard00></Link>
+        <Link to='/community/event_detail_00'><EventCard01 card={card} i={0}></EventCard01></Link>
+        <Link to='/community/event_detail_00'><EventCard02 card={card} i={0}></EventCard02></Link>
         </div>
       </div>
     </div>

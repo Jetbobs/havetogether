@@ -1,4 +1,5 @@
 import './App.scss';
+import $ from'jquery';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 import logo from './asset/img/ht_logo_header.png';
 import GlobalStyles from './components/GlobalStyles';
@@ -62,10 +63,10 @@ function App() {
           </div>
           <div id="header_info">
             <div className="hi_community">
-              커뮤니티
+              <Link to='/community/commu_info'>커뮤니티</Link>
             </div>
             <div className="hi_my_page">
-              마이 페이지
+              <Link to='/my_page/dash_board'>마이 페이지</Link>
             </div>
             <div className="hi_user">
               <FontAwesomeIcon icon={faCircleUser}></FontAwesomeIcon>

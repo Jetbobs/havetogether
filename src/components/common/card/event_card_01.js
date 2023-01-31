@@ -13,7 +13,7 @@ function EventCard01(props) {
     let d_day = props.card[props.i].d_day;  
 
     return (
-        <div className="event">
+        <div className="event event_01">
         <div className="wrapper wrapper_h">
           <div className="title title_h">
           {title}

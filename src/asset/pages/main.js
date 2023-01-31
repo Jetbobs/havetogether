@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../css/pages/main_style.scss';
+import { Link } from 'react-router-dom';
 //img
 import sectionImg00 from '../img/main/section_00.png';
 import sectionImg01 from '../img/main/section_01.png';
@@ -148,8 +149,57 @@ function Main(props) {
                     <img src={sectionImg06} alt="" />
                 </div>
             </sectoion>
-            <sectoion id='sec_07'></sectoion>
-            <sectoion id='sec_08'></sectoion>
+            <sectoion id='sec_07'>
+                <div className="text_container">
+                    <h3>함께 성장하는 커뮤니티 문화를 만들어 가고 있습니다</h3>
+                </div>
+                <div className="img_container">
+                    <img src={sectionImg07} alt="" />
+                </div>
+            </sectoion>
+            <sectoion id='sec_08'>
+                <div className="img_container">
+                    <img src={sectionImg08} alt="" />
+                </div>
+                <div className="text_container">
+                    <div className="subtitle">
+                        독자적이고 성장하는 <br />
+                        우리만의 커뮤니티를 원한다면
+                    </div>
+                    <div className="title">
+                        Have Together
+                    </div>
+                    <div className="btn_container">
+                    <div className="btn purple">
+                        얼리 액세스 신청하기
+                    </div>
+                    </div>
+                </div>
+            </sectoion>
+            <footer>
+                <div className="footer_header">
+                    <div className="text_container">
+                        <div className="title">
+                            주식회사 텐로코
+                        </div>
+                        <div className="subtitle">
+                            사이트맵
+                        </div>
+                    </div>
+                </div>
+                <div className="contents">
+                    <div className="sitemap">
+                        <Link>사업자 정보</Link>
+                        <Link>계정</Link>
+                        <Link>주소</Link>
+                    </div>
+                    <div className="sitemap">
+                        <Link>사업자 정보</Link>
+                        <Link>계정</Link>
+                        <Link>주소</Link>
+                    </div>
+                </div>
+            </footer>
         </div>
     )
 }

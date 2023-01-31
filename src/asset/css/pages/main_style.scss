@@ -7,6 +7,7 @@
 
 
 #landing {
+    margin-top: -30px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -52,16 +53,6 @@
                     justify-content: center;
                     border-radius: 8px;
                     font-size: 14px;
-                }
-                .purple{
-                    width: 176px;
-                    background-color: color.$purple01;
-                    color: color.$white;
-                }
-                .yellow{
-                    width: 65px;
-                    background-color: #F8D110;
-                    color: #000;
                 }
             }
         }
@@ -112,6 +103,77 @@
         img{
             width: 336px;
             height: 280px;
+        }
+    }
+    #sec_07{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+        height: 240px;
+        .img_container{
+            img{
+                width: 260px;
+                height: 55px;
+            }
+        }
+    }
+    #sec_08{
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        align-items: center;
+        .text_container{
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+    .purple{
+        width: 176px;
+        background-color: color.$purple01;
+        color: color.$white;
+    }
+    .yellow{
+        width: 65px;
+        background-color: #F8D110;
+        color: #000;
+    }
+    footer{
+        .footer_header{
+            padding: 24px;
+            border-bottom: 1px solid #808080;
+            .text_container{
+                display: flex;
+                gap: 8px;
+                .title{
+                    font-size: 21px;
+                    line-height: 30px;
+                    font-weight: bold;
+                }
+                .subtitle{
+                    font-size: 16px;
+                    line-height: 30px;
+                }
+            }
+        }
+        .contents{
+            display: flex;
+            .sitemap{
+                flex: 1;
+                padding: 24px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                a{
+                    font-size: 16px;
+                    line-height: 30px;
+                    font-weight: 400;
+                    color: #000;
+                }
+            }
         }
     }
 }
