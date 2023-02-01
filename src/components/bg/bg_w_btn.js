@@ -1,14 +1,21 @@
-import '../../asset/css/components/bg/bg_w_btn_style.scss';
+
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+//css
+import '../../asset/css/components/bg/bg_w_btn_style.scss';
+//modal
+import ModalMuJoin from '../modal/modal_mu_join';
 
 function BgWBtn(props) {
 
     let title = props.bg[props.i].title;
     let subtitle = props.bg[props.i].subtitle;
     let info = props.bg[props.i].info;
-    console.log(info);
+    // let [modalJoin, modalJoinSet] = useState(false);
+    // console.log(modalJoin);
 
     return (
+        <>
         <div id="meetup_info_title">
             <div className="bg"></div>
             <div className="corp_info">
@@ -31,7 +38,7 @@ function BgWBtn(props) {
                     </ul>
                 </div>
                 <div className="btn_wrapper">
-                    <div className="btn" id='btn_join'>
+                    <div className="btn" id='btn_join' onClick={()=>{props.modalJoinSet(true)}}>
                         참가하기 <strong>D-<span>3</span></strong>
                     </div>
                     <div className="btn" id='btn_cancel'>
@@ -46,6 +53,8 @@ function BgWBtn(props) {
                 </div>
             </div>
         </div>
+
+        </>
     )
 }
 

@@ -1,0 +1,207 @@
+@use '../../../../App.scss';
+@use '../../common/color.scss';
+@use '../../common/text.scss';
+@use '../../common/button.scss';
+@use '../../common/input.scss';
+@use '../../common/common.scss';
+@use '../modal/modal.scss';
+
+
+#meetup_join{
+    display: block;
+    margin-bottom: -30px;
+    .contents{
+      width: 512px;
+      height: 857px;
+      .title{
+        position: absolute;
+        left: 33px;
+        top: 32px;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 1.6;
+      }
+      .time{
+        position: absolute;
+        top: 83px;
+        left: 33px;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      .line{
+        position: absolute;
+        border: 1px solid #000;
+        left: 32px;
+        top: 140px;
+        width: 437px;
+      }
+      .desc{
+        position: absolute;
+        left: 33px;
+        top: 159px;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      .content_title{
+        position: absolute;
+        left: 33px;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      #mj_ct_00{
+        top: 215px;
+      }
+      #mj_ct_01{
+        left: 33px;
+        top: 459px;
+      }
+      .day_week_wrapper{
+        .day_week{
+          position: absolute;
+          font-size: 10px;
+          line-height: 16px;
+          text-align: center;
+          font-weight: 400;
+          width: 37px;
+          height: 40px;
+          top: 263px;
+          span{
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 22.4px;
+          }
+        }
+        #monday{
+          left: 51px;
+        }
+        #tuesday{
+          left: 141px;
+        }
+        #wednesday{
+          left: 231px;
+        }
+        #thursday{
+          left: 321px;
+        }
+        #friday{
+          left: 411px;
+        }
+      }
+      .time_week_wrapper{
+        .time_week{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 4px 16px;
+          position: absolute;
+          width: 71px;
+          height: 34px;
+          border: 1px solid #969696;
+          border-radius: 8px;
+          color: #969696;
+        }
+        #m_11{
+          left: 32px;
+          top: 319px;
+        }
+        #m_12{
+          left: 32px;
+          top: 369px;
+        }
+        #t_11{
+          left: 122px;
+          top: 319px;
+        }
+        #t_12{
+          left: 122px;
+          top: 369px;
+        }
+        #w_11{
+          left: 212px;
+          top: 319px;
+        }
+        #w_12{
+          left: 212px;
+          top: 369px;
+        }
+        #th_11{
+          left: 302px;
+          top: 319px;
+        }
+        #th_12{
+          left: 302px;
+          top: 369px;
+        }
+        #f_11{
+          left: 392px;
+          top: 319px;
+        }
+        #f_12{
+          left: 392px;
+          top: 369px;
+        }
+      }
+      .hobbies_wrapper{
+        .hobby_wrapper{
+          display: flex;
+          gap: 8px;
+          position: absolute;
+          left: 32px;
+          .hobby{
+            border: 1px solid #969696;
+            color: #969696;
+            border-radius: 8px;
+            padding: 4px 16px;
+            font-size: 16px;
+            line-height: 1.6;
+          }
+        }
+        #mj_hw_00{
+          top: 517px;
+        }
+        #mj_hw_01{
+          top: 559px;
+        }
+        #mj_hw_02{
+          top: 601px;
+        }
+      }
+      .guide{
+        font-size: 14px;
+        font-weight: 900;
+        line-height: 1.6;
+        position: absolute;
+        top: 659px;
+        left: 33px;
+      }
+      .btn_wrapper{
+        display: flex;
+        padding: 16px;
+        gap: 16px;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        .btn{
+          padding: 8px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: color.$white;
+          width: 232px;
+          height: 48px;
+        }
+        #btn_cancel{
+          border: 1px solid #0e2b36;
+          color: #0e2b36;
+        }
+        #btn_join{
+          background-color: #0e2b36;
+          color: color.$white;
+        }
+      }
+    }
+  }

@@ -14,6 +14,10 @@ import UserCard from '../../../components/common/card/user_card';
 //data
 import bgWBtnData from '../../data/bg/bg_w_btn_data';
 import userCardData from '../../data/card/user_card_data';
+//modal
+import ModalMuJoin from '../../../components/modal/modal_mu_join';
+import ModalMuConfirm from '../../../components/modal/modal_mu_confirm';
+import Modal from '../../../components/modal/modal';
 
 
 
@@ -22,6 +26,10 @@ function EventDetail00(props) {
   let navigate = useNavigate();
   let [bg, bgSet] = useState(bgWBtnData);
   let [user, userSet] = useState(userCardData);
+  let [modalJoin, modalJoinSet] = useState(false);
+  let [modalConfirm, modalConfirmSet] = useState(false);
+
+
 
   return (
     <>
@@ -34,7 +42,7 @@ function EventDetail00(props) {
             <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon> 이벤트 목록
           </div></Link>
         </div>
-        <BgWBtn bg={bg} i={0}></BgWBtn>
+        <BgWBtn bg={bg} i={0} modalJoinSet={modalJoinSet} modalConfirmSet={modalConfirmSet}></BgWBtn>
         <div className="contents">
           <div className="info_container" id='host_info'>
             <div className="title">
@@ -87,7 +95,13 @@ function EventDetail00(props) {
           </div>
         </div>
       </div>
-      <div className="modal" id='meetup_join'>
+      {
+        modalJoin == true ? <ModalMuJoin modalJoinSet={modalJoinSet} modalConfirmSet={modalConfirmSet}></ModalMuJoin> : null
+      }
+      {
+        modalConfirm == true ? <ModalMuConfirm modalConfirmSet={modalConfirmSet} modalJoinSet={modalJoinSet}></ModalMuConfirm> : null
+      }
+      {/* <div className="modal" id='meetup_join'>
         <div className="modal_bg">
         </div>
         <div className="contents">
@@ -230,8 +244,8 @@ function EventDetail00(props) {
             <div className="btn" id='btn_join'>참가하기</div>
           </div>
         </div>
-      </div>
-      <div className="modal" id='meetup_confirm'>
+      </div> */}
+      {/* <div className="modal" id='meetup_confirm'>
         <div className="modal_bg"></div>
         <div className="contents">
           <div className="title">
@@ -327,7 +341,7 @@ function EventDetail00(props) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="modal" id='meetup_cancel'>
         <div className="modal_bg"></div>
         <div className="contents">
@@ -402,6 +416,9 @@ function EventDetail00(props) {
           </div>
         </div>
       </div>
+      <Modal id={'meetup_cancel'}>
+        <Modal.Test>Test</Modal.Test>
+      </Modal>
     </>
   )
 }

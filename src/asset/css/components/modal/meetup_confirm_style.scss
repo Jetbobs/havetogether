@@ -1,0 +1,187 @@
+@use '../../../../App.scss';
+@use '../../common/color.scss';
+@use '../../common/text.scss';
+@use '../../common/button.scss';
+@use '../../common/input.scss';
+@use '../../common/common.scss';
+@use '../modal/modal.scss';
+
+#meetup_confirm{
+    display: block;
+    .contents{
+      width: 512px;
+      height: 620px;
+      .title{
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 1.6;
+        left: 33px;
+        top: 32px;
+        position: absolute;
+      }
+      .desc{
+        font-weight: bold;
+        font-size: 14px;
+        color: color.$orange;
+        line-height: 1.6;
+        position: absolute;
+        top: 83px;
+        left: 33px;
+      }
+      .line{
+        position: absolute;
+        width: 437px;
+        border: 1px solid #000;
+        left: 32px;
+        top: 140px;
+      }
+      .content_title{
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        position: absolute;
+        left: 33px;
+      }
+      #mc_ct_00{
+        top: 172px;
+      }
+      #mc_ct_01{
+        top: 399px;
+      }
+      .day_week_wrapper{
+        .day_week{
+          position: absolute;
+          font-size: 10px;
+          line-height: 16px;
+          text-align: center;
+          font-weight: 400;
+          width: 37px;
+          height: 40px;
+          top: 228px;
+          span{
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 22.4px;
+          }
+        }
+        #monday{
+          left: 51px;
+        }
+        #tuesday{
+          left: 141px;
+        }
+        #wednesday{
+          left: 231px;
+        }
+        #thursday{
+          left: 321px;
+        }
+        #friday{
+          left: 411px;
+        }
+      }
+      .time_week_wrapper{
+        .time_week{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 4px 16px;
+          position: absolute;
+          width: 71px;
+          height: 34px;
+          border: 1px solid #969696;
+          border-radius: 8px;
+          color: #969696;
+        }
+        .active{
+          font-weight: 900;
+          color: color.$white;
+          background-color: #0e2b36;
+        }
+        #m_11{
+          left: 32px;
+          top: 275px;
+        }
+        #m_12{
+          left: 32px;
+          top: 325px;
+        }
+        #t_11{
+          left: 122px;
+          top: 275px;
+        }
+        #t_12{
+          left: 122px;
+          top: 325px;
+        }
+        #w_11{
+          left: 212px;
+          top: 275px;
+        }
+        #w_12{
+          left: 212px;
+          top: 325px;
+        }
+        #th_11{
+          left: 302px;
+          top: 275px;
+        }
+        #th_12{
+          left: 302px;
+          top: 325px;
+        }
+        #f_11{
+          left: 392px;
+          top: 275px;
+        }
+        #f_12{
+          left: 392px;
+          top: 325px;
+        }
+      }
+      .hobbies_wrapper{
+        .hobby_wrapper{
+          display: flex;
+          gap: 8px;
+          position: absolute;
+          left: 32px;
+          .hobby{
+            border: 1px solid #969696;
+            color: color.$white;
+            border-radius: 8px;
+            padding: 4px 16px;
+            font-size: 16px;
+            line-height: 1.6;
+            font-weight: 900;
+            background-color: #0e2b36;
+          }
+        }
+        #mc_hw_00{
+          top: 457px;
+        }
+      }
+      .btn_wrapper{
+        display: flex;
+        padding: 16px;
+        gap: 16px;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        .btn{
+          padding: 8px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: color.$white;
+          width: 232px;
+          height: 48px;
+          color: color.$green;
+          border: 1px solid color.$green;
+          border-radius: 8px;
+          font-weight: 900;
+          font-size: 14px;
+        }
+      }
+    }
+  }

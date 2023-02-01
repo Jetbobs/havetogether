@@ -68,10 +68,10 @@
         }
       }
       #btn_join{
-        display: none;
+        display: block;
       }
       #btn_cancel, #btn_event_cancel{
-        display: none;
+        display: block;
         background-color: color.$white;
         color: color.$green;
         border: 1px solid color.$green;
