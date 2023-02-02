@@ -207,7 +207,7 @@ div{
         }
       }
       #event_join{
-        display: none;
+        display: block;
         .contents{
           width: 512px;
           height: 248px;
@@ -268,7 +268,7 @@ div{
         }
       }
       #event_cancel{
-        display: none;
+        display: block;
         .contents{
           width: 512px;
           height: 248px;
@@ -629,8 +629,9 @@ div{
           }
         }
       }
+      //modal_event_create
       #event_create_confirm{
-        display: none;
+        display: block;
 
         .contents{
           width: 512px;

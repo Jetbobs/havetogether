@@ -7,14 +7,24 @@ function Modal(props) {
                     {props.title}
                 </div>
                 <div className="desc">
-                    참가를 취소하시겠습니까? <br />
-                    <span>(마루민)</span>님을 기다리고 있는데, 아쉬워요!
+                    {/* 참가를 취소하시겠습니까? <br />
+                    <span>(마루민)</span>님을 기다리고 있는데, 아쉬워요! */}
+                    {props.desc}
                 </div>
-                <div className="btn_wrapper">
+                {/* <div className="btn_wrapper">
                     <div className="btn" id='btn_join_cancel'>
                         참가 취소하기
                     </div>
-                </div>
+                </div> */}
+                {props.btn.map((a, i) => {
+                    return (
+                        <div className="btn_wrapper" onClick={props.func}>
+                            <div className="btn" id={a.id}>
+                                {a.name}
+                            </div>
+                        </div>
+                    )
+                })}
             </div>
             <div className="test"></div>
         </div>

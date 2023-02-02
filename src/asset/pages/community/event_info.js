@@ -27,7 +27,7 @@ function EventInfo(props) {
         <div className="container">
           <Link to='/community/event_detail_00'><EventCard00 card={card} i={0}></EventCard00></Link>
           <Link to='/community/event_detail_00'><EventCard01 card={card} i={0}></EventCard01></Link>
-          <Link to='/community/event_detail_00'><EventCard02 card={card} i={0}></EventCard02></Link>
+          <Link to='/community/event_detail_01'><EventCard02 card={card} i={1}></EventCard02></Link>
         </div>
       </div>
       <div id="end_event">
@@ -37,7 +37,7 @@ function EventInfo(props) {
         <div className="container">
         <Link to='/community/event_detail_00'><EventCard00 card={card} i={0}></EventCard00></Link>
         <Link to='/community/event_detail_00'><EventCard01 card={card} i={0}></EventCard01></Link>
-        <Link to='/community/event_detail_00'><EventCard02 card={card} i={0}></EventCard02></Link>
+        <Link to='/community/event_detail_01'><EventCard02 card={card} i={1}></EventCard02></Link>
         </div>
       </div>
     </div>

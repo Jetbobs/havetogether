@@ -41,7 +41,7 @@ function BgWBtn(props) {
                     <div className="btn" id='btn_join' onClick={()=>{props.modalJoinSet(true)}}>
                         참가하기 <strong>D-<span>3</span></strong>
                     </div>
-                    <div className="btn" id='btn_cancel'>
+                    <div className="btn" id='btn_cancel' onClick={()=>{props.modalJCSet(true)}}>
                         참가 취소
                     </div>
                     <div className="btn" id='btn_progress'>

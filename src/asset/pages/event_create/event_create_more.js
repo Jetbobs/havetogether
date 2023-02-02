@@ -8,18 +8,14 @@ import Input from '../../../components/input/input';
 //data
 import { inputData00, inputData01, inputData02, inputData03 } from '../../data/input/event_create/event_create_data';
 import { useState } from 'react';
-//modal
-import ModalECConfirm from '../../../components/modal/modal_ec_confirm';
 
 
-function EventCreate(props) {
+function EventCreateMore(props) {
 
   let [input00, input00Set] = useState(inputData00);
   let [input01, input01Set] = useState(inputData01);
   let [input02, input02Set] = useState(inputData02);
   let [input03, input03Set] = useState(inputData03);
-
-  let[modalECConfirm, modalECConfirmSet] = useState(false);
 
   return (
     <>
@@ -85,7 +81,7 @@ function EventCreate(props) {
               </div>
             </div>
           </div>
-          {/* <div className="contents_container" id='c_c_01'>
+          <div className="contents_container" id='c_c_01'>
             <div className="title_wrapper">
               <div className="title">
                 사전 등록 정보
@@ -193,15 +189,15 @@ function EventCreate(props) {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
           <div className="btn_wrapper">
-            <div className="btn" onClick={()=>{modalECConfirmSet(true)}}>
+            <div className="btn">
               입력 완료
             </div>
           </div>
         </div>
       </div>
-      {/* <div className="modal" id='event_create_confirm'>
+      <div className="modal" id='event_create_confirm'>
         <div className="modal_bg"></div>
         <div className="contents">
           <div className="title">
@@ -231,10 +227,7 @@ function EventCreate(props) {
             </div>
           </div>
         </div>
-      </div> */}
-      {
-        modalECConfirm == true ? <ModalECConfirm func00={()=>{modalECConfirmSet(false)}}></ModalECConfirm> : null
-      }
+      </div>
       <div className="modal" id='event_create_confirm_01'>
         <div className="modal_bg"></div>
         <div className="contents">
@@ -270,4 +263,4 @@ function EventCreate(props) {
     </>
   )
 }
-export default EventCreate;
+export default EventCreateMore;

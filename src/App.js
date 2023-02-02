@@ -23,6 +23,7 @@ import MemberInfo from './asset/pages/community/member_info';
 import Matching from './asset/pages/community/matching';
 //event_create
 import EventCreate from './asset/pages/event_create/event_create';
+import EventCreateMore from './asset/pages/event_create/event_create_more';
 import EventEdit from './asset/pages/event_create/event_edit';
 //my_page
 import DashBoard from './asset/pages/my_page/dash_baord';
@@ -46,6 +47,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import ResponsiveExample from './asset/pages/test';
 import AutoLayoutExample from './asset/pages/test2';
 import MemberInfoManager from './asset/pages/my_page/member_info_manager';
+//side_menu
+import SideMenu from './components/side_menu/side_menu';
 
 function App() {
 
@@ -91,7 +94,7 @@ function App() {
         <Routes>
           <Route path='/community' element={<>
             <div id="main">
-              <div id="side_menu">
+              {/* <div id="side_menu">
                 <div className="menu_container">
                   <div className="container">
                     <div className="menu" onClick={() => { navigate() }}>
@@ -108,7 +111,8 @@ function App() {
                 <div className="btn">
                   이벤트 만들기
                 </div>
-              </div>
+              </div> */}
+              <SideMenu></SideMenu>
               <Outlet></Outlet>
             </div>
           </>}>
@@ -121,7 +125,7 @@ function App() {
           </Route>
           <Route path='/event_create' element={<>
             <div id="main">
-              <div id="side_menu">
+              {/* <div id="side_menu">
                 <div className="menu_container">
                   <div className="container">
                     <div className="menu" onClick={() => { navigate() }}>
@@ -138,11 +142,13 @@ function App() {
                 <div className="btn">
                   이벤트 만들기
                 </div>
-              </div>
+              </div> */}
+              <SideMenu></SideMenu>
               <Outlet></Outlet>
             </div>
           </>}>
             <Route path='create' element={<EventCreate></EventCreate>}></Route>
+            <Route path='create_more' element={<EventCreateMore></EventCreateMore>}></Route>
             <Route path='edit' element={<EventEdit />}></Route>
           </Route>
           <Route path='/my_page' element={<>

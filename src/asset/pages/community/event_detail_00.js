@@ -26,8 +26,10 @@ function EventDetail00(props) {
   let navigate = useNavigate();
   let [bg, bgSet] = useState(bgWBtnData);
   let [user, userSet] = useState(userCardData);
+  // modal
   let [modalJoin, modalJoinSet] = useState(false);
   let [modalConfirm, modalConfirmSet] = useState(false);
+  let [modalJC, modalJCSet] = useState(false);
 
 
 
@@ -42,7 +44,7 @@ function EventDetail00(props) {
             <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon> 이벤트 목록
           </div></Link>
         </div>
-        <BgWBtn bg={bg} i={0} modalJoinSet={modalJoinSet} modalConfirmSet={modalConfirmSet}></BgWBtn>
+        <BgWBtn bg={bg} i={0} modalJoinSet={modalJoinSet} modalConfirmSet={modalConfirmSet} modalJCSet={modalJCSet}></BgWBtn>
         <div className="contents">
           <div className="info_container" id='host_info'>
             <div className="title">
@@ -100,6 +102,10 @@ function EventDetail00(props) {
       }
       {
         modalConfirm == true ? <ModalMuConfirm modalConfirmSet={modalConfirmSet} modalJoinSet={modalJoinSet}></ModalMuConfirm> : null
+      }
+      {
+        modalJC == true ? <Modal id={'meetup_cancel'} title={'MARU Meet Up'} desc={'참가를 취소하시겠습니까? \n (마루민)님을 기다리고 있는데, 아쉬워요!'} btn={[{id : 'btn_join_cancel', name : '참가 취소하기'}]} func={()=>{modalJCSet(false)}}>
+        </Modal> : null
       }
       {/* <div className="modal" id='meetup_join'>
         <div className="modal_bg">
@@ -342,7 +348,7 @@ function EventDetail00(props) {
           </div>
         </div>
       </div> */}
-      <div className="modal" id='meetup_cancel'>
+      {/* <div className="modal" id='meetup_cancel'>
         <div className="modal_bg"></div>
         <div className="contents">
           <div className="title">
@@ -358,7 +364,7 @@ function EventDetail00(props) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="modal" id='meetup_fail'>
         <div className="modal_bg"></div>
         <div className="contents">
@@ -416,9 +422,7 @@ function EventDetail00(props) {
           </div>
         </div>
       </div>
-      <Modal id={'meetup_cancel'}>
-        <Modal.Test>Test</Modal.Test>
-      </Modal>
+
     </>
   )
 }
