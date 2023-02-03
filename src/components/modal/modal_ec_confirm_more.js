@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 
-function ModalECConfirm(props) {
+
+function ModalECConfirmMore(props) {
+
+    function movePage(e){
+        document.location.href(e)
+    }
+
     return (
         <div className="modal" id='event_create_confirm'>
             <div className="modal_bg"></div>
@@ -14,9 +20,10 @@ function ModalECConfirm(props) {
                     </div>
                     <div className="text">
                         <ul>
-                            <li>이벤트명 : 치맥하실 야근러 모집!!</li>
-                            <li>일자 : 2022. 9. 30(금) 오후 7시</li>
-                            <li>참가자 정원 : 8명</li>
+                            <li>이벤트명 : MARU Meet Up</li>
+                            <li>일자 : 2022. 10. 24(월) ~ 28일(금)</li>
+                            <li>참가 신청기간 : 2022. 10. 17(월) ~ 19(수)</li>
+                            <li>매칭결과 안내 : 2022. 10. 20(목)</li>
                         </ul>
                     </div>
                     <div className="text yellow">
@@ -27,7 +34,7 @@ function ModalECConfirm(props) {
                     <div className="btn" id='btn_re_check' onClick={props.func00}>
                         한번 더 검토하기
                     </div>
-                    <Link to='/community/event_detail_01'><div className="btn" id='btn_confirm' onClick={props.func01}>
+                    <Link to={props.confirm_link}><div className="btn" id='btn_confirm' onClick={props.func01}>
                         확인
                     </div></Link>
                 </div>
@@ -36,4 +43,4 @@ function ModalECConfirm(props) {
     )
 }
 
-export default ModalECConfirm;
+export default ModalECConfirmMore;

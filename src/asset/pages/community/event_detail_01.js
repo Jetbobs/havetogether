@@ -13,6 +13,8 @@ function EventDetail01(props){
   //modal
   let [modalJoin, modalJoinSet] = useState(false);
   let [modalCancel, modalCancelSet] = useState(false);
+  let [modalECancel, modalECancelSet] = useState(false); 
+  let [modalEditConfirm, modalEditConfirmSet] = useState(false);
 
   let navigate = useNavigate();
     return(
@@ -53,6 +55,9 @@ function EventDetail01(props){
           </div>
           <div className="btn" id="btn_join_cancel" onClick={()=>{modalCancelSet(true)}}>
             참가취소
+          </div>
+          <div className="btn" id='btn_event_cancel' onClick={()=>{modalECancelSet(true)}}>
+            이벤트 취소하기
           </div>
           </div>
         </div>
@@ -228,7 +233,7 @@ function EventDetail01(props){
               </div>
             </div>
           </div> */}
-          <div className="modal" id='event_cancel_01'>
+          {/* <div className="modal" id='event_cancel_01'>
             <div className="modal_bg">
             </div>
             <div className="contents">
@@ -247,7 +252,7 @@ function EventDetail01(props){
                 <div className="btn" id='btn_yes'>확인</div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="modal" id='event_edit_confirm'>
             <div className="modal_bg">
             </div>
@@ -269,12 +274,17 @@ function EventDetail01(props){
             </div>
           </div>
           {
-            modalJoin == true ? <Modal id={'event_join'} title={'치맥하실 야근러 모집'} desc={'참가 신청을 완료했습니다. 일정을 확인해주세요! \n* 2022. 9. 30(금) 오후 7시'} btn={[{id : 'btn_m_confirm', name : '확인'}]} func={()=>{modalJoinSet(false)}}></Modal> : null
+            modalJoin == true ? <Modal id={'event_join'} title={'치맥하실 야근러 모집'} desc={'참가 신청을 완료했습니다. 일정을 확인해주세요! \n* 2022. 9. 30(금) 오후 7시'} btn={[{id : 'btn_m_confirm', name : '확인'}]} func={[()=>{modalJoinSet(false)}]}></Modal> : null
           }
           {
-            modalCancel == true ? <Modal id={'event_cancel'} title={'MARU Meet Up'} desc={'참가를 취소하시겠습니까? \n(마루민)님을 기다리고 있는데, 아쉬워요!'} btn={[{id : 'btn_m_cancel', name : '참가 취소하기'}]} func={()=>{modalCancelSet(false)}}></Modal> : null
+            modalCancel == true ? <Modal id={'event_cancel'} title={'MARU Meet Up'} desc={'참가를 취소하시겠습니까? \n(마루민)님을 기다리고 있는데, 아쉬워요!'} btn={[{id : 'btn_m_cancel', name : '참가 취소하기'}]} func={[()=>{modalCancelSet(false)}]}></Modal> : null
           }
-          
+          {
+             modalECancel == true ? <Modal id={'event_cancel_01'} title={'이벤트 취소'} desc={'정말로 이벤트를 취소할까요? 확인을 선택하시면 이벤트가 취소되며, \n참가신청한 멤버들에게 푸시 알림이 전송됩니다.'} btn={[{id : 'btn_ec_01_n', name : '아니요'},{id : 'btn_ec_01_y', name : '확인'}]} func={[()=>{modalECancelSet(false)},()=>{modalECancelSet(true)}]}></Modal> : null
+          }
+                    {
+             modalEditConfirm == true ? <Modal id={'event_edit_confirm'} title={'이벤트 정보 수정'} desc={'정보 수정을 완료할까요?\n완료 후 이벤트 상세보기 페이지로 이동합니다.'} btn={[{id : 'btn_continue', name : '수정 계속하기'},{id : 'btn_complete', name : '수정 완료'}]} func={[()=>{modalECancelSet(false)},()=>{modalECancelSet(true)}]}></Modal> : null
+          }
           </>
     )
 }

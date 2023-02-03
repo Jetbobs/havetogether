@@ -2,48 +2,41 @@ import { Link, useNavigate } from 'react-router-dom';
 //fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faEllipsisVertical, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import '../../css/pages/event_create/event_create_style.scss';
-//components
-import Input from '../../../components/input/input';
-//data
-import { inputData00, inputData01, inputData02, inputData03 } from '../../data/input/event_create/event_create_data';
-import { useState } from 'react';
-//modal
-import ModalECConfirm from '../../../components/modal/modal_ec_confirm';
-import ModalECConfirmMore from '../../../components/modal/modal_ec_confirm_more';
+import '../../css/pages/event_create/event_edit_style.scss';
 
-
-function EventCreateMore(props) {
-
-  let [input00, input00Set] = useState(inputData00);
-  let [input01, input01Set] = useState(inputData01);
-  let [input02, input02Set] = useState(inputData02);
-  let [input03, input03Set] = useState(inputData03);
-
-  let[modalECConfirmMore, modalECConfirmMoreSet] = useState(false);
-
+function EventEditMore(props) {
   return (
     <>
-      <div id="event_create">
+      <div id="event_edit">
         <div className="header" id='header'>
           <div className="container">
             <div className="title">
-              이벤트 만들기
+              이벤트 정보 수정
             </div>
             <div className="subtitle">
-              네트워킹・고민상담・취미 모임・동아리 등의 멤버들과 함께 할 수 있는 이벤트를 만들어보세요.
+              이벤트 일자, 참가자 정원 이외의 정보를 수정하실 수 있습니다.
             </div>
           </div>
           <Link>이벤트 만드는 방법 자세히 보기 <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></Link>
         </div>
         <div className="body" id='body'>
-          <div className="contents_container">
+          <div className="contents_container" id='c_c_00'>
             <div className="title">
               이벤트 필수 정보
             </div>
             <div className="contents">
               <div className="input_container">
-                <Input inputData={inputData00} i={0}></Input>
+                <div className="input">
+                  <div className="text_container">
+                    <div className="title">
+                      행사명
+                    </div>
+                    <div className="desc">
+
+                    </div>
+                  </div>
+                  <input type="text" />
+                </div>
                 <div className="input">
                   <div className="text_container">
                     <div className="title">
@@ -76,13 +69,39 @@ function EventCreateMore(props) {
                   </div>
 
                 </div>
-                {
-                  inputData01.map((a, i) => {
-                    return (
-                      <Input inputData={inputData01} i={i}></Input>
-                    )
-                  })
-                }
+                <div className="input">
+                  <div className="text_container">
+                    <div className="title">
+                      관련 URL
+                    </div>
+                    <div className="desc">
+
+                    </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                    <div className="title">
+                      이벤트 일자
+                    </div>
+                    <div className="desc">
+                      * 이벤트 만들기 이후에는 수정 불가능
+                    </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                    <div className="title">
+                      참가자 정원
+                    </div>
+                    <div className="desc">
+                      *이벤트 만들기 이후에는 수정 불가능
+                    </div>
+                  </div>
+                  <input type="text" />
+                </div>
               </div>
             </div>
           </div>
@@ -102,13 +121,39 @@ function EventCreateMore(props) {
             </div>
             <div className="contents">
               <div className="input_container">
-                {
-                  inputData02.map((a, i) => {
-                    return (
-                      <Input inputData={inputData02} i={i}></Input>
-                    )
-                  })
-                }
+                <div className="input">
+                  <div className="text_container">
+                    <div className="title">
+                      모집기간
+                    </div>
+                    <div className="desc">
+
+                    </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                    <div className="title">
+                      팀 매칭 결과 안내 일자
+                    </div>
+                    <div className="desc">
+
+                    </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                    <div className="title">
+                      참가자 정원
+                    </div>
+                    <div className="desc">
+
+                    </div>
+                  </div>
+                  <input type="text" />
+                </div>
               </div>
             </div>
           </div>
@@ -128,13 +173,39 @@ function EventCreateMore(props) {
             </div>
             <div className="contents">
               <div className="input_container">
-                {
-                  inputData03.map((a, i) => {
-                    return (
-                      <Input inputData={inputData03} i={i}></Input>
-                    )
-                  })
-                }
+                <div className="input">
+                  <div className="text_container">
+                    <div className="title">
+                      후기 작성 안내글
+                    </div>
+                    <div className="desc">
+
+                    </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                    <div className="title">
+                      관련 URL
+                    </div>
+                    <div className="desc">
+
+                    </div>
+                  </div>
+                  <input type="text" />
+                </div>
+                <div className="input">
+                  <div className="text_container">
+                    <div className="title">
+                      작성 기한
+                    </div>
+                    <div className="desc">
+
+                    </div>
+                  </div>
+                  <input type="text" />
+                </div>
                 <div className="input">
                   <div className="text_container">
                     <div className="title">
@@ -195,49 +266,47 @@ function EventCreateMore(props) {
               </div>
             </div>
           </div>
-          <div className="btn_wrapper" onClick={()=>{modalECConfirmMoreSet(true)}}>
-            <div className="btn">
-              입력 완료
+          <div className="btn_container">
+            <div className="btn_wrapper">
+              <div className="btn" id='btn_complete'>
+                수정 완료
+              </div>
+            </div>
+            <div className="btn_wrapper" id='btn_enter_complete'>
+              <div className="btn">
+                입력 완료
+              </div>
+            </div>
+            <div className="btn_wrapper">
+              <div className="btn" id='btn_cancel'>
+                이벤트 취소하기
+              </div>
             </div>
           </div>
         </div>
       </div>
-      {
-        modalECConfirmMore == true ? <ModalECConfirmMore func00={()=>{modalECConfirmMoreSet(false)}} confirm_link={'/community/event_detail_00'}></ModalECConfirmMore> : null
-      }
-      <div className="modal" id='event_create_confirm_01'>
-        <div className="modal_bg"></div>
-        <div className="contents">
-          <div className="title">
-            이벤트 만들기 최종확인
-          </div>
-          <div className="desc">
-            <div className="text">
-              아래의 정보로 이벤트를 생성할까요?
+      {/* <div className="modal" id='event_edit_confirm'>
+            <div className="modal_bg">
             </div>
-            <div className="text">
-              <ul>
-                <li>이벤트명 : MARU Meet up</li>
-                <li>일자 : 2022. 10. 24(월) ~ 28일(금)</li>
-                <li>참가 신청기간 : 2022. 10. 17(월) ~19(수)</li>
-                <li>매칭결과 안내 : 2022. 10. 20(목)</li>
-              </ul>
+            <div className="contents">
+              <div className="title">
+                이벤트 정보 수정
+              </div>
+              <div className="desc">
+                정보 수정을 완료할까요? <br />
+                 완료 후 이벤트 상세보기 페이지로 이동합니다.
+                <div className="time">
+                
+              </div>
+              </div>
+              <div className="btn_wrapper">
+                <div className="btn" id='btn_continue'>수정 계속하기</div>
+                <div className="btn" id='btn_complete'>수정 완료</div>
+              </div>
             </div>
-            <div className="text yellow">
-              * 이벤트 정보 수신동의를 한 멤버들에게 푸시 알림이 전송됩니다.
-            </div>
-          </div>
-          <div className="btn_wrapper">
-            <div className="btn" id='btn_re_check'>
-              한번 더 검토하기
-            </div>
-            <div className="btn" id='btn_confirm'>
-              확인
-            </div>
-          </div>
-        </div>
-      </div>
+          </div> */}
     </>
   )
 }
-export default EventCreateMore;
+
+export default EventEditMore;

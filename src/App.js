@@ -25,6 +25,7 @@ import Matching from './asset/pages/community/matching';
 import EventCreate from './asset/pages/event_create/event_create';
 import EventCreateMore from './asset/pages/event_create/event_create_more';
 import EventEdit from './asset/pages/event_create/event_edit';
+import EventEditMore from './asset/pages/event_create/event_edit_more';
 //my_page
 import DashBoard from './asset/pages/my_page/dash_baord';
 import CurrentEventState from './asset/pages/my_page/current_event_state';
@@ -150,6 +151,7 @@ function App() {
             <Route path='create' element={<EventCreate></EventCreate>}></Route>
             <Route path='create_more' element={<EventCreateMore></EventCreateMore>}></Route>
             <Route path='edit' element={<EventEdit />}></Route>
+            <Route path='edit_more' element={<EventEditMore />}></Route>
           </Route>
           <Route path='/my_page' element={<>
             <div id="main">

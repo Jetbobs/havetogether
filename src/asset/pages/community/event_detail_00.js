@@ -104,7 +104,7 @@ function EventDetail00(props) {
         modalConfirm == true ? <ModalMuConfirm modalConfirmSet={modalConfirmSet} modalJoinSet={modalJoinSet}></ModalMuConfirm> : null
       }
       {
-        modalJC == true ? <Modal id={'meetup_cancel'} title={'MARU Meet Up'} desc={'참가를 취소하시겠습니까? \n (마루민)님을 기다리고 있는데, 아쉬워요!'} btn={[{id : 'btn_join_cancel', name : '참가 취소하기'}]} func={()=>{modalJCSet(false)}}>
+        modalJC == true ? <Modal id={'meetup_cancel'} title={'MARU Meet Up'} desc={'참가를 취소하시겠습니까? \n (마루민)님을 기다리고 있는데, 아쉬워요!'} btn={[{id : 'btn_join_cancel', name : '참가 취소하기'}]} func={[()=>{modalJCSet(false)}]}>
         </Modal> : null
       }
       {/* <div className="modal" id='meetup_join'>
@@ -365,7 +365,7 @@ function EventDetail00(props) {
           </div>
         </div>
       </div> */}
-      <div className="modal" id='meetup_fail'>
+      {/* <div className="modal" id='meetup_fail'>
         <div className="modal_bg"></div>
         <div className="contents">
           <div className="title">
@@ -421,7 +421,7 @@ function EventDetail00(props) {
             <div className="btn" id='btn_complete'>수정 완료</div>
           </div>
         </div>
-      </div>
+      </div> */}
 
     </>
   )

@@ -3,6 +3,7 @@ function Modal(props) {
         <div className="modal" id={props.id}>
             <div className="modal_bg"></div>
             <div className="contents">
+                <div className="text_container">
                 <div className="title">
                     {props.title}
                 </div>
@@ -11,20 +12,25 @@ function Modal(props) {
                     <span>(마루민)</span>님을 기다리고 있는데, 아쉬워요! */}
                     {props.desc}
                 </div>
+                </div>
+
                 {/* <div className="btn_wrapper">
                     <div className="btn" id='btn_join_cancel'>
                         참가 취소하기
                     </div>
                 </div> */}
+                <div className="btn_container">
                 {props.btn.map((a, i) => {
+
                     return (
-                        <div className="btn_wrapper" onClick={props.func}>
+                        <div className="btn_wrapper" onClick={props.func[i]}>
                             <div className="btn" id={a.id}>
                                 {a.name}
                             </div>
                         </div>
                     )
                 })}
+                </div>
             </div>
             <div className="test"></div>
         </div>
