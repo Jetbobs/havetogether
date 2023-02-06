@@ -12,6 +12,7 @@
     gap: 16px;
     color: #202020;
     .header{
+      width: 100%;
       padding: 16px 32px;
       background-color: color.$white;
       border-radius: 10px;
@@ -257,7 +258,7 @@
         }
       }
       #enter{
-        display: none;
+        display: block;
       }
       #complete{
         display: block;

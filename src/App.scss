@@ -117,11 +117,17 @@ div{
         display: flex;
         flex-direction: column;
         gap: 32px;
-        width: 25%;
+        width: 248px;
         .menu_container{
+          display: flex;
+          flex-direction: column;
           background-color: color.$white;
           padding: 16px 32px;
         border-radius: 10px;
+        .container{
+          display: flex;
+          flex-direction: column;
+        }
           .menu{
             font-size: 18px;
             line-height: 1.6;
@@ -165,33 +171,31 @@ div{
       #meetup_cancel{
         display: block;
         .contents{
-          width: 512px;
-          height: 248px;
-          .title{
-            // position: absolute;
-            // left: 33px;
-            // top: 32px;
-            padding: 24px 32px;
-            font-weight: 900;
-            font-size: 24px;
-            line-height: 1.6;
-          }
-          .desc{
-            // position: absolute;
-            // left: 33px;
-            // top: 83px;
-            padding: 0px 32px;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 1.6;
-          }
+          // width: 512px;
+          // height: 248px;
+          // .title{
+          //   // position: absolute;
+          //   // left: 33px;
+          //   // top: 32px;
+          //   padding: 24px 32px;
+          //   font-weight: 900;
+          //   font-size: 24px;
+          //   line-height: 1.6;
+          // }
+          // .desc{
+          //   // position: absolute;
+          //   // left: 33px;
+          //   // top: 83px;
+          //   padding: 0px 32px;
+          //   font-weight: bold;
+          //   font-size: 14px;
+          //   line-height: 1.6;
+          // }
+          @extend .modal_set;
           .btn_wrapper{
             display: flex;
             padding: 16px;
             gap: 16px;
-            position: absolute;
-            left: 0px;
-            bottom: 0px;
             .btn{
               padding: 8px;
               display: flex;
@@ -775,32 +779,32 @@ div{
           //   font-size: 14px;
           //   line-height: 1.6;
           // }
-          // .btn_container{
-          //   padding: 16px;
-          //   display: flex;
-          //   gap: 16px;
-          //   .btn_wrapper{
-          //     display: flex;
-          //     // padding: 16px;
-          //     // gap: 16px;
-          //     // position: absolute;
-          //     // left: 0px;
-          //     // bottom: 0px;
-          //     .btn{
-          //       font-weight: 900;
-          //       padding: 8px;
-          //       display: flex;
-          //       justify-content: center;
-          //       align-items: center;
-          //       background-color: color.$white;
-          //       width: 232px;
-          //       height: 48px;
-          //       color: color.$green;
-          //       border: 1px solid color.$green;
-          //       border-radius: 10px;
-          //     }
-          //   }
-          // }
+          .btn_container{
+            padding: 16px;
+            display: flex;
+            gap: 16px;
+            .btn_wrapper{
+              display: flex;
+              // padding: 16px;
+              // gap: 16px;
+              // position: absolute;
+              // left: 0px;
+              // bottom: 0px;
+              .btn{
+                font-weight: 900;
+                padding: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: color.$white;
+                width: 232px;
+                height: 48px;
+                color: color.$green;
+                border: 1px solid color.$green;
+                border-radius: 10px;
+              }
+            }
+          }
           @extend .modal_set;
         }
       }
@@ -825,131 +829,202 @@ div{
           //   font-size: 14px;
           //   line-height: 1.6;
           // }
-          // .btn_wrapper{
-          //   display: flex;
-          //   padding: 16px;
-          //   gap: 16px;
-          //   position: absolute;
-          //   left: 0px;
-          //   bottom: 0px;
-          //   .btn{
-          //     font-weight: 900;
-          //     padding: 8px;
-          //     display: flex;
-          //     justify-content: center;
-          //     align-items: center;
-          //     background-color: color.$white;
-          //     width: 232px;
-          //     height: 48px;
-          //     color: color.$green;
-          //     border: 1px solid color.$green;
-          //     border-radius: 10px;
-          //   }
-          // }
+          .btn_wrapper{
+            display: flex;
+            padding: 16px;
+            gap: 16px;
+            .btn{
+              font-weight: 900;
+              padding: 8px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: color.$white;
+              width: 232px;
+              height: 48px;
+              color: color.$green;
+              border: 1px solid color.$green;
+              border-radius: 10px;
+            }
+          }
           @extend .modal_set;
         }
       }
       //modal_my_page
       #enter_cancel{
-        display: none;
+        display: block;
 
         .contents{
-          width: 512px;
-          height: 248px;
-          .title{
-            position: absolute;
-            left: 33px;
-            top: 32px;
-            font-weight: 900;
-            font-size: 24px;
-            line-height: 1.6;
-          }
-          .desc{
-            position: absolute;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 1.6;
-            top: 86px;
-            left: 33px;
-          }
-          .icon{
-            position: absolute;
-            right: 32px;
-            top: 32px;
-            padding: 5px;
-            a{
-              width: 24px;
-              height: 24px;
+          // width: 512px;
+          // height: 248px;
+          // .title{
+          //   position: absolute;
+          //   left: 33px;
+          //   top: 32px;
+          //   font-weight: 900;
+          //   font-size: 24px;
+          //   line-height: 1.6;
+          // }
+          // .desc{
+          //   position: absolute;
+          //   font-weight: bold;
+          //   font-size: 14px;
+          //   line-height: 1.6;
+          //   top: 86px;
+          //   left: 33px;
+          // }
+          // .icon{
+          //   position: absolute;
+          //   right: 32px;
+          //   top: 32px;
+          //   padding: 5px;
+          //   a{
+          //     width: 24px;
+          //     height: 24px;
+          //   }
+          // }
+          padding: 16px;
+          @extend .modal_set;
+          .btn_container{
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            .btn_wrapper{
+              display: flex;
+              padding: 16px;
+              padding: 0;
+              gap: 16px;
+              .btn{
+                font-weight: 900;
+                padding: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: color.$white;
+                width: 232px;
+                height: 48px;
+                color: color.$green;
+                border: 1px solid color.$green;
+                border-radius: 10px;
+              }
             }
           }
-          .btn_wrapper{
+
+        }
+      }
+      #account_delete{
+        display: block;
+
+        .contents{
+          // .title{
+          //   display: flex;
+          //   justify-content: space-between;
+          //   padding: 32px;
+          //   font-weight: 900;
+          //   font-size: 24px;
+          //   line-height: 1.6;
+          // }
+          // .desc{
+          //   font-weight: bold;
+          //   font-size: 14px;
+          //   line-height: 1.6;
+          //   color: color.$orange;
+          //   padding: 16px 32px;
+          // }
+          // .icon{
+          //   position: absolute;
+          //   right: 32px;
+          //   top: 32px;
+          //   padding: 5px;
+          //   a{
+          //     width: 24px;
+          //     height: 24px;
+          //   }
+          // }
+          box-sizing: border-box;
+          padding: 16px;
+          @extend .modal_set;
+          .desc{
+            color: color.$orange;
+          }
+          .btn_container{
             display: flex;
-            padding: 16px;
-            gap: 16px;
-            position: absolute;
-            left: 0px;
-            bottom: 0px;
-            .btn{
-              font-weight: 900;
-              padding: 8px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              background-color: color.$white;
-              width: 232px;
-              height: 48px;
-              color: color.$green;
-              border: 1px solid color.$green;
-              border-radius: 10px;
+            padding: 0px;
+            .btn_wrapper{
+              .btn{
+                font-weight: 900;
+                padding: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: color.$white;
+                width: 232px;
+                height: 48px;
+                color: color.$green;
+                border: 1px solid color.$green;
+                border-radius: 10px;
+              }
             }
           }
         }
       }
-      #account_delete{
-        display: none;
-
+      #meetup_enter_cancel{
+        display: block;
         .contents{
-          .title{
+          // width: 512px;
+          // height: 248px;
+          // .title{
+          //   font-size: 24px;
+          //   font-weight: 900;
+          //   line-height: 1.6;
+          //   left: 33px;
+          //   top: 32px;
+          //   position: absolute;
+          // }
+          // .desc{
+          //   font-weight: bold;
+          //   font-size: 14px;
+          //   line-height: 1.6;
+          //   position: absolute;
+          //   top: 83px;
+          //   left: 33px;
+          // }
+          // .line{
+          //   position: absolute;
+          //   width: 437px;
+          //   border: 1px solid #000;
+          //   left: 32px;
+          //   top: 140px;
+          // }
+          // .content_title{
+          //   font-weight: bold;
+          //   font-size: 16px;
+          //   line-height: 19px;
+          //   position: absolute;
+          //   left: 33px;
+          // }
+          @extend .modal_set;
+          .btn_container{
             display: flex;
-            justify-content: space-between;
-            padding: 32px;
-            font-weight: 900;
-            font-size: 24px;
-            line-height: 1.6;
-          }
-          .desc{
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 1.6;
-            color: color.$orange;
-            padding: 16px 32px;
-          }
-          .icon{
-            position: absolute;
-            right: 32px;
-            top: 32px;
-            padding: 5px;
-            a{
-              width: 24px;
-              height: 24px;
-            }
-          }
-          .btn_wrapper{
-            display: flex;
-            padding: 16px;
-            gap: 16px;
-            .btn{
-              font-weight: 900;
-              padding: 8px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              background-color: color.$white;
-              width: 232px;
-              height: 48px;
-              color: color.$green;
-              border: 1px solid color.$green;
-              border-radius: 10px;
+            justify-content: center;
+            padding: 0;
+            .btn_wrapper{
+              // display: flex;
+              // padding: 16px;
+              // gap: 16px;
+              .btn{
+                padding: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: color.$white;
+                height: 48px;
+                color: color.$green;
+                border: 1px solid color.$green;
+                border-radius: 8px;
+                font-weight: 900;
+                font-size: 14px;
+              }
             }
           }
         }

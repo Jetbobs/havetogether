@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 //css
 import '../../asset/css/components/modal/meetup_join_style.scss';
 
@@ -147,8 +148,18 @@ function ModalMuJoin(props) {
                     변경하신 정보는 저장되며 다음 참가신청시에 표기됩니다.
                 </div>
                 <div className="btn_wrapper">
-                    <div className="btn" id='btn_cancel' onClick={()=>{props.modalJoinSet(false)}}>취소</div>
-                    <div className="btn" id='btn_join' onClick={()=>{props.modalConfirmSet(true); props.modalJoinSet(false)}}>참가하기</div>
+                    {props.btn.map((a, i) => {
+
+                        return (
+                            <div className="btn" onClick={props.func[i]}>
+                                <div className="btn" id={a.id}>
+                                    {a.name}
+                                </div>
+                            </div>
+                        )
+                    })}
+                    {/* <div className="btn" id='btn_cancel' onClick={()=>{props.modalJoinSet(false)}}>취소</div>
+                    <div className="btn" id='btn_join' onClick={()=>{props.modalConfirmSet(true); props.modalJoinSet(false)}}>참가하기</div> */}
                 </div>
             </div>
         </div>

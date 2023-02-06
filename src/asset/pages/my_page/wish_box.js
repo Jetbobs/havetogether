@@ -3,7 +3,14 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon, Outlet } from '@fortawesome/react-fontawesome';
 import '../../css/pages/my_page/wish_box_style.scss';
 
+//components
+import Modal from '../../../components/modal/modal';
+import { useState } from 'react';
+
 function WishBox(props) {
+  let [enterBtn, enterBtnSet] = useState(false);
+  let [modalEnterCancel, modalEnterCancelSet] = useState(false);
+
   return (
     <>
       <div id="wish_box">
@@ -74,7 +81,7 @@ function WishBox(props) {
           </div>
         </div>
         <div className="btn_wrapper">
-          <div className="btn_container" id='enter'>
+          {/* <div className="btn_container" id='enter'>
             <div className="btn">
               입력하기
             </div>
@@ -84,14 +91,33 @@ function WishBox(props) {
               입력 완료
             </div>
           </div>
-          <div className="btn_container" id='cancel'>
+          <div className="btn_container" id='cancel' onClick={()=>{modalEnterCancelSet(true)}}>
             <div className="btn">
               입력 취소
             </div>
+          </div> */}
+          {
+            enterBtn == false ? <div className="btn_container" id='enter'>
+            <div className="btn" onClick={()=>{enterBtnSet(true)}}>
+              입력하기
+            </div>
+          </div> : null
+          }
+          {
+            enterBtn == true ? <>          <div className="btn_container" id='complete'>
+            <div className="btn" onClick={()=>{enterBtnSet(false)}}>
+              입력 완료
+            </div>
           </div>
+          <div className="btn_container" id='cancel' onClick={()=>{modalEnterCancelSet(true)}}>
+            <div className="btn">
+              입력 취소
+            </div>
+          </div></> : null
+          }
         </div>
       </div>
-      <div className="modal" id='enter_cancel'>
+      {/* <div className="modal" id='enter_cancel'>
         <div className="modal_bg"></div>
         <div className="contents">
           <div className="title">
@@ -104,15 +130,20 @@ function WishBox(props) {
             <FontAwesomeIcon icon={faX}></FontAwesomeIcon>
           </div>
           <div className="btn_wrapper">
-            <div className="btn" id='btn_join_cancel'>
+            <div className="btn" id='btn_e_c_n'>
               아니오
             </div>
-            <div className="btn" id='btn_join_cancel'>
+            <div className="btn" id='btn_e_c_y'>
               예
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+
+        {
+          modalEnterCancel == true ? <Modal id={'enter_cancel'} title={'입력 취소'} desc={'작성하신 정보를 반영하지 않고, 입력을 취소할까요 ?'} btn={[{id : 'btn_continue', name : '수정 계속하기'},{id : 'btn_enter_y', name : '확인'}]} func={[()=>{modalEnterCancelSet(false)},()=>{modalEnterCancelSet(false); enterBtnSet(false)}]}>
+          </Modal> : null
+        }
     </>
   )
 }

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Modal(props) {
     return (
         <div className="modal" id={props.id}>
@@ -23,11 +25,12 @@ function Modal(props) {
                 {props.btn.map((a, i) => {
 
                     return (
-                        <div className="btn_wrapper" onClick={props.func[i]}>
+                        <Link to={a.link}><div className="btn_wrapper" onClick={props.func[i]}>
                             <div className="btn" id={a.id}>
                                 {a.name}
                             </div>
                         </div>
+                        </Link>
                     )
                 })}
                 </div>

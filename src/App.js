@@ -158,18 +158,18 @@ function App() {
             <div id="side_menu_mp">
             <div className="menu_container">
               <div className="container">
-                <div className="menu" onClick={() => { navigate() }}>
+                <Link to='/my_page/dash_board'><div className="menu" onClick={() => { navigate() }}>
                   대시보드
-                </div>
-                <div className="menu" onClick={() => { navigate() }}>
+                </div></Link>
+                <Link to='/my_page/current_event_state'><div className="menu" onClick={() => { navigate() }}>
                   이벤트 참가 현황
-                </div>
-                <div className="menu" onClick={() => { navigate() }}>
+                </div></Link>
+                <Link to='/my_page'><div className="menu" onClick={() => { navigate() }}>
                   내 정보
-                </div>
-                <div className="menu" onClick={() => { navigate() }}>
+                </div></Link>
+                <Link to='/my_page/wish_box'><div className="menu" onClick={() => { navigate() }}>
                   소망 상자
-                </div>
+                </div></Link>
                 <div className="menu" onClick={() => { navigate() }}>
                   설정
                 </div>
