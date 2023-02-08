@@ -1,0 +1,19 @@
+@use '../../common/color.scss';
+
+input{
+    display: block;
+  }
+  input:checked + label{
+    background-color: color.$green;
+    color: color.$white;
+  }
+  label{
+    border: 1px solid #969696;
+    color: #969696;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: bold;
+    cursor: pointer;
+  }

@@ -53,6 +53,9 @@
         width: 100%;
         @extend .input_set;
         .input{
+          input{
+            display: block;
+          }
           .title{
             @extend .input_title;
           }

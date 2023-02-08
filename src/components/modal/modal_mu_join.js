@@ -2,8 +2,26 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 //css
 import '../../asset/css/components/modal/meetup_join_style.scss';
+//components
+import CheckBoxBtn from "../common/check/check_box_btn";
 
 function ModalMuJoin(props) {
+
+    let [hobbyArr, hobbyArrSet] = useState([{id : 'new_tech', title : '신문물'},
+    {id : 'excercise', title : '운동'},
+    {id : 'pet', title : '반려 동물'},
+    {id : 'reading', title : '독서'},
+    {id : 'self_development', title : '자기계발'},
+    {id : 'foreign_lang', title : '외국어'},
+    {id : 'hot_restaurant', title : '맛집'},
+    {id : 'trip', title : '여행'},
+    {id : 'music', title : '음악'},
+    {id : 'consert', title : '공연'},
+    {id : 'movie', title : '영화'},
+    {id : 'coffee', title : '커피'},
+    {id : 'hot_restaurant_01', title : '맛집'},
+    {id : 'stock', title : '주식'},
+    {id : 'investment', title : '투자'}])
 
     console.log(props.modalConfirmSet)
     // let [modalJoin, modalJoinSet] = useState(false);
@@ -56,42 +74,72 @@ function ModalMuJoin(props) {
                     </div>
                 </div>
                 <div className="time_week_wrapper">
-                    <div className="time_week" id='m_11'>
-                        11:30
+                    <div className="time_week" id=''>
+                        <input type="checkbox" id="m_11_i" />
+                        <label htmlFor="m_11_i" id="m_11">
+                            11:30
+                        </label>
                     </div>
-                    <div className="time_week" id='m_12'>
-                        12:00
+                    <div className="time_week" id=''>
+                        <input type="checkbox" id="m_12_i" />
+                        <label htmlFor="m_12_i" id="m_12">
+                            12:30
+                        </label>
                     </div>
-                    <div className="time_week" id='t_11'>
-                        11:30
+                    <div className="time_week" id=''>
+                        <input type="checkbox" id="t_11_i" />
+                        <label htmlFor="t_11_i" id="t_11">
+                            11:30
+                        </label>
                     </div>
-                    <div className="time_week" id='t_12'>
-                        12:00
+                    <div className="time_week" id=''>
+                        <input type="checkbox" id="t_12_i" />
+                        <label htmlFor="t_12_i" id="t_12">
+                            12:30
+                        </label>
                     </div>
-                    <div className="time_week" id='w_11'>
-                        11:30
+                    <div className="time_week" id=''>
+                        <input type="checkbox" id="w_11_i" />
+                        <label htmlFor="w_11_i" id="w_11">
+                            11:30
+                        </label>
                     </div>
-                    <div className="time_week" id='w_12'>
-                        12:00
+                    <div className="time_week" id=''>
+                        <input type="checkbox" id="w_12_i" />
+                        <label htmlFor="w_12_i" id="w_12">
+                            12:30
+                        </label>
                     </div>
-                    <div className="time_week" id='th_11'>
-                        11:30
+                    <div className="time_week" id=''>
+                        <input type="checkbox" id="th_11_i" />
+                        <label htmlFor="th_11_i" id="th_11">
+                            11:30
+                        </label>
                     </div>
-                    <div className="time_week" id='th_12'>
-                        12:00
+                    <div className="time_week" id=''>
+                        <input type="checkbox" id="th_12_i" />
+                        <label htmlFor="th_12_i" id="th_12">
+                            12:30
+                        </label>
                     </div>
-                    <div className="time_week" id='f_11'>
-                        11:30
+                    <div className="time_week" id=''>
+                        <input type="checkbox" id="f_11_i" />
+                        <label htmlFor="f_11_i" id="f_11">
+                            11:30
+                        </label>
                     </div>
-                    <div className="time_week" id='f_12'>
-                        12:00
+                    <div className="time_week" id=''>
+                        <input type="checkbox" id="f_12_i" />
+                        <label htmlFor="f_12_i" id="f_12">
+                            12:30
+                        </label>
                     </div>
                 </div>
                 <div className="content_title" id='mj_ct_01'>
                     관심사, 취미를 알려주세요
                 </div>
                 <div className="hobbies_wrapper">
-                    <div className="hobby_wrapper" id='mj_hw_00'>
+                    {/* <div className="hobby_wrapper" id='mj_hw_00'>
                         <span className="hobby">
                             신문물
                         </span>
@@ -141,6 +189,15 @@ function ModalMuJoin(props) {
                         <span className="hobby">
                             투자
                         </span>
+                    </div> */}
+                    <div className="hobby_wrapper">
+                        {
+                            hobbyArr.map((a,i)=>{
+                                return(
+                                    <CheckBoxBtn id={a.id} title={a.title}></CheckBoxBtn>
+                                )
+                            })
+                        }
                     </div>
                 </div>
                 <div className="guide">

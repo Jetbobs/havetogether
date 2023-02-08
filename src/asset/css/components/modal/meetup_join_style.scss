@@ -92,17 +92,28 @@
       }
       .time_week_wrapper{
         .time_week{
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          padding: 4px 16px;
-          position: absolute;
-          width: 71px;
-          height: 34px;
-          border: 1px solid #969696;
-          border-radius: 8px;
-          color: #969696;
+          input{
+            display: none;
+          }
+          input:checked + label{
+            color: color.$white;
+            background-color: color.$green;
+          }
+          label{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 4px 16px;
+            position: absolute;
+            width: 71px;
+            height: 34px;
+            border: 1px solid #969696;
+            border-radius: 8px;
+            color: #969696;
+            font-size: bold;
+            cursor: pointer;
+          }
         }
         #m_11{
           left: 32px;
@@ -148,17 +159,32 @@
       .hobbies_wrapper{
         .hobby_wrapper{
           display: flex;
+          top: 517px;
           gap: 8px;
           position: absolute;
           left: 32px;
-          .hobby{
+          flex-wrap: wrap;
+          .hobby_i{
+            margin-bottom: 8px;
+          }
+          input{
+            display: none;
+          }
+          input:checked + label{
+            background-color: color.$green;
+            color: color.$white;
+          }
+          label{
             border: 1px solid #969696;
             color: #969696;
             border-radius: 8px;
-            padding: 4px 16px;
+            padding: 8px 16px;
             font-size: 16px;
             line-height: 1.6;
+            font-weight: bold;
+            cursor: pointer;
           }
+
         }
         #mj_hw_00{
           top: 517px;
@@ -203,5 +229,30 @@
           color: color.$white;
         }
       }
+    }
+  }
+
+  .test{
+    input{
+      display: none;
+    }
+    input:checked + label{
+      color: color.$white;
+      background-color: color.$green;
+    }
+    label{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 4px 16px;
+      position: absolute;
+      width: 71px;
+      height: 34px;
+      border: 1px solid #969696;
+      border-radius: 8px;
+      color: #969696;
+      font-size: bold;
+      cursor: pointer;
     }
   }

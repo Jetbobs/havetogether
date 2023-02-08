@@ -171,44 +171,34 @@ div{
       #meetup_cancel{
         display: block;
         .contents{
-          // width: 512px;
-          // height: 248px;
-          // .title{
-          //   // position: absolute;
-          //   // left: 33px;
-          //   // top: 32px;
-          //   padding: 24px 32px;
-          //   font-weight: 900;
-          //   font-size: 24px;
-          //   line-height: 1.6;
-          // }
-          // .desc{
-          //   // position: absolute;
-          //   // left: 33px;
-          //   // top: 83px;
-          //   padding: 0px 32px;
-          //   font-weight: bold;
-          //   font-size: 14px;
-          //   line-height: 1.6;
-          // }
+
           @extend .modal_set;
-          .btn_wrapper{
-            display: flex;
-            padding: 16px;
-            gap: 16px;
-            .btn{
-              padding: 8px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              background-color: color.$white;
-              width: 480px;
-              height: 48px;
-              color: color.$green;
-              border: 1px solid color.$green;
-              border-radius: 10px;
+          .btn_container{
+            padding: 0;
+            a{
+              width: 100%;
+              .btn_wrapper{
+                display: flex;
+                padding: 16px;
+                gap: 16px;
+                width: 100%;
+                .btn{
+                  padding: 8px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  background-color: color.$white;
+                  // width: 480px;
+                  width: 100%;
+                  height: 48px;
+                  color: color.$green;
+                  border: 1px solid color.$green;
+                  border-radius: 10px;
+                }
+              }
             }
           }
+
         }
       }
       #event_join{
@@ -916,31 +906,6 @@ div{
         display: block;
 
         .contents{
-          // .title{
-          //   display: flex;
-          //   justify-content: space-between;
-          //   padding: 32px;
-          //   font-weight: 900;
-          //   font-size: 24px;
-          //   line-height: 1.6;
-          // }
-          // .desc{
-          //   font-weight: bold;
-          //   font-size: 14px;
-          //   line-height: 1.6;
-          //   color: color.$orange;
-          //   padding: 16px 32px;
-          // }
-          // .icon{
-          //   position: absolute;
-          //   right: 32px;
-          //   top: 32px;
-          //   padding: 5px;
-          //   a{
-          //     width: 24px;
-          //     height: 24px;
-          //   }
-          // }
           box-sizing: border-box;
           padding: 16px;
           @extend .modal_set;

@@ -98,7 +98,7 @@ function EventDetail00(props) {
         </div>
       </div>
       {
-        modalJoin == true ? <ModalMuJoin btn={[{id : 'btn_cancel', name : '취소'},{id : 'btn_join', name : '참가하기'}]} func={[()=>{modalJoinSet(false)},]}></ModalMuJoin> : null
+        modalJoin == true ? <ModalMuJoin btn={[{id : 'btn_cancel', name : '취소'},{id : 'btn_join', name : '참가하기'}]} func={[()=>{modalJoinSet(false)},()=>{modalConfirmSet(true); modalJoinSet(false)}]}></ModalMuJoin> : null
       }
       {
         modalConfirm == true ? <ModalMuConfirm modalConfirmSet={modalConfirmSet} modalJoinSet={modalJoinSet}></ModalMuConfirm> : null
