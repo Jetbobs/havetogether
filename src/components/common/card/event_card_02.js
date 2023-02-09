@@ -27,7 +27,7 @@ function EventCard02(props) {
           <div className="contents">
           {contents}
           </div>
-          <div className="writer" style={{ marginBottom: '88px' }}>
+          <div className="writer" style={{ marginBottom: '72px' }}>
           {writer}
           </div>
         </div>
