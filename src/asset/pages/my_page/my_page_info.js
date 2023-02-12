@@ -5,13 +5,17 @@ import { faCircleUser, faEllipsisVertical, faArrowRight } from '@fortawesome/fre
 import userPic from '../../img/pic.png';
 import '../../css/pages/my_page/my_page_info_style.scss';
 import { useState } from 'react';
+//data
+import userCardData from '../../data/card/user_card_data';
 //components
 import Modal from '../../../components/modal/modal';
+import UserCard from '../../../components/common/card/user_card';
 
 function MyPageInfo(props) {
 
   let [editBtn, editBtnSet] = useState(false);
   let [modalEnterCancel, modalEnterCancelSet] = useState(false);
+  let [user, userSet] = useState(userCardData);
 
   return (
     <div id="my_page_info">
@@ -78,6 +82,7 @@ function MyPageInfo(props) {
           </div>
         </div>
       </div>
+      {/* <UserCard user={user} i={1}></UserCard> */}
       <div className="contents">
         <div className="title">
           기본 정보

@@ -1,9 +1,10 @@
 //css
 import '../../../asset/css/components/card/user_card_style.scss';
+import userPic from '../../../asset/img/pic.png';
 
 function UserCard(props) {
 
-    let pic = props.user[props.i].pic;
+    let pic = userPic;
     let name = props.user[props.i].name;
     let sub = props.user[props.i].sub;
     let intro = props.user[props.i].intro;

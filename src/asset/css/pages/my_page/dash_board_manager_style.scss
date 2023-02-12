@@ -5,12 +5,13 @@
 @use '../../common/input.scss';
 @use '../../common/common.scss';
 
-#dash_board{
+#dash_board_manager{
     width: 75%;
     display: flex;
     flex-direction: column;
     gap: 16px;
     #header{
+      width: 100%;
       background-color: color.$white;
       border-radius: 10px;
       padding: 16px 32px;
@@ -67,6 +68,7 @@
             }
           }
           #profile{
+            width: 332px;
             height: fit-content;
             .pic_name{
               display: flex;
@@ -77,19 +79,23 @@
                 flex-direction: column;
                 gap: 8px;
                 .name{
-                  font-size: 14px;
+                  font-size: 20px;
                   font-weight: bold;
                   line-height: 1.3;
                 }
                 .sub{
-                  font-size: 10px;
+                  font-size: 14px;
                   font-weight: 500;
                   line-height: 1.3;
                 }
+
               }
             }
+            .line{
+              margin: 0;
+            }
             .intro{
-              font-size: 10px;
+              font-size: 14px;
               line-height: 1.3;
               font-weight: 600;
             }
@@ -97,7 +103,7 @@
               display: flex;
               gap: 4px;
               span{
-                font-size: 10px;
+                font-size: 14px;
                 font-weight: 600;
                 line-height: 1.3;
                 border: 1px solid #000;
@@ -116,14 +122,14 @@
               gap: 8px;
               .contact_i{
                 font-weight: 500;
-                font-size: 10px;
+                font-size: 14px;
                 color: #202020;
               }
               .belong_group{
                 display: flex;
                 gap: 8px;
                 .b_g_i{
-                  font-size: 10px;
+                  font-size: 14px;
                   line-height: 1.3;
                   font-weight: bold;
                   color: color.$white;
@@ -217,14 +223,14 @@
                 gap: 4px;
                 .title{
                   font-weight: bold;
-                  font-size: 10px;
+                  font-size: 14px;
                   line-height: 12px;
                   border: none;
                   padding: 0;
                 }
                 .desc{
                   font-weight: bold;
-                  font-size: 10px;
+                  font-size: 14px;
                   line-height: 12px;
                 }
                 .orange{
@@ -235,6 +241,81 @@
                   opacity: 0.2;
                 }
               }
+            }
+          }
+          #progress_state{
+            flex-direction: column;
+            .item_container{
+              display: flex;
+            }
+            .item{
+              display: flex;
+            }
+          }
+          #current_state{
+            padding: 16px 32px;
+            background-color: color.$white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            .container{
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              padding: 8px;
+              .title{
+                font-weight: 900;
+                font-size: 32px;
+                line-height: 1.6;
+              }
+              .subtitle{
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 1.6;
+              }
+              .state_container{
+                display: flex;
+                gap: 8px;
+                .state{
+                  padding: 8px 12px;
+                  border-radius: 8px;
+                  border: 0.5px solid #f1f1f1;
+                  box-sizing: border-box;
+                  display: flex;
+                  gap: 8px;
+                  flex-direction: column;
+                  width: 162px;
+                  font-size: 20px;
+                  font-weight: bold;
+                  line-height: 1.3;
+                  .count{
+                    font-weight: 400;
+                    span{
+      
+                    }
+                  }
+                  .orange{
+                    color: color.$orange;
+                  }
+                  .green{
+                    color: color.$green;
+                  }
+                  .light_gree{
+                    color: #2b9a29;
+                  }
+                }
+              }
+            }
+            .look{
+              display: flex;
+              justify-content: end;
+            }
+            a{
+              color: inherit;
+              font-weight: bold;
+              font-size: 12px;
+              line-height: 1.6;
             }
           }
         }
