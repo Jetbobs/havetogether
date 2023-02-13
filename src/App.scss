@@ -59,11 +59,11 @@ div{
         font-weight: bold;
         font-size: 16px;
         align-items: center;
-        .hi_community,.hi_my_page,.hi_user,.hi_menu{
+        .hi{
           padding: 8px 16px;
           display: flex;
         }
-        .hi_user{
+        #hi_user{
           svg{
             font-size: 32px;
           }
@@ -71,7 +71,7 @@ div{
         .active{
           border-bottom: 2px solid #000;
         }
-        .hi_menu{
+        #hi_menu{
           svg{
             font-size: 24px;
           }

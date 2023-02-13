@@ -9,8 +9,35 @@ import { useState } from "react";
 
 function DashBoard(props) {
 
+  //state
   let [modalMuJoin, modalMuJoinSet] = useState(false);
   let [modalConfirm, modalConfirmSet] = useState(false);
+  let [tagItem, tagItemSet] = useState(['기획', '브랜딩', '서비스 디자인']);
+  let [belongGroup, belongGroupSet] = useState([{ id: 'maru180', title: 'MARU 180' }, { id: 'ict_coc', title: "ICT COC" }, { id: 'd_camp', title: 'D.camp' }])
+  let [contactI, contactISet] = useState(['이메일 : hq@USNISTY.center', '연락처 : 010-2731-0705', '소속 단체']);
+  let [dayWeek, dayWeekSet] = useState([
+    { id: 'monday', title: '월요일' },
+    { id: 'tuesday', title: '화요일' },
+    { id: 'wednesday', title: '수요일' },
+    { id: 'thursday', title: '목요일' },
+    { id: 'friday', title: '금요일' }
+  ])
+  let [hobby, hobbySet] = useState(['운동','음악','자기계발','맛집']);
+  let [currentJoin, currentJoinSet] = useState([
+    {id : 'coming_event', title: '참가예정 이벤트'},
+    {id : 'complete_event', title: '참가완료 이벤트'},
+    {id : 'review', title: '작성한 후기'},
+    {id : 'reward', title: '참가 리워드'},
+    {id : 'met_ppl', title: '만난 사람들'}]);
+
+  //JS
+  //참가현황 색변경
+  document.querySelector('#coming_event .desc').classList.add('orange');
+  document.querySelector('#review .desc').classList.add('orange');
+  document.querySelector('#reward .desc').classList.add('gray');
+  
+
+  console.log(document.querySelectorAll('.item'));
 
   return (
     <>
@@ -47,37 +74,37 @@ function DashBoard(props) {
                   IT 커뮤니티와 IT 기업을 연결하는 일을 하고 있습니다.
                 </div>
                 <div className="tag">
-                  <div className="item">
-                    <span>기획</span>
-                  </div>
-                  <div className="item">
-                    <span>브랜딩</span>
-                  </div>
-                  <div className="item">
-                    <span>서비스 디자인</span>
-                  </div>
+                  {
+                    tagItem.map((a, e) => {
+                      return (
+                        <div className="item">
+                          <span>{a}</span>
+                        </div>
+                      )
+                    })
+                  }
                 </div>
                 <div className="line"></div>
                 <div className="contact">
-                  <div className="contact_i">
-                    이메일: hq@UNISTY.center
-                  </div>
-                  <div className="contact_i">
-                    연락처 : 010-2731-0705
-                  </div>
-                  <div className="contact_i">
-                    소속단체
-                  </div>
+                  {
+                    contactI.map((a, e) => {
+                      return (
+                        <div className="contact_i">
+                          {a}
+                        </div>
+                      )
+                    })
+                  }
                   <div className="belong_group">
-                    <span className="b_g_i" id='maru180'>
-                      MARU 180
-                    </span>
-                    <span className="b_g_i" id='ict_coc'>
-                      ICT COC
-                    </span>
-                    <span className="b_g_i" id='d_camp'>
-                      D.camp
-                    </span>
+                    {
+                      belongGroup.map((a, e) => {
+                        return (
+                          <span className="b_g_i" id={a.id}>
+                            {a.title}
+                          </span>
+                        )
+                      })
+                    }
                   </div>
                 </div>
               </div>
@@ -90,61 +117,23 @@ function DashBoard(props) {
                     선택하신 요일, 시간
                   </div>
                   <div className="day_week_wrapper">
-                    <div className="day_week" id='monday'>
-                      <div className="text_wrapper">
-                        MM.DD <br /> 월요일
-                      </div>
-                      <div className="item active">
-                        11:30
-                      </div>
-                      <div className="item">
-                        12:00
-                      </div>
-                    </div>
-                    <div className="day_week" id='tuesday'>
-                      <div className="text_wrapper">
-                        MM.DD <br /> 월요일
-                      </div>
-                      <div className="item active">
-                        11:30
-                      </div>
-                      <div className="item">
-                        12:00
-                      </div>
-                    </div>
-                    <div className="day_week" id='wednesday'>
-                      <div className="text_wrapper">
-                        MM.DD <br /> 월요일
-                      </div>
-                      <div className="item active">
-                        11:30
-                      </div>
-                      <div className="item">
-                        12:00
-                      </div>
-                    </div>
-                    <div className="day_week" id='thursday'>
-                      <div className="text_wrapper">
-                        MM.DD <br /> 월요일
-                      </div>
-                      <div className="item active">
-                        11:30
-                      </div>
-                      <div className="item">
-                        12:00
-                      </div>
-                    </div>
-                    <div className="day_week" id='friday'>
-                      <div className="text_wrapper">
-                        MM.DD <br /> 월요일
-                      </div>
-                      <div className="item active">
-                        11:30
-                      </div>
-                      <div className="item">
-                        12:00
-                      </div>
-                    </div>
+                    {
+                      dayWeek.map((a, e) => {
+                        return (
+                          <div className="day_week" id={a.id}>
+                            <div className="text_wrapper">
+                              MM.DD <br /> {a.title}
+                            </div>
+                            <div className="item active">
+                              11:30
+                            </div>
+                            <div className="item">
+                              12:00
+                            </div>
+                          </div>
+                        )
+                      })
+                    }
                   </div>
                 </div>
                 <div className="info" id='hobby'>
@@ -152,25 +141,22 @@ function DashBoard(props) {
                     선택하신 관심사, 취미
                   </div>
                   <div className="item_wrapper">
-                    <div className="item active">
-                      운동
-                    </div>
-                    <div className="item active">
-                      음악
-                    </div>
-                    <div className="item active">
-                      자기계발
-                    </div>
-                    <div className="item active">
-                      맛집
-                    </div>
+                    {
+                      hobby.map((a,i)=>{
+                        return(
+                          <div className="item active">
+                          {a}
+                        </div>
+                        )
+                      })
+                    }
                   </div>
                 </div>
                 <div className="update_wrapper">
                   <div className="text" id='update'>
                     *<span>2022. 10. 20(목)</span> 업데이트
                   </div>
-                  <div className="text" id='edit' onClick={()=>{modalMuJoinSet(true)}}>
+                  <div className="text" id='edit' onClick={() => { modalMuJoinSet(true) }}>
                     수정하기
                   </div>
                 </div>
@@ -180,7 +166,7 @@ function DashBoard(props) {
                   참가 현황
                 </div>
                 <div className="item_wrapper">
-                  <div className="item" id='coming_event'>
+                  {/* <div className="item" id='coming_event'>
                     <div className="title">
                       참가예정 이벤트
                     </div>
@@ -219,7 +205,21 @@ function DashBoard(props) {
                     <div className="desc">
                       NN개
                     </div>
-                  </div>
+                  </div> */}
+                  {
+                    currentJoin.map((a,e)=>{
+                      return(
+                        <div className="item" id={a.id}>
+                        <div className="title">
+                          {a.title}
+                        </div>
+                        <div className="desc">
+                          NN개
+                        </div>
+                      </div>
+                      )
+                    })
+                  }
                 </div>
               </div>
             </div>
@@ -350,7 +350,7 @@ function DashBoard(props) {
         </div>
       </div>
       {
-        modalMuJoin == true ? <ModalMuJoin btn={[{id : 'btn_cancel', name : '취소'},{id : 'btn_join', name : '참가하기'}]} func={[()=>{modalMuJoinSet(false)},()=>{modalMuJoinSet(false)}]}></ModalMuJoin> : null
+        modalMuJoin == true ? <ModalMuJoin btn={[{ id: 'btn_cancel', name: '취소' }, { id: 'btn_join', name: '참가하기' }]} func={[() => { modalMuJoinSet(false) }, () => { modalMuJoinSet(false) }]}></ModalMuJoin> : null
       }
     </>
   )

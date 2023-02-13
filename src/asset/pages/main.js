@@ -37,9 +37,9 @@ function Main(props) {
                         <div className="btn purple">
                             얼리 액세스 신청하기
                         </div>
-                        <div className="btn yellow">
+                        {/* <div className="btn yellow">
                             문의하기
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div className="img_conainer">

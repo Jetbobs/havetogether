@@ -71,7 +71,7 @@
                 font-size: 14px;
                 font-weight: bold;
                 line-height: 24px;
-                color: color.$purple01;
+                color: color.$purple02;
                 box-shadow: 1px 1px 0px rgba(117, 70, 215, 0.2);
             }
         }
@@ -132,8 +132,8 @@
         }
     }
     .purple{
-        width: 176px;
-        background-color: color.$purple01;
+        border-radius: 8px;
+        background-color: color.$purple02;
         color: color.$white;
     }
     .yellow{
