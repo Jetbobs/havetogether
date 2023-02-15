@@ -7,6 +7,8 @@ import '../../css/pages/community/event_detail_01_style.scss';
 //components
 import Modal from "../../../components/modal/modal";
 import { useState } from "react";
+//jquery
+import $ from 'jquery';
 
 function EventDetail01(props){
 

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import userPic from '../../img/pic.png';
 import '../../css/pages/community/matching_style.scss';
+//jquery
+import $ from 'jquery';
 
 function Matching(props){
     return(

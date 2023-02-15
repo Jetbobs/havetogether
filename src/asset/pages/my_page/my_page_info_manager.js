@@ -1,14 +1,19 @@
-import {Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 //fontawesome
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faCircleUser,faEllipsisVertical,faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleUser, faEllipsisVertical, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import hostPic from '../../img/host_img00.png';
 import '../../css/pages/my_page/my_page_info_manager_style.scss';
+//jquery
+import $ from 'jquery';
 
-function MyPageInfoManager(props){
-    return(
-        <div id="my_page_info_manager">
-        <div id="corp_info_title">
+function MyPageInfoManager(props) {
+  return (
+    <div id="my_page_info_manager">
+      <div className="page_title">
+        커뮤니티 정보
+      </div>
+      <div id="corp_info_title">
         <div className="bg"></div>
         <div className="corp_info">
           <div className="title">
@@ -43,7 +48,7 @@ function MyPageInfoManager(props){
           </div>
         </div>
         <div className="intro">
-        마루민들의 행복과 건강을 넘어 네트워킹을 만들어가는 마루요정이에요!
+          마루민들의 행복과 건강을 넘어 네트워킹을 만들어가는 마루요정이에요!
         </div>
         <div className="tag">
           <span className="tag_i">
@@ -57,18 +62,18 @@ function MyPageInfoManager(props){
           </span>
         </div>
         <div className="contact">
-                <div className="contact_i" id='c_email'>
-                  이메일: maru180@asan_nanum.org
-                </div>
-                <div className="contact_i" id='c_phone'>
-                  연락처 : 010-2731-0705
-                </div>
-                <div className="belong_group">
-                  <span className="b_g_i" id='maru180'>
-                    MARU 180 / 관리자 계정
-                  </span>
-                </div>
-              </div>
+          <div className="contact_i" id='c_email'>
+            이메일: maru180@asan_nanum.org
+          </div>
+          <div className="contact_i" id='c_phone'>
+            연락처 : 010-2731-0705
+          </div>
+          <div className="belong_group">
+            <span className="b_g_i" id='maru180'>
+              MARU 180 / 관리자 계정
+            </span>
+          </div>
+        </div>
       </div>
       <div className="contents">
         <div className="title">
@@ -214,129 +219,124 @@ function MyPageInfoManager(props){
             <textarea name="" id="" cols="30" rows="10"></textarea>
           </div>
           <div className="input_btn">
-        <div className="title">
-          관심사를 알려주세요.
-        </div>
-        <div className="input_btn_container">
-          <div className="input_btn_i">
-            <span>
-            스타트업
-            </span>
+            <div className="title">
+              관심사를 알려주세요.
+            </div>
+            <div className="input_btn_container">
+              <div className="input_btn_i">
+                <span>
+                  스타트업
+                </span>
+              </div>
+              <div className="input_btn_i">
+                <span>
+                  반려동물
+                </span>
+              </div>
+              <div className="input_btn_i">
+                <span>
+                  재테크
+                </span>
+              </div>
+              <div className="input_btn_i">
+                <span>
+                  IT 기술
+                </span>
+              </div>
+              <div className="input_btn_i">
+                <span>
+                  여행
+                </span>
+              </div>
+              <div className="input_btn_i">
+                <span>
+                  시사, 이슈
+                </span>
+              </div>
+              <div className="input_btn_i">
+                <span>
+                  사람과 문화
+                </span>
+              </div>
+              <div className="input_btn_i">
+                <span>
+                  건강
+                </span>
+              </div>
+            </div>
           </div>
-          <div className="input_btn_i">
-            <span>
-            반려동물
-            </span>
+          <div className="input_btn">
+            <div className="title">
+              취미를 알려주세요.
+            </div>
+            <div className="input_btn_container">
+              <div className="input_btn_i">
+                <span>
+                  운동
+                </span>
+              </div>
+              <div className="input_btn_i">
+                <span>
+                  요리
+                </span>
+              </div>
+              <div className="input_btn_i">
+                <span>
+                  맛집
+                </span>
+              </div>
+              <div className="input_btn_i">
+                <span>
+                  게임
+                </span>
+              </div>
+              <div className="input_btn_i">
+                <span>
+                  독서
+                </span>
+              </div>
+              <div className="input_btn_i">
+                <span>
+                  영화, 드라마
+                </span>
+              </div>
+            </div>
           </div>
-          <div className="input_btn_i">
-            <span>
-            재테크
-            </span>
-          </div>
-          <div className="input_btn_i">
-            <span>
-            IT 기술
-            </span>
-          </div>
-          <div className="input_btn_i">
-            <span>
-            여행
-            </span>
-          </div>
-          <div className="input_btn_i">
-            <span>
-            시사, 이슈
-            </span>
-          </div>
-          <div className="input_btn_i">
-            <span>
-            사람과 문화
-            </span>
-          </div>
-          <div className="input_btn_i">
-            <span>
-            건강
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className="input_btn">
-        <div className="title">
-          취미를 알려주세요.
-        </div>
-        <div className="input_btn_container">
-          <div className="input_btn_i">
-            <span>
-            운동
-            </span>
-          </div>
-          <div className="input_btn_i">
-            <span>
-            요리
-            </span>
-          </div>
-          <div className="input_btn_i">
-            <span>
-            맛집
-            </span>
-          </div>
-          <div className="input_btn_i">
-            <span>
-            게임
-            </span>
-          </div>
-          <div className="input_btn_i">
-            <span>
-            독서
-            </span>
-          </div>
-          <div className="input_btn_i">
-            <span>
-            영화, 드라마
-            </span>
-          </div>
-        </div>
-      </div>
         </div>
       </div>
       <div className="contents_more">
-    <div className="title">
-      계정 정보
-    </div>
-    <div className="input_container">
-    <div className="input">
-          <div className="input_title" id='email'>
+        <div className="title">
+          계정 정보
+        </div>
+        <div className="input_container">
+          <div className="input">
+            <div className="input_title" id='email'>
               <p>이메일</p>
               <div className="input_desc">
-                  *입력하신 이메일 계정이 ID가 됩니다.
+                *입력하신 이메일 계정이 ID가 됩니다.
               </div>
+            </div>
+            <input type="text" id='my_name' />
           </div>
-          <input type="text" id='my_name' />
-        </div>
-        <div className="input">
-          <div className="input_title">
+          <div className="input">
+            <div className="input_title">
               <p>비밀번호 변경</p>
               <div className="input_desc">
-                  
+
               </div>
+            </div>
+            <input type="text" id='my_name' />
           </div>
-          <input type="text" id='my_name' />
-        </div>
-    </div>
-  </div>
-  <div className="btn_wrapper">
-  <div className="btn_container" id='edit'>
-        <div className="btn">
-          수정하기
         </div>
       </div>
-      <div className="btn_container" id='edit'>
-        <div className="btn">
-          수정하기
+      <div className="btn_wrapper">
+        <div className="btn_container" id='edit'>
+          <div className="btn">
+            수정하기
+          </div>
         </div>
       </div>
-  </div>
-      <div className="modal" id='event_edit_confirm'>
+      {/* <div className="modal" id='event_edit_confirm'>
         <div className="modal_bg">
         </div>
         <div className="contents">
@@ -355,8 +355,8 @@ function MyPageInfoManager(props){
             <div className="btn" id='btn_complete'>수정 완료</div>
           </div>
         </div>
-      </div>
-      <div className="modal" id='meetup_join'>
+      </div> */}
+      {/* <div className="modal" id='meetup_join'>
         <div className="modal_bg">
         </div>
         <div className="contents">
@@ -499,8 +499,8 @@ function MyPageInfoManager(props){
             <div className="btn" id='btn_join'>참가하기</div>
           </div>
         </div>
-      </div>
-      <div className="modal" id='meetup_confirm'>
+      </div> */}
+      {/* <div className="modal" id='meetup_confirm'>
         <div className="modal_bg"></div>
         <div className="contents">
           <div className="title">
@@ -630,9 +630,9 @@ function MyPageInfoManager(props){
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
-    )
+  )
 }
 
 export default MyPageInfoManager;

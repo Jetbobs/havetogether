@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import $ from 'jquery';
 import userPic from '../../img/pic.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -6,6 +7,8 @@ import '../../css/pages/my_page/dash_board_style.scss';
 //modal
 import ModalMuJoin from "../../../components/modal/modal_mu_join";
 import { useState } from "react";
+//jquery
+// import $ from 'jquery';
 
 function DashBoard(props) {
 
@@ -32,9 +35,6 @@ function DashBoard(props) {
 
   //JS
   //참가현황 색변경
-  document.querySelector('#coming_event .desc').classList.add('orange');
-  document.querySelector('#review .desc').classList.add('orange');
-  document.querySelector('#reward .desc').classList.add('gray');
   
 
   console.log(document.querySelectorAll('.item'));
@@ -355,5 +355,10 @@ function DashBoard(props) {
     </>
   )
 }
+$(function(){
+  $('#coming_event .desc').addClass('orange');
+  $('#review .desc').addClass('orange');
+  $('#reward .desc').addClass('gray');
+})
 
 export default DashBoard;

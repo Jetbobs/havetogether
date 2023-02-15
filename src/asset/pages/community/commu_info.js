@@ -11,6 +11,8 @@ import CurrentState from '../../../components/common/current_state';
 import EventCard00 from '../../../components/common/card/event_card_00';
 import EventCard01 from '../../../components/common/card/event_card_01';
 import EventCard02 from '../../../components/common/card/event_card_02';
+//jquery
+import $ from 'jquery';
 
 function CommuInfo(props) {
   let [currentState, currentStateSet] = useState([
@@ -43,5 +45,13 @@ function CommuInfo(props) {
     </div>
   )
 }
+
+$(function(){
+  let location = window.location.pathname;
+
+  if(location.includes('/community')){
+    $('#hi_community').addClass('active');
+  }
+})
 
 export default CommuInfo;

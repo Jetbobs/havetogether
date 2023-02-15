@@ -1,4 +1,5 @@
 import groupImg from '../../img/group_img_00.png';
+import $ from 'jquery';
 import '../../css/pages/my_page/current_event_state_style.scss';
 import { useState } from 'react';
 import EventCard00 from '../../../components/common/card/event_card_00';
@@ -6,6 +7,8 @@ import EventCard01 from '../../../components/common/card/event_card_01';
 import EventCard02 from '../../../components/common/card/event_card_02';
 //data
 import cardData from "../../data/card/card_data";
+//jquery
+// import $ from 'jquery';
 
 function CurrentEventState(props){
 
@@ -298,23 +301,22 @@ function CurrentEventState(props){
     )
 }
 
+$(function(){
 
-//JS
-     setTimeout(() => {
-      document.querySelector('#complete_event .count').classList.add('orange');
-      let j_c = document.querySelectorAll('#coming_event .btn');
+  $('#complete_event .count').addClass('orange');
 
-      for(let i = 0; i < j_c.length; i++){
-        j_c[i].innerText = '참가 취소'
-      }
+  let j_c = $('#coming_event .btn');
 
-      let state = document.querySelectorAll('#complete_event .event .state span');
+  for(let i = 0; i < j_c.length; i++){
+    j_c[i].innerText = '참가 취소'
+  }
 
-      for(let i = 0; i < state.length; i++){
-        state[i].innerText = '종료';
-        state[i].style.backgroundColor = '#000';
-      }
+  let state = $('#complete_event .event .state span');
 
-     }, 10);
+  for(let i = 0; i < state.length; i++){
+    state[i].innerText = '종료';
+    state[i].style.backgroundColor = '#000';
+  }
+})
 
 export default CurrentEventState;

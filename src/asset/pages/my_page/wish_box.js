@@ -6,6 +6,8 @@ import '../../css/pages/my_page/wish_box_style.scss';
 //components
 import Modal from '../../../components/modal/modal';
 import { useState } from 'react';
+//jquery
+import $ from 'jquery';
 
 function WishBox(props) {
   let [enterBtn, enterBtnSet] = useState(false);

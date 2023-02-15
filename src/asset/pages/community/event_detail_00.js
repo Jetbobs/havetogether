@@ -18,6 +18,8 @@ import userCardData from '../../data/card/user_card_data';
 import ModalMuJoin from '../../../components/modal/modal_mu_join';
 import ModalMuConfirm from '../../../components/modal/modal_mu_confirm';
 import Modal from '../../../components/modal/modal';
+//jquery
+import $ from 'jquery';
 
 
 

@@ -10,6 +10,8 @@ import userCardData from '../../data/card/user_card_data';
 //components
 import Modal from '../../../components/modal/modal';
 import UserCard from '../../../components/common/card/user_card';
+//jquery
+import $ from 'jquery';
 
 function MyPageInfo(props) {
 

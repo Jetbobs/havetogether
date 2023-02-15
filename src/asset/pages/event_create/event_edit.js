@@ -6,6 +6,8 @@ import '../../css/pages/event_create/event_edit_style.scss';
 //components
 import Modal from "../../../components/modal/modal";
 import { useState } from "react";
+//jquery
+import $ from 'jquery';
 
 function EventEdit(props) {
 

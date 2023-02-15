@@ -5,6 +5,8 @@ import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass, faAr
 // import '../../css/pages/my_page/dash_board_manager_style.scss';
 //css
 import '../../css/pages/my_page/dash_board_manager_style.scss';
+//jquery
+import $ from 'jquery';
 
 function DashBoardManager(props) {
   return (
@@ -66,57 +68,6 @@ function DashBoardManager(props) {
                 </div>
               </div>
             </div>
-            {/* <div className="contents" id='progress_state'>
-                <div className="title">
-                  참가 현황
-                </div>
-                <div className="item_container">
-                <div className="item_wrapper">
-                  <div className="item" id='coming_event'>
-                    <div className="title">
-                      진행예정 이벤트
-                    </div>
-                    <div className="desc orange">
-                      NN개
-                    </div>
-                  </div>
-                  <div className="item" id='progress_event'>
-                    <div className="title">
-                      진행 중인 이벤트
-                    </div>
-                    <div className="desc">
-                      NN개
-                    </div>
-                  </div>
-                  <div className="item" id='complete_event'>
-                    <div className="title">
-                      종료된 이벤트
-                    </div>
-                    <div className="desc">
-                      NN개
-                    </div>
-                  </div>
-                </div>
-                <div className="item_wrapper">
-                <div className="item" id='review'>
-                    <div className="title">
-                      참가예정 이벤트
-                    </div>
-                    <div className="desc orange">
-                      NN개
-                    </div>
-                  </div>
-                  <div className="item" id='reward'>
-                    <div className="title">
-                      참가예정 이벤트
-                    </div>
-                    <div className="desc gray">
-                      NN개
-                    </div>
-                  </div>
-                </div>
-                </div>
-              </div> */}
             <div id="current_state">
               <div className="container">
                 <div className="title">

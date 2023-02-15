@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import '../css/pages/main_style.scss';
 import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import $ from 'jquery';
 //img
 import sectionImg00 from '../img/main/section_00.png';
 import sectionImg01 from '../img/main/section_01.png';
@@ -203,5 +205,22 @@ function Main(props) {
         </div>
     )
 }
+
+// document.querySelector('#hi_my_page').style.display = "none";
+$(function(){
+    let location = window.location.pathname  ;
+    if(location == '/'){
+        $('#hi_community').css('display','none');
+        $('#hi_my_page').css('display','none');
+        $('#hi_my_ask').css('display','block');
+        $('#hi_service').css('display','block');
+        $('#hi_service').addClass('active');
+    } else {
+        $('#hi_community').css('display','block');
+        $('#hi_my_page').css('display','block');
+        $('#hi_my_ask').css('display','none');
+        $('#hi_service').css('display','none');
+    }
+});
 
 export default Main;

@@ -17,6 +17,8 @@ import LoginDateButton from '../../../components/login/login_date_button';
 import interestData from '../../data/login/info_input_more/info_interest_data';
 import hobbyData from '../../data/login/info_input_more/info_hobby_data';
 import talkTypeData from '../../data/login/info_input_more/info_talk_type_data';
+//jquery
+import $ from 'jquery';
 
 function InfoInputMore(props) {
 
@@ -91,5 +93,13 @@ function InfoInputMore(props) {
     </div>
   )
 }
+
+$(function(){
+  let location = window.location.pathname;
+
+  if(location == '/info_input_more'){
+    $('#hi_my_page').addClass('active');
+  }
+})
 
 export default InfoInputMore;

@@ -1,5 +1,7 @@
 import groupImg from '../../img/group_img_00.png';
 import '../../css/pages/my_page/current_event_state_manager_style.scss';
+//jquery
+import $ from 'jquery';
 
 function CurrentEventStateManager(props){
     return(

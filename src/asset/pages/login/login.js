@@ -11,6 +11,8 @@ import meetUp from '../../data/meetup';
 //components
 import LoginHeader from '../../../components/login/login_header';
 import BasicButton from '../../../components/common/basic_button';
+//jquery
+import $ from 'jquery';
 
 
 
@@ -57,5 +59,12 @@ function Login(){
       </div>
     )
 }
+$(function(){
+  let location = window.location.pathname;
+
+  if(location == '/login'){
+    $('#hi_my_page').addClass('active');
+  }
+})
 
 export default Login;

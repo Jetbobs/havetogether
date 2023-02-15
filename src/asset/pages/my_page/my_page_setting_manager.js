@@ -2,6 +2,8 @@ import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass, faX 
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon, Outlet } from '@fortawesome/react-fontawesome';
 import '../../css/pages/my_page/my_page_setting_manager_style.scss';
+//jquery
+import $ from 'jquery';
 
 function MyPageSettingManager(props){
     return(

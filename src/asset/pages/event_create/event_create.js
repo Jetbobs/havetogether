@@ -10,6 +10,8 @@ import { inputData00, inputData01, inputData02, inputData03 } from '../../data/i
 import { useState } from 'react';
 //modal
 import ModalECConfirm from '../../../components/modal/modal_ec_confirm';
+//jquery
+import $ from 'jquery';
 
 
 function EventCreate(props) {

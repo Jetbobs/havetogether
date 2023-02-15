@@ -11,6 +11,8 @@ import UserCard from '../../../components/common/card/user_card';
 //data
 import headerData from "../../data/header/header_data";
 import userCardData from '../../data/card/user_card_data';
+//jquery
+import $ from 'jquery';
 
 function MemberInfo(props) {
 

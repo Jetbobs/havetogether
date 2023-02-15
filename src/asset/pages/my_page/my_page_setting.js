@@ -5,6 +5,8 @@ import '../../css/pages/my_page/my_page_setting_style.scss';
 //components
 import Modal from '../../../components/modal/modal';
 import { useState } from 'react';
+//jquery
+import $ from 'jquery';
 
 function MyPageSetting(props) {
 

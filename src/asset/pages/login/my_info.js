@@ -24,6 +24,8 @@ import hobbyData from '../../data/login/info_input_more/info_hobby_data';
 import talkTypeData from '../../data/login/info_input_more/info_talk_type_data';
 //scss
 import '../../css/pages/login/my_info_style.scss';
+//jquery
+import $ from 'jquery';
 
 function MyInfo(props){
 
@@ -182,5 +184,13 @@ function MyInfo(props){
       </div>
     )
 }
+
+$(function(){
+  let location = window.location.pathname;
+
+  if(location == '/my_info'){
+    $('#hi_my_page').addClass('active');
+  }
+})
 
 export default MyInfo;

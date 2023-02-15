@@ -1,6 +1,8 @@
 import {Link, useNavigate} from 'react-router-dom';
 import '../../css/pages/login/terms_style.scss';
 import LoginHeaderNol from '../../../components/login/login_header_noL';
+//jquery
+import $ from 'jquery';
 
 function Terms(props){
     
@@ -69,5 +71,13 @@ function Terms(props){
       </div>
     )
 }
+
+$(function(){
+  let location = window.location.pathname;
+
+  if(location == '/terms'){
+    $('#hi_my_page').addClass('active');
+  }
+})
 
 export default Terms;

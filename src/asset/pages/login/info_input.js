@@ -14,6 +14,8 @@ import LoginInfoInputTextarea from '../../../components/login/login_input_textar
 import infoInputData from '../../data/login/info_input/info_input_data';
 import infoInputDataFile from '../../data/login/info_input/info_input_file_data';
 import infoInputDataTextarea from '../../data/login/info_input/info_input_textarea_data';
+//jquery
+import $ from 'jquery';
 
 
 function InfoInput() {
@@ -80,5 +82,13 @@ function InfoInput() {
     </div>
   )
 }
+
+$(function(){
+  let location = window.location.pathname;
+
+  if(location == '/info_input'){
+    $('#hi_my_page').addClass('active');
+  }
+})
 
 export default InfoInput;

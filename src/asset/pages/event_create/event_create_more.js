@@ -11,6 +11,8 @@ import { useState } from 'react';
 //modal
 import ModalECConfirm from '../../../components/modal/modal_ec_confirm';
 import ModalECConfirmMore from '../../../components/modal/modal_ec_confirm_more';
+//jquery
+import $ from 'jquery';
 
 
 function EventCreateMore(props) {

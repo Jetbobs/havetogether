@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import '../../css/pages/my_page/member_info_manager_style.scss';
+//jquery
+import $ from 'jquery';
 
 
 function MemberInfoManager(props){
@@ -84,34 +86,9 @@ function MemberInfoManager(props){
                 <span>서비스 디자인</span>
               </div>
             </div>
-          </div>
-          <div className="member">
-            <div className="pic_name">
-              <div className="pic">
-                <img src={userPic} alt="" />
-              </div>
-              <div className="container">
-                <div className="name">
-                  TOMAS
-                </div>
-                <div className="job">
-                  UNISTY CEO
-                </div>
-              </div>
-            </div>
-            <div className="intro">
-            IT 커뮤니티와 IT 기업을 연결하는 일을 하고 있습니다. 
-            </div>
-            <div className="tag">
-              <div className="item">
-                <span>기획</span>
-              </div>
-              <div className="item">
-                <span>브랜딩</span>
-              </div>
-              <div className="item">
-                <span>서비스 디자인</span>
-              </div>
+            <div className="btn_wrapper">
+              <div className="btn green">가입 승인</div>
+              <div className="btn white">거절</div>
             </div>
           </div>
           <div className="member">
@@ -142,6 +119,10 @@ function MemberInfoManager(props){
                 <span>서비스 디자인</span>
               </div>
             </div>
+            <div className="btn_wrapper">
+              <div className="btn green">가입 승인</div>
+              <div className="btn white">거절</div>
+            </div>
           </div>
           <div className="member">
             <div className="pic_name">
@@ -170,6 +151,43 @@ function MemberInfoManager(props){
               <div className="item">
                 <span>서비스 디자인</span>
               </div>
+            </div>
+            <div className="btn_wrapper">
+              <div className="btn green">가입 승인</div>
+              <div className="btn white">거절</div>
+            </div>
+          </div>
+          <div className="member">
+            <div className="pic_name">
+              <div className="pic">
+                <img src={userPic} alt="" />
+              </div>
+              <div className="container">
+                <div className="name">
+                  TOMAS
+                </div>
+                <div className="job">
+                  UNISTY CEO
+                </div>
+              </div>
+            </div>
+            <div className="intro">
+            IT 커뮤니티와 IT 기업을 연결하는 일을 하고 있습니다. 
+            </div>
+            <div className="tag">
+              <div className="item">
+                <span>기획</span>
+              </div>
+              <div className="item">
+                <span>브랜딩</span>
+              </div>
+              <div className="item">
+                <span>서비스 디자인</span>
+              </div>
+            </div>
+            <div className="btn_wrapper">
+              <div className="btn green">가입 승인</div>
+              <div className="btn white">거절</div>
             </div>
           </div>
         </div>

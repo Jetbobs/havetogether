@@ -11,6 +11,8 @@ import EventCard02 from "../../../components/common/card/event_card_02";
 import headerData from "../../data/header/header_data";
 import cardData from "../../data/card/card_data";
 import { useState } from "react";
+//jquery
+// import $ from 'jquery';
 
 function EventInfo(props) {
 
