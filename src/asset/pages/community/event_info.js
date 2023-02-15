@@ -46,4 +46,19 @@ function EventInfo(props) {
   )
 }
 
+$(function(){
+  let location = window.location.pathname;
+
+  if(location == ('/community/event_info')){
+    let smArr = ['community','event','member'];
+    $('#sm_community').removeClass('active');
+
+    for(let i = 0; i < smArr.length; i++){
+      $(`#sm_${smArr[i]}`).removeClass('active');
+    }
+    $('#hi_community').addClass('active');
+    $('#sm_community').addClass('active');
+  }
+});
+
 export default EventInfo;

@@ -63,7 +63,7 @@ div{
           padding: 8px 16px;
           display: flex;
         }
-        #hi_service,#hi_my_ask{
+        #hi_service,#hi_my_ask,#hi_manager{
           display: none;
         }
         #hi_user{
@@ -140,6 +140,9 @@ div{
             font-weight: 400;
             padding: 4px 8px;
             cursor: pointer;
+          }
+          .active{
+            font-weight: bold;
           }
         }
         .btn{

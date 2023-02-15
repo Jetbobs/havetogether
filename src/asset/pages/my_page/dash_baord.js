@@ -359,6 +359,23 @@ $(function(){
   $('#coming_event .desc').addClass('orange');
   $('#review .desc').addClass('orange');
   $('#reward .desc').addClass('gray');
+
+  let smpArr = ['dash_board','event_state','my_info','wish_box','setting']
+  let location = window.location.pathname;
+
+  if(location == '/my_page/dash_board'){
+    for(let i = 0; i < smpArr.length; i++){
+      $(`smp_${smpArr[i]}`).removeClass('active');
+    }
+    $('#smp_dash_board').addClass('active');
+  
+    $('#hi_community').removeClass('active');
+    $('#hi_my_page').removeClass('active');
+    $('#hi_my_page').addClass('active');
+  }
+
+
+
 })
 
 export default DashBoard;

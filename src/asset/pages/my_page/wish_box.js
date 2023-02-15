@@ -119,28 +119,6 @@ function WishBox(props) {
           }
         </div>
       </div>
-      {/* <div className="modal" id='enter_cancel'>
-        <div className="modal_bg"></div>
-        <div className="contents">
-          <div className="title">
-            입력 취소
-          </div>
-          <div className="desc">
-            작성하신 정보를 반영하지 않고, 입력을 취소할까요 ?
-          </div>
-          <div className="icon">
-            <FontAwesomeIcon icon={faX}></FontAwesomeIcon>
-          </div>
-          <div className="btn_wrapper">
-            <div className="btn" id='btn_e_c_n'>
-              아니오
-            </div>
-            <div className="btn" id='btn_e_c_y'>
-              예
-            </div>
-          </div>
-        </div>
-      </div> */}
 
         {
           modalEnterCancel == true ? <Modal id={'enter_cancel'} title={'입력 취소'} desc={'작성하신 정보를 반영하지 않고, 입력을 취소할까요 ?'} btn={[{id : 'btn_continue', name : '수정 계속하기'},{id : 'btn_enter_y', name : '확인'}]} func={[()=>{modalEnterCancelSet(false)},()=>{modalEnterCancelSet(false); enterBtnSet(false)}]}>
@@ -149,5 +127,25 @@ function WishBox(props) {
     </>
   )
 }
+
+let location = window.location.pathname;
+
+let smpArr = ['dash_board','event_state','my_info','wish_box','setting']
+
+$(function(){
+  if(location == '/my_page/wish_box'){
+    for(let i = 0; i < smpArr.length; i++){
+      $(`smp_${smpArr[i]}`).removeClass('active');
+    }
+  
+  
+    $('#hi_community').removeClass('active');
+    $('#hi_my_page').removeClass('active');
+  
+    $('#hi_my_page').addClass('active');
+    
+    $('#smp_wish_box').addClass('active');
+  }
+})
 
 export default WishBox;

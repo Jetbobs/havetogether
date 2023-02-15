@@ -1,5 +1,5 @@
 import './App.scss';
-import $ from'jquery';
+import $ from 'jquery';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 import logo from './asset/img/ht_logo_header.png';
 import GlobalStyles from './components/GlobalStyles';
@@ -50,6 +50,8 @@ import AutoLayoutExample from './asset/pages/test2';
 import MemberInfoManager from './asset/pages/my_page/member_info_manager';
 //side_menu
 import SideMenu from './components/side_menu/side_menu';
+import SideMenuMp from './components/side_menu/side_menu_mp';
+import SideMenuManager from './components/side_menu/side_menu_manager';
 //jquery
 import jQuery from 'jquery';
 
@@ -74,11 +76,14 @@ function App() {
             <div className="hi" id='hi_my_page'>
               <Link to='/my_page/dash_board'>마이 페이지</Link>
             </div>
+            <div className="hi" id='hi_manager'>
+              <Link to=''>관리자페이지</Link>
+            </div>
             <div className="hi" id='hi_service'>
-              <Link to='/my_page/dash_board'>서비스 소개</Link>
+              <Link to=''>서비스 소개</Link>
             </div>
             <div className="hi" id='hi_my_ask'>
-              <Link to='/my_page/dash_board'>문의/협업</Link>
+              <Link to=''>문의/협업</Link>
             </div>
             <div className="hi" id='hi_user'>
               <FontAwesomeIcon icon={faCircleUser}></FontAwesomeIcon>
@@ -88,9 +93,9 @@ function App() {
             </div>
           </div>
         </header>
-        
+
         <Routes>
-        <Route path='/' element={<Main></Main>}></Route>
+          <Route path='/' element={<Main></Main>}></Route>
           <Route path='/login' element={<Login></Login>}>
           </Route>
           <Route path='/terms' element={<Terms></Terms>}></Route>
@@ -103,24 +108,6 @@ function App() {
         <Routes>
           <Route path='/community' element={<>
             <div id="main">
-              {/* <div id="side_menu">
-                <div className="menu_container">
-                  <div className="container">
-                    <div className="menu" onClick={() => { navigate() }}>
-                      커뮤니티 정보
-                    </div>
-                    <div className="menu" onClick={() => { navigate() }}>
-                      이벤트 정보
-                    </div>
-                    <div className="menu" onClick={() => { navigate() }}>
-                      멤버 보기
-                    </div>
-                  </div>
-                </div>
-                <div className="btn">
-                  이벤트 만들기
-                </div>
-              </div> */}
               <SideMenu></SideMenu>
               <Outlet></Outlet>
             </div>
@@ -134,24 +121,6 @@ function App() {
           </Route>
           <Route path='/event_create' element={<>
             <div id="main">
-              {/* <div id="side_menu">
-                <div className="menu_container">
-                  <div className="container">
-                    <div className="menu" onClick={() => { navigate() }}>
-                      커뮤니티 정보
-                    </div>
-                    <div className="menu" onClick={() => { navigate() }}>
-                      이벤트 정보
-                    </div>
-                    <div className="menu" onClick={() => { navigate() }}>
-                      멤버 보기
-                    </div>
-                  </div>
-                </div>
-                <div className="btn">
-                  이벤트 만들기
-                </div>
-              </div> */}
               <SideMenu></SideMenu>
               <Outlet></Outlet>
             </div>
@@ -163,7 +132,7 @@ function App() {
           </Route>
           <Route path='/my_page' element={<>
             <div id="main">
-            <div id="side_menu_mp">
+              {/* <div id="side_menu_mp">
             <div className="menu_container">
               <div className="container">
                 <Link to='/my_page/dash_board'><div className="menu" onClick={() => { navigate() }}>
@@ -186,21 +155,35 @@ function App() {
             <div className="btn">
               이벤트 만들기
             </div>
-          </div>
+          </div> */}
+              <SideMenuMp></SideMenuMp>
               <Outlet></Outlet>
             </div>
           </>}>
             <Route path='dash_board' element={<DashBoard />}></Route>
             <Route path='current_event_state' element={<CurrentEventState />}></Route>
-            <Route path='my_page_info' element={<MyPageInfo/>}></Route>
-            <Route path='wish_box' element={<WishBox/>}></Route>
-            <Route path='my_page_setting' element={<MyPageSetting/>}></Route>
-            <Route path='dash_board_manager' element={<DashBoardManager/>}></Route>
-            <Route path='current_event_state_manager' element={<CurrentEventStateManager/>}></Route>
-            <Route path='member_info_manager' element={<MemberInfoManager/>}></Route>
-            <Route path='my_page_info_manager' element={<MyPageInfoManager/>}></Route>
-            <Route path='my_page_setting_manager' element={<MyPageSettingManager/>}></Route>
-            <Route path='activity_record_manager' element={<ActivityRecordManager/>}></Route>
+            <Route path='my_page_info' element={<MyPageInfo />}></Route>
+            <Route path='wish_box' element={<WishBox />}></Route>
+            <Route path='my_page_setting' element={<MyPageSetting />}></Route>
+            {/* <Route path='dash_board_manager' element={<DashBoardManager />}></Route>
+            <Route path='current_event_state_manager' element={<CurrentEventStateManager />}></Route>
+            <Route path='member_info_manager' element={<MemberInfoManager />}></Route>
+            <Route path='my_page_info_manager' element={<MyPageInfoManager />}></Route>
+            <Route path='my_page_setting_manager' element={<MyPageSettingManager />}></Route>
+            <Route path='activity_record_manager' element={<ActivityRecordManager />}></Route> */}
+          </Route>
+          <Route path='/manager' element={
+            <div id="main">
+              <SideMenuManager></SideMenuManager>
+              <Outlet></Outlet>
+            </div>
+          }>
+            <Route path='dash_board' element={<DashBoardManager />}></Route>
+            <Route path='current_event_state' element={<CurrentEventStateManager />}></Route>
+            <Route path='activity_record' element={<ActivityRecordManager />}></Route>
+            <Route path='member_info' element={<MemberInfoManager />}></Route>
+            <Route path='my_page_info' element={<MyPageInfoManager />}></Route>
+            <Route path='my_page_setting' element={<MyPageSettingManager />}></Route>
           </Route>
         </Routes>
       </div>

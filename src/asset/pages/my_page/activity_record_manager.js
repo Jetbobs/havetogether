@@ -218,4 +218,21 @@ function ActivityRecordManager(props){
     )
 }
 
+let smpArr = ['dash_board','event_state','my_info','wish_box','setting']
+let location = window.location.pathname;
+
+if(location == '/manager/activity_record'){
+  for(let i = 0; i < smpArr.length; i++){
+    $(`smp_${smpArr[i]}`).removeClass('active');
+  }
+  $('#smm_activity_record').addClass('active');
+
+  $('#hi_community').removeClass('active');
+  $('#hi_my_page').removeClass('active');
+
+  $('#hi_my_page').css('display','none');
+  $('#hi_manager').css('display','block');
+  $('#hi_manager').addClass('active');
+}
+
 export default ActivityRecordManager;

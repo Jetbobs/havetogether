@@ -242,4 +242,8 @@ function EventCreateMore(props) {
     </>
   )
 }
+
+$(function(){
+  $('#hi_community').addClass('active');
+})
 export default EventCreateMore;

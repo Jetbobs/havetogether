@@ -213,5 +213,23 @@ function EventDetail01(props){
           </>
     )
 }
+let smArr = ['community','event','member'];
 
+setTimeout(function(){
+
+},10)
+$(function(){
+  let location = window.location.pathname;
+
+  if(location.includes('/event_detail_01')){
+    $('#hi_community').addClass('active');
+    for(let i = 0; i < smArr.length; i++){
+      $(`#sm_${smArr[i]}`).removeClass('active');
+    }
+    setTimeout(function(){
+      $('#sm_event').addClass('active');
+    },10)
+
+  }
+});
 export default EventDetail01;

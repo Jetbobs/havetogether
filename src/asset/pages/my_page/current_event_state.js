@@ -317,6 +317,21 @@ $(function(){
     state[i].innerText = '종료';
     state[i].style.backgroundColor = '#000';
   }
+  let location = window.location.pathname;
+
+  let smpArr = ['dash_board','event_state','my_info','wish_box','setting']
+
+  if(location == '/my_page/current_event_state'){
+    for(let i = 0; i < smpArr.length; i++){
+      $(`smp_${smpArr[i]}`).removeClass('active');
+    }
+    $('#smp_event_state').addClass('active');
+  
+    $('#hi_community').removeClass('active');
+    $('#hi_my_page').removeClass('active');
+    $('#hi_my_page').addClass('active');
+  }
+
 })
 
 export default CurrentEventState;

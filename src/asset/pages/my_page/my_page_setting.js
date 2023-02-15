@@ -96,28 +96,6 @@ function MyPageSetting(props) {
 
         </div>
       </div>
-      {/* <div className="modal" id='account_delete'>
-        <div className="modal_bg"></div>
-        <div className="contents">
-          <div className="title">
-            계정 탈퇴
-            <div className="icon">
-              <FontAwesomeIcon icon={faX}></FontAwesomeIcon>
-            </div>
-          </div>
-          <div className="desc">
-            Have Together를 탈퇴하고, 해당 계정 정보를 삭제할까요?
-          </div>
-          <div className="btn_wrapper">
-            <div className="btn" id='cancel'>
-              취소
-            </div>
-            <div className="btn" id='delete'>
-              계정 탈퇴
-            </div>
-          </div>
-        </div>
-      </div> */}
       {
         modalAD == true ? <Modal id={'account_delete'} title={'계정 탈퇴'} desc={' Have Together를 탈퇴하고, 해당 계정 정보를 삭제할까요?'} btn={[{ id: 'btn_cancel', name: '취소'}, { id: 'btn_delete', name: '계정 탈퇴', link: '/'  }]} func={[() => {modalADSet(false)}, () => { }]}>
         </Modal> : null
@@ -125,5 +103,25 @@ function MyPageSetting(props) {
     </>
   )
 }
+
+let location = window.location.pathname;
+
+let smpArr = ['dash_board','event_state','my_info','wish_box','setting']
+
+$(function(){
+  if(location == '/my_page/my_page_setting'){
+    for(let i = 0; i < smpArr.length; i++){
+      $(`smp_${smpArr[i]}`).removeClass('active');
+    }
+  
+  
+    $('#hi_community').removeClass('active');
+    $('#hi_my_page').removeClass('active');
+  
+    $('#hi_my_page').addClass('active');
+    
+    $('#smp_setting').addClass('active');
+  }
+})
 
 export default MyPageSetting;

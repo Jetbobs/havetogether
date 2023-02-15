@@ -10,13 +10,13 @@ function SideMenu(props){
         <div id="side_menu">
         <div className="menu_container">
           <div className="container">
-            <div className="menu" onClick={() => { navigate() }}>
+            <div className="menu" id="sm_community" onClick={() => { navigate() }}>
               커뮤니티 정보
             </div>
-            <div className="menu" onClick={() => { navigate() }}>
+            <div className="menu" id="sm_event" onClick={() => { navigate() }}>
               이벤트 정보
             </div>
-            <div className="menu" onClick={() => { navigate() }}>
+            <div className="menu" id="sm_member" onClick={() => { navigate() }}>
               멤버 보기
             </div>
           </div>

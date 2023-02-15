@@ -286,4 +286,21 @@ function DashBoardManager(props) {
   )
 }
 
+let smpArr = ['dash_board','event_state','my_info','wish_box','setting']
+let location = window.location.pathname;
+
+if(location == '/manager/dash_board'){
+  for(let i = 0; i < smpArr.length; i++){
+    $(`smp_${smpArr[i]}`).removeClass('active');
+  }
+  $('#smm_dash_board').addClass('active');
+
+  $('#hi_community').removeClass('active');
+  $('#hi_my_page').removeClass('active');
+
+  $('#hi_my_page').css('display','none');
+  $('#hi_manager').css('display','block');
+  $('#hi_manager').addClass('active');
+}
+
 export default DashBoardManager;
