@@ -3,7 +3,7 @@ import groupImg from '../../img/group_img_00.png';
 import '../../css/pages/community/commu_info_style.scss';
 //data
 import bgData from '../../data/bg/bg_data';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import cardData from '../../data/card/card_data';
 //components
 import Bg from '../../../components/bg/bg';
@@ -22,6 +22,13 @@ function CommuInfo(props) {
     { id: 'alumni', title: '졸업한 알럼나이', count: 'NNN' + '명' }]);
   let [bg, bgSet] = useState(bgData);
   let [card, cardSet] = useState(cardData);
+
+  useEffect(()=>{
+        
+
+    $('#hi_community').addClass('active');
+    $('#sm_community').addClass('active');
+  },[])
 
   return (
     <div id="commu_info">
@@ -50,14 +57,7 @@ $(function(){
   let location = window.location.pathname;
 
   if(location == ('/community/commu_info')){
-    let smArr = ['community','event','member'];
-    $('#sm_community').removeClass('active');
 
-    for(let i = 0; i < smArr.length; i++){
-      $(`#sm_${smArr[i]}`).removeClass('active');
-    }
-    $('#hi_community').addClass('active');
-    $('#sm_community').addClass('active');
   }
 });
 

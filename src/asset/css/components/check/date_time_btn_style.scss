@@ -1,34 +1,6 @@
 @use '../../common/color.scss';
 
-// .input_btn_d{
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     gap: 10.1px;
-//     .title{
-//       font-size: 12px;
-//       font-weight: bold;
-//       line-height: 1.6;
-//       text-align: center;
-//     }
-//     .input_time{
-//       span{
-//         display: flex;
-//         box-sizing: border-box;
-//         color: #969696;
-//         font-size: 14px;
-//         font-weight: 600;
-//         line-height: 1.6;
-//         padding: 3px 10.1px;
-//         border: 0.63px solid #969696;
-//         border-radius: 5.05px;
-//         cursor: pointer;
-//       }
-//     }
-//   }
-
-  .time_week_wrapper{
+.time_week_wrapper{
     display: flex;
     flex-direction: column;
     gap: 8px;

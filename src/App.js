@@ -65,6 +65,7 @@ function App() {
         <GlobalStyles />
       </>
       <div className="main_container">
+        {/* 헤더 */}
         <header>
           <div id="logo">
             <img src={logo} alt="" />
@@ -105,6 +106,7 @@ function App() {
           <Route path='/test' element={<ResponsiveExample />} />
           <Route path='/test2' element={<AutoLayoutExample />} />
         </Routes>
+        {/* 커뮤니티 */}
         <Routes>
           <Route path='/community' element={<>
             <div id="main">
@@ -119,6 +121,7 @@ function App() {
             <Route path='event_detail_01' element={<EventDetail01 />}></Route>
             <Route path='matching' element={<Matching />}></Route>
           </Route>
+          {/* event_create */}
           <Route path='/event_create' element={<>
             <div id="main">
               <SideMenu></SideMenu>
@@ -130,32 +133,9 @@ function App() {
             <Route path='edit' element={<EventEdit />}></Route>
             <Route path='edit_more' element={<EventEditMore />}></Route>
           </Route>
+          {/* 마이페이지 */}
           <Route path='/my_page' element={<>
             <div id="main">
-              {/* <div id="side_menu_mp">
-            <div className="menu_container">
-              <div className="container">
-                <Link to='/my_page/dash_board'><div className="menu" onClick={() => { navigate() }}>
-                  대시보드
-                </div></Link>
-                <Link to='/my_page/current_event_state'><div className="menu" onClick={() => { navigate() }}>
-                  이벤트 참가 현황
-                </div></Link>
-                <Link to='/my_page'><div className="menu" onClick={() => { navigate() }}>
-                  내 정보
-                </div></Link>
-                <Link to='/my_page/wish_box'><div className="menu" onClick={() => { navigate() }}>
-                  소망 상자
-                </div></Link>
-                <div className="menu" onClick={() => { navigate() }}>
-                  설정
-                </div>
-              </div>
-            </div>
-            <div className="btn">
-              이벤트 만들기
-            </div>
-          </div> */}
               <SideMenuMp></SideMenuMp>
               <Outlet></Outlet>
             </div>
@@ -165,13 +145,8 @@ function App() {
             <Route path='my_page_info' element={<MyPageInfo />}></Route>
             <Route path='wish_box' element={<WishBox />}></Route>
             <Route path='my_page_setting' element={<MyPageSetting />}></Route>
-            {/* <Route path='dash_board_manager' element={<DashBoardManager />}></Route>
-            <Route path='current_event_state_manager' element={<CurrentEventStateManager />}></Route>
-            <Route path='member_info_manager' element={<MemberInfoManager />}></Route>
-            <Route path='my_page_info_manager' element={<MyPageInfoManager />}></Route>
-            <Route path='my_page_setting_manager' element={<MyPageSettingManager />}></Route>
-            <Route path='activity_record_manager' element={<ActivityRecordManager />}></Route> */}
           </Route>
+          {/* 관리자 */}
           <Route path='/manager' element={
             <div id="main">
               <SideMenuManager></SideMenuManager>

@@ -6,9 +6,22 @@ import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass } fro
 import '../../css/pages/my_page/activity_record_manager_style.scss';
 //jquery
 import $ from 'jquery';
+import { useEffect } from 'react';
 
 
 function ActivityRecordManager(props){
+
+  useEffect(()=>{
+    $('#smm_activity_record').addClass('active');
+
+    $('#hi_community').removeClass('active');
+    $('#hi_my_page').removeClass('active');
+  
+    $('#hi_my_page').css('display','none');
+    $('#hi_manager').css('display','block');
+    $('#hi_manager').addClass('active');
+  },[])
+
     return(
         <div id="activity_record_manager">
         <div id="info_title">

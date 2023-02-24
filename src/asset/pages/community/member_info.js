@@ -1,6 +1,6 @@
 import userPic from '../../img/pic.png';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 //fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -19,6 +19,10 @@ function MemberInfo(props) {
   let [header, headerSet] = useState(headerData);
   let [user, userSet] = useState(userCardData);
 
+  useEffect(()=>{
+    $('#hi_community').addClass('active');
+    $('#sm_member').addClass('active');
+  },[])
   return (
     <>
       <div id="member_info">
@@ -274,8 +278,7 @@ $(function(){
     for(let i = 0; i < smArr.length; i++){
       $(`#sm_${smArr[i]}`).removeClass('active');
     }
-    $('#hi_community').addClass('active');
-    $('#sm_community').addClass('active');
+
   }
 });
 

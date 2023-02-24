@@ -1,10 +1,18 @@
+import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import $ from 'jquery';
 
 function SideMenuManager(props){
-
+  let smmArr = ['dash_board','event_state','activity_record','member_info','my_page_info','setting']
     let navigate = useNavigate();
+    let location = window.location.pathname;
+    useEffect(()=>{
+      for(let i = 0; i < smmArr.length; i++){
+        $(`#smm_${smmArr[i]}`).removeClass('active');
+      }
+    },[location])
 
     return(
       <div id="side_menu_mp">

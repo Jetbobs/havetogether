@@ -4,8 +4,21 @@ import { FontAwesomeIcon, Outlet } from '@fortawesome/react-fontawesome';
 import '../../css/pages/my_page/my_page_setting_manager_style.scss';
 //jquery
 import $ from 'jquery';
+import { useEffect } from 'react';
 
 function MyPageSettingManager(props){
+
+  useEffect(()=>{
+    $('#smm_setting').addClass('active');
+
+    $('#hi_community').removeClass('active');
+    $('#hi_my_page').removeClass('active');
+  
+    $('#hi_my_page').css('display','none');
+    $('#hi_manager').css('display','block');
+    $('#hi_manager').addClass('active');
+  },[])
+
     return(
         <div id="my_page_setting_manager">
         <div className="header">

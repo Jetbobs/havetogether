@@ -139,57 +139,6 @@ function ModalMuJoin(props) {
                     관심사, 취미를 알려주세요
                 </div>
                 <div className="hobbies_wrapper">
-                    {/* <div className="hobby_wrapper" id='mj_hw_00'>
-                        <span className="hobby">
-                            신문물
-                        </span>
-                        <span className="hobby">
-                            운동
-                        </span>
-                        <span className="hobby">
-                            반려동물
-                        </span>
-                        <span className="hobby">
-                            독서
-                        </span>
-                        <span className="hobby">
-                            자기계발
-                        </span>
-                    </div>
-                    <div className="hobby_wrapper" id='mj_hw_01'>
-                        <span className="hobby">
-                            외국어
-                        </span>
-                        <span className="hobby">
-                            맛집
-                        </span>
-                        <span className="hobby">
-                            여행
-                        </span>
-                        <span className="hobby">
-                            음악
-                        </span>
-                        <span className="hobby">
-                            공연
-                        </span>
-                        <span className="hobby">
-                            영화
-                        </span>
-                    </div>
-                    <div className="hobby_wrapper" id='mj_hw_02'>
-                        <span className="hobby">
-                            커피
-                        </span>
-                        <span className="hobby">
-                            맛집
-                        </span>
-                        <span className="hobby">
-                            주식
-                        </span>
-                        <span className="hobby">
-                            투자
-                        </span>
-                    </div> */}
                     <div className="hobby_wrapper">
                         {
                             hobbyArr.map((a,i)=>{

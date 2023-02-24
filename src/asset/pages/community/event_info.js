@@ -10,7 +10,7 @@ import EventCard02 from "../../../components/common/card/event_card_02";
 //data
 import headerData from "../../data/header/header_data";
 import cardData from "../../data/card/card_data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 //jquery
 // import $ from 'jquery';
 
@@ -18,6 +18,12 @@ function EventInfo(props) {
 
   let [header, headerSet] = useState(headerData);
   let [card, cardSet] = useState(cardData);
+
+  useEffect(()=>{
+
+    $('#hi_community').addClass('active');
+    $('#sm_event').addClass('active');
+  },[])
   return (
     <div id="event_info">
       <Header header={header} i={0}></Header>
@@ -50,14 +56,7 @@ $(function(){
   let location = window.location.pathname;
 
   if(location == ('/community/event_info')){
-    let smArr = ['community','event','member'];
-    $('#sm_community').removeClass('active');
 
-    for(let i = 0; i < smArr.length; i++){
-      $(`#sm_${smArr[i]}`).removeClass('active');
-    }
-    $('#hi_community').addClass('active');
-    $('#sm_community').addClass('active');
   }
 });
 

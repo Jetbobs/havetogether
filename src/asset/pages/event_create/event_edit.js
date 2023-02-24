@@ -5,7 +5,10 @@ import { faCircleUser, faEllipsisVertical, faArrowRight } from '@fortawesome/fre
 import '../../css/pages/event_create/event_edit_style.scss';
 //components
 import Modal from "../../../components/modal/modal";
+import Input from '../../../components/input/input';
 import { useState } from "react";
+//data
+import { inputData00, inputData01, inputData02, inputData03 } from '../../data/input/event_create/event_create_data';
 //jquery
 import $ from 'jquery';
 
@@ -14,6 +17,10 @@ function EventEdit(props) {
   let [modalECancel, modalECancelSet] = useState(false);
   let [modalEditConfirm, modalEditConfirmSet] = useState(false);
 
+  let [input00, input00Set] = useState(inputData00);
+  let [input01, input01Set] = useState(inputData01);
+  let [input02, input02Set] = useState(inputData02);
+  let [input03, input03Set] = useState(inputData03);
   return (
     <>
       <div id="event_edit">
@@ -78,39 +85,13 @@ function EventEdit(props) {
                   </div>
 
                 </div>
-                <div className="input">
-                  <div className="text_container">
-                    <div className="title">
-                      관련 URL
-                    </div>
-                    <div className="desc">
-
-                    </div>
-                  </div>
-                  <input type="text" />
-                </div>
-                <div className="input">
-                  <div className="text_container">
-                    <div className="title">
-                      이벤트 일자
-                    </div>
-                    <div className="desc">
-                      * 이벤트 만들기 이후에는 수정 불가능
-                    </div>
-                  </div>
-                  <input type="text" />
-                </div>
-                <div className="input">
-                  <div className="text_container">
-                    <div className="title">
-                      참가자 정원
-                    </div>
-                    <div className="desc">
-                      *이벤트 만들기 이후에는 수정 불가능
-                    </div>
-                  </div>
-                  <input type="text" />
-                </div>
+                {
+                  inputData01.map((a, i) => {
+                    return (
+                      <Input inputData={inputData01} i={i}></Input>
+                    )
+                  })
+                }
               </div>
             </div>
           </div>
@@ -142,7 +123,7 @@ function EventEdit(props) {
     </>
   )
 }
-$(function(){
+$(function () {
   $('#hi_community').addClass('active');
 })
 export default EventEdit;

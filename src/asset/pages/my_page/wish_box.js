@@ -5,13 +5,36 @@ import '../../css/pages/my_page/wish_box_style.scss';
 
 //components
 import Modal from '../../../components/modal/modal';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 //jquery
 import $ from 'jquery';
 
 function WishBox(props) {
   let [enterBtn, enterBtnSet] = useState(false);
   let [modalEnterCancel, modalEnterCancelSet] = useState(false);
+  let location = window.location.pathname;
+  
+
+  useEffect(()=>{
+    let smpArr = ['dash_board','event_state','my_info','wish_box','setting']
+    // for(let i = 0; i < smpArr.length; i++){
+    //   $(`#smp_${smpArr[i]}`).removeClass('active');
+    // }
+  
+  
+    $('#hi_community').removeClass('active');
+    $('#hi_my_page').removeClass('active');
+  
+    $('#hi_my_page').addClass('active');
+    
+    $('#smp_wish_box').addClass('active');
+  },[])
+  // useEffect(()=>{
+  //   let smpArr = ['dash_board','event_state','my_info','wish_box','setting']
+  //   for(let i = 0; i < smpArr.length; i++){
+  //     $(`#smp_${smpArr[i]}`).removeClass('active');
+  //   }
+  // },[location])
 
   return (
     <>
@@ -83,21 +106,6 @@ function WishBox(props) {
           </div>
         </div>
         <div className="btn_wrapper">
-          {/* <div className="btn_container" id='enter'>
-            <div className="btn">
-              입력하기
-            </div>
-          </div>
-          <div className="btn_container" id='complete'>
-            <div className="btn">
-              입력 완료
-            </div>
-          </div>
-          <div className="btn_container" id='cancel' onClick={()=>{modalEnterCancelSet(true)}}>
-            <div className="btn">
-              입력 취소
-            </div>
-          </div> */}
           {
             enterBtn == false ? <div className="btn_container" id='enter'>
             <div className="btn" onClick={()=>{enterBtnSet(true)}}>
@@ -128,24 +136,24 @@ function WishBox(props) {
   )
 }
 
-let location = window.location.pathname;
+
 
 let smpArr = ['dash_board','event_state','my_info','wish_box','setting']
 
-$(function(){
-  if(location == '/my_page/wish_box'){
-    for(let i = 0; i < smpArr.length; i++){
-      $(`smp_${smpArr[i]}`).removeClass('active');
-    }
+// $(function(){
+//   if(location == '/my_page/wish_box'){
+//     for(let i = 0; i < smpArr.length; i++){
+//       $(`smp_${smpArr[i]}`).removeClass('active');
+//     }
   
   
-    $('#hi_community').removeClass('active');
-    $('#hi_my_page').removeClass('active');
+//     $('#hi_community').removeClass('active');
+//     $('#hi_my_page').removeClass('active');
   
-    $('#hi_my_page').addClass('active');
+//     $('#hi_my_page').addClass('active');
     
-    $('#smp_wish_box').addClass('active');
-  }
-})
+//     $('#smp_wish_box').addClass('active');
+//   }
+// })
 
 export default WishBox;

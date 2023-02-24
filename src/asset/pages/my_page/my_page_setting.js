@@ -4,13 +4,22 @@ import { FontAwesomeIcon, Outlet } from '@fortawesome/react-fontawesome';
 import '../../css/pages/my_page/my_page_setting_style.scss';
 //components
 import Modal from '../../../components/modal/modal';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 //jquery
 import $ from 'jquery';
 
 function MyPageSetting(props) {
 
   let [modalAD, modalADSet] = useState(false);
+
+  useEffect(()=>{
+    $('#hi_community').removeClass('active');
+    $('#hi_my_page').removeClass('active');
+  
+    $('#hi_my_page').addClass('active');
+    
+    $('#smp_setting').addClass('active');
+  })
 
   return (
     <>
@@ -104,24 +113,24 @@ function MyPageSetting(props) {
   )
 }
 
-let location = window.location.pathname;
+// let location = window.location.pathname;
 
-let smpArr = ['dash_board','event_state','my_info','wish_box','setting']
+// let smpArr = ['dash_board','event_state','my_info','wish_box','setting']
 
-$(function(){
-  if(location == '/my_page/my_page_setting'){
-    for(let i = 0; i < smpArr.length; i++){
-      $(`smp_${smpArr[i]}`).removeClass('active');
-    }
+// $(function(){
+//   if(location == '/my_page/my_page_setting'){
+//     for(let i = 0; i < smpArr.length; i++){
+//       $(`smp_${smpArr[i]}`).removeClass('active');
+//     }
   
   
-    $('#hi_community').removeClass('active');
-    $('#hi_my_page').removeClass('active');
+//     $('#hi_community').removeClass('active');
+//     $('#hi_my_page').removeClass('active');
   
-    $('#hi_my_page').addClass('active');
+//     $('#hi_my_page').addClass('active');
     
-    $('#smp_setting').addClass('active');
-  }
-})
+//     $('#smp_setting').addClass('active');
+//   }
+// })
 
 export default MyPageSetting;

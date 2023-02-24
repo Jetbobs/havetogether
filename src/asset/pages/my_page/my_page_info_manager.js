@@ -6,8 +6,21 @@ import hostPic from '../../img/host_img00.png';
 import '../../css/pages/my_page/my_page_info_manager_style.scss';
 //jquery
 import $ from 'jquery';
+import { useEffect } from 'react';
 
 function MyPageInfoManager(props) {
+
+  useEffect(()=>{
+    $('#smm_my_page_info').addClass('active');
+
+    $('#hi_community').removeClass('active');
+    $('#hi_my_page').removeClass('active');
+  
+    $('#hi_my_page').css('display','none');
+    $('#hi_manager').css('display','block');
+    $('#hi_manager').addClass('active');
+  },[])
+
   return (
     <div id="my_page_info_manager">
       <div className="page_title">

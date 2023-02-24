@@ -1,5 +1,26 @@
+@use '../../common/color.scss';
+
 .input_btn_i{
     span{
+      display: flex;
+      box-sizing: border-box;
+      color: #969696;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.6;
+      padding: 3px 10.1px;
+      border: 0.63px solid #969696;
+      border-radius: 5.05px;
+      cursor: pointer;
+    }
+    input{
+      display: none;
+    }
+    input:checked + label{
+      color: color.$white;
+      background-color: color.$green;
+    }
+    label{
       display: flex;
       box-sizing: border-box;
       color: #969696;

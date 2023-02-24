@@ -5,6 +5,7 @@ import { faCircleUser, faEllipsisVertical, faArrowRight } from '@fortawesome/fre
 import '../../css/pages/event_create/event_create_style.scss';
 //components
 import Input from '../../../components/input/input';
+import CheckBox from '../../../components/common/check/check_box';
 //data
 import { inputData00, inputData01, inputData02, inputData03 } from '../../data/input/event_create/event_create_data';
 import { useState } from 'react';
@@ -21,6 +22,14 @@ function EventCreateMore(props) {
   let [input01, input01Set] = useState(inputData01);
   let [input02, input02Set] = useState(inputData02);
   let [input03, input03Set] = useState(inputData03);
+
+  let [checkBox, checkBoxSet] = useState([
+    {title : '참가목적', desc : '텍스트 박스(최대 500자'},
+    {title : '참가 후기', desc : '텍스트 박스(최대 500자)'},
+    {title : '한줄평', desc : '텍스트 박스(최대 100자)'},
+    {title : '점수', desc : '10점 만점'},
+    {title : '인증샷', desc : '이미지 파일 업로드 기능'}
+  ])
 
   let[modalECConfirmMore, modalECConfirmMoreSet] = useState(false);
 
@@ -147,51 +156,13 @@ function EventCreateMore(props) {
                     </div>
                   </div>
                   <div className="checkbox_container">
-                    <div className="checkbox">
-                      <input type="checkbox" id='check_00' />
-                      <label htmlFor="check_00"></label>
-                      <div className="text_wrapper">
-                        <div className="text">
-                          참가 목적 <strong>/ 텍스트 박스(최대 500자)</strong>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="checkbox">
-                      <input type="checkbox" id='check_01' />
-                      <label htmlFor="check_01"></label>
-                      <div className="text_wrapper">
-                        <div className="text">
-                          참가 후기 <strong>/ 텍스트 박스(최대 500자)</strong>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="checkbox">
-                      <input type="checkbox" id='check_02' />
-                      <label htmlFor="check_02"></label>
-                      <div className="text_wrapper">
-                        <div className="text">
-                          한줄평 <strong>/ 텍스트 박스(최대 100자)</strong>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="checkbox">
-                      <input type="checkbox" id='check_03' />
-                      <label htmlFor="check_03"></label>
-                      <div className="text_wrapper">
-                        <div className="text">
-                          점수 <strong>/ 10점 만점</strong>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="checkbox">
-                      <input type="checkbox" id='check_04' />
-                      <label htmlFor="check_04"></label>
-                      <div className="text_wrapper">
-                        <div className="text">
-                          인증샷 <strong>/ 이미지 파일 업로드 기능</strong>
-                        </div>
-                      </div>
-                    </div>
+                    {
+                      checkBox.map((a,i)=>{
+                        return(
+                          <CheckBox checkBox={checkBox} i={i}></CheckBox>
+                        )
+                      })
+                    }
                   </div>
                 </div>
               </div>

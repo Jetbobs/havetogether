@@ -120,7 +120,14 @@
         }
         #week{
           .title{
-            margin-bottom: 8px;
+            display: flex;
+            .input_btn_d{
+              .title{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            }
           }
         }
         #mbti{

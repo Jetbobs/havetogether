@@ -6,9 +6,13 @@ import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass, faAr
 import '../../css/pages/my_page/dash_board_style.scss';
 //modal
 import ModalMuJoin from "../../../components/modal/modal_mu_join";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 //jquery
 // import $ from 'jquery';
+//data
+import CardEventData from '../../data/card/card_event_data';
+//components
+import CardEvent from '../../../components/common/card/card_event';
 
 function DashBoard(props) {
 
@@ -33,8 +37,22 @@ function DashBoard(props) {
     {id : 'reward', title: '참가 리워드'},
     {id : 'met_ppl', title: '만난 사람들'}]);
 
+    let [CardEventD, CardEventDSet] = useState(CardEventData);
+
   //JS
   //참가현황 색변경
+
+  useEffect(()=>{
+    let smpArr = ['dash_board','event_state','my_info','wish_box','setting']
+    // for(let i = 0; i < smpArr.length; i++){
+    //   $(`#smp_${smpArr[i]}`).removeClass('active');
+    // }
+    $('#smp_dash_board').addClass('active');
+  
+    $('#hi_community').removeClass('active');
+    $('#hi_my_page').removeClass('active');
+    $('#hi_my_page').addClass('active');
+  },[])
   
 
   console.log(document.querySelectorAll('.item'));
@@ -166,46 +184,6 @@ function DashBoard(props) {
                   참가 현황
                 </div>
                 <div className="item_wrapper">
-                  {/* <div className="item" id='coming_event'>
-                    <div className="title">
-                      참가예정 이벤트
-                    </div>
-                    <div className="desc orange">
-                      NN개
-                    </div>
-                  </div>
-                  <div className="item" id='complete_event'>
-                    <div className="title">
-                      참가완료 이벤트
-                    </div>
-                    <div className="desc">
-                      NN개
-                    </div>
-                  </div>
-                  <div className="item" id='review'>
-                    <div className="title">
-                      작성한 후기
-                    </div>
-                    <div className="desc orange">
-                      NN개
-                    </div>
-                  </div>
-                  <div className="item" id='reward'>
-                    <div className="title">
-                      참가 리워드
-                    </div>
-                    <div className="desc gray">
-                      NN개
-                    </div>
-                  </div>
-                  <div className="item" id='met_ppl'>
-                    <div className="title">
-                      만난 사람들
-                    </div>
-                    <div className="desc">
-                      NN개
-                    </div>
-                  </div> */}
                   {
                     currentJoin.map((a,e)=>{
                       return(
@@ -230,42 +208,13 @@ function DashBoard(props) {
               참가예정 이벤트 <span>NN개</span>
             </div>
             <div className="card_container">
-              <div className="card">
-                <div className="card_wrapper">
-                  <div className="title">
-                    MARU Meet Up
-                  </div>
-                  <div className="desc orange">
-                    오늘
-                  </div>
-                </div>
-                <div className="card_wrapper">
-                  <div className="date">
-                    2022. 10. 3(월) ~7(금)
-                  </div>
-                  <div className="writer">
-                    마루 요정 🧚
-                  </div>
-                </div>
-              </div>
-              <div className="card">
-                <div className="card_wrapper">
-                  <div className="title">
-                    치맥하실 야근러 모집!!
-                  </div>
-                  <div className="desc orange">
-                    오늘
-                  </div>
-                </div>
-                <div className="card_wrapper">
-                  <div className="date">
-                    2022. 9. 30(금) 오후 7시
-                  </div>
-                  <div className="writer">
-                    UNISTY TOMAS
-                  </div>
-                </div>
-              </div>
+              {
+                CardEventD.CardEventDataComing.map((a,i)=>{
+                  return(
+                    <CardEvent CardEvent={CardEventD.CardEventDataComing} i={i}></CardEvent>
+                  )
+                })
+              }
             </div>
           </div>
           <div className="event_container">
@@ -273,78 +222,13 @@ function DashBoard(props) {
               참가완료 이벤트 <span>NN개</span>
             </div>
             <div className="card_container">
-              <div className="card">
-                <div className="card_wrapper">
-                  <div className="title">
-                    개발 스터디원 모집
-                  </div>
-                  <div className="desc purple">
-                    후기 작성 필요
-                  </div>
-                </div>
-                <div className="card_wrapper">
-                  <div className="date">
-                    2022. 10. 3(월) ~7(금)
-                  </div>
-                  <div className="writer">
-                    마루 요정 🧚
-                  </div>
-                </div>
-              </div>
-              <div className="card">
-                <div className="card_wrapper">
-                  <div className="title">
-                    개발 스터디원 모집
-                  </div>
-                  <div className="desc purple">
-                    후기 작성 필요
-                  </div>
-                </div>
-                <div className="card_wrapper">
-                  <div className="date">
-                    2022. 10. 3(월) ~7(금)
-                  </div>
-                  <div className="writer">
-                    마루 요정 🧚
-                  </div>
-                </div>
-              </div>
-              <div className="card">
-                <div className="card_wrapper">
-                  <div className="title">
-                    치맥하실 야근러 모집!!
-                  </div>
-                  <div className="desc green">
-                    리워드 사용하기
-                  </div>
-                </div>
-                <div className="card_wrapper">
-                  <div className="date">
-                    2022. 9. 30(금) 오후 7시
-                  </div>
-                  <div className="writer">
-                    UNISTY TOMAS
-                  </div>
-                </div>
-              </div>
-              <div className="card">
-                <div className="card_wrapper">
-                  <div className="title">
-                    치맥하실 야근러 모집!!
-                  </div>
-                  <div className="desc green">
-                    리워드 사용하기
-                  </div>
-                </div>
-                <div className="card_wrapper">
-                  <div className="date">
-                    2022. 9. 30(금) 오후 7시
-                  </div>
-                  <div className="writer">
-                    UNISTY TOMAS
-                  </div>
-                </div>
-              </div>
+                            {
+                CardEventD.CardEventDataComplete.map((a,i)=>{
+                  return(
+                    <CardEvent CardEvent={CardEventD.CardEventDataComplete} i={i}></CardEvent>
+                  )
+                })
+              }
             </div>
           </div>
         </div>
@@ -360,20 +244,15 @@ $(function(){
   $('#review .desc').addClass('orange');
   $('#reward .desc').addClass('gray');
 
-  let smpArr = ['dash_board','event_state','my_info','wish_box','setting']
-  let location = window.location.pathname;
-
-  if(location == '/my_page/dash_board'){
-    for(let i = 0; i < smpArr.length; i++){
-      $(`smp_${smpArr[i]}`).removeClass('active');
+  document.querySelectorAll('.card_wrapper .desc').forEach(function(a,i){
+    if(a.innerHTML == '오늘'){
+      a.classList.add('orange')
+    } else if(a.innerHTML == '후기 작성 필요'){
+      a.classList.add('purple')
+    } else if(a.innerHTML == '리워드 사용하기'){
+      a.classList.add('green')
     }
-    $('#smp_dash_board').addClass('active');
-  
-    $('#hi_community').removeClass('active');
-    $('#hi_my_page').removeClass('active');
-    $('#hi_my_page').addClass('active');
-  }
-
+  })
 
 
 })

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faEllipsisVertical, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import userPic from '../../img/pic.png';
 import '../../css/pages/my_page/my_page_info_style.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 //data
 import userCardData from '../../data/card/user_card_data';
 //components
@@ -18,6 +18,15 @@ function MyPageInfo(props) {
   let [editBtn, editBtnSet] = useState(false);
   let [modalEnterCancel, modalEnterCancelSet] = useState(false);
   let [user, userSet] = useState(userCardData);
+
+  useEffect(()=>{
+    $('#hi_community').removeClass('active');
+    $('#hi_my_page').removeClass('active');
+  
+    $('#hi_my_page').addClass('active');
+    
+    $('#smp_my_info').addClass('active');
+  },[])
 
   return (
     <div id="my_page_info">

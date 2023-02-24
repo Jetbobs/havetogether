@@ -10,6 +10,9 @@ import LoginHeader from '../../../components/login/login_header';
 import LoginInfoInput from '../../../components/login/login_input';
 import LoginInfoButton from '../../../components/login/login_info_button';
 import BasicButton from '../../../components/common/basic_button';
+import DateTimeBtn from '../../../components/common/check_btn/date_time_btn';
+import CheckBoxBtn from '../../../components/common/check/check_box_btn';
+// import CheckInputTime from '../../../components/common/check_btn/date_time_btn';
 //data
 import infoInputData from '../../data/login/info_input_more/info_input_data';
 import dateButtonData from '../../data/login/info_input_more/date_button_data';
@@ -24,16 +27,37 @@ function InfoInputMore(props) {
 
   let [button, buttonSet] = useState([{ 'name': '입력완료', 'id': 'complete' }]);
   let input_array_0 = ['email', 'pw_change'];
-  
+
   let [inputData, inputDataSet] = useState(infoInputData);
   let [dateButton, dateButtonSet] = useState(dateButtonData);
 
   let [interest, interestSet] = useState(interestData);
   let [hobby, hobbytSet] = useState(hobbyData);
-  let [talkType, talkTypeSet ] = useState(talkTypeData);
+  let [talkType, talkTypeSet] = useState(talkTypeData);
 
-  let [inputBtnInfo, inputBtnInfoSet] = useState([{title : '관심사를 알려주세요.', data : interest},{title : '취미를 알려주세요.', data : hobby},{title : '대화 성향을 알려주세요.', data : talkType}])
+  let [inputBtnInfo, inputBtnInfoSet] = useState([
+    { title: '관심사를 알려주세요.', data: interest }, 
+    { title: '취미를 알려주세요.', data: hobby }, 
+    { title: '대화 성향을 알려주세요.', data: talkType }])
+  let [hobbyArr, hobbyArrSet] = useState([
+  { id: 'new_tech', title: '신문물' },
+  { id: 'excercise', title: '운동' },
+  { id: 'pet', title: '반려 동물' },
+  { id: 'reading', title: '독서' },
+  { id: 'self_development', title: '자기계발' },
+  { id: 'foreign_lang', title: '외국어' },
+  { id: 'hot_restaurant', title: '맛집' },
+  { id: 'trip', title: '여행' },
+  { id: 'music', title: '음악' },
+  { id: 'consert', title: '공연' },
+  { id: 'movie', title: '영화' },
+  { id: 'coffee', title: '커피' },
+  { id: 'hot_restaurant_01', title: '맛집' },
+  { id: 'stock', title: '주식' },
+  { id: 'investment', title: '투자' }])
 
+  // date 
+  let [dateTime, dateTimeSet] = useState([{ id: 'm_11', time: '11:30' }])
   console.log(dateButton);
   return (
     <div id="info_input_more">
@@ -67,17 +91,18 @@ function InfoInputMore(props) {
               </div>
               <div className="input_btn_container">
                 {
-                  dateButton.map((a,i) => {
-                    return(
-                      <LoginDateButton dateButton={dateButton} i={i}></LoginDateButton>
+                  dateButton.map((a, i) => {
+                    return (
+                      <DateTimeBtn dateButton={dateButton} i={i}></DateTimeBtn>
                     )
                   })
                 }
+
               </div>
             </div>
             {
-              inputBtnInfo.map((a,i)=>{
-                return(
+              inputBtnInfo.map((a, i) => {
+                return (
                   <LoginInfoButton title={inputBtnInfo[i].title} infoInput={inputBtnInfo[i].data}></LoginInfoButton>
                 )
               })
@@ -94,10 +119,10 @@ function InfoInputMore(props) {
   )
 }
 
-$(function(){
+$(function () {
   let location = window.location.pathname;
 
-  if(location == '/info_input_more'){
+  if (location == '/info_input_more') {
     $('#hi_my_page').addClass('active');
   }
 })

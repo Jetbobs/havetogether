@@ -1,7 +1,7 @@
 //css
-import '../../asset/css/components/login/login_date_button_style.scss';
+import '../../../asset/css/components/check/date_time_btn_style.scss';
 
-function LoginDateButton(props){
+function DateTimeBtn(props){
 
     let id = props.dateButton[props.i].id;
     let title = props.dateButton[props.i].title;
@@ -29,4 +29,4 @@ function LoginDateButton(props){
     )
 }
 
-export default LoginDateButton;
+export default DateTimeBtn;
