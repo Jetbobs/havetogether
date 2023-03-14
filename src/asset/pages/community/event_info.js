@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import groupImg from '../../img/group_img_00.png';
 import '../../css/pages/community/event_info_style.scss';
 import $ from'jquery';
@@ -15,9 +16,12 @@ import { useEffect, useState } from "react";
 // import $ from 'jquery';
 
 function EventInfo(props) {
-
-  let [header, headerSet] = useState(headerData);
-  let [card, cardSet] = useState(cardData);
+  let header = useSelector((state)=>{
+    return state.headerData
+  })
+  let card = useSelector((state)=>{
+    return cardData
+  })
 
   useEffect(()=>{
 

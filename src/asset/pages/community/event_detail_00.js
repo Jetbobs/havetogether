@@ -2,6 +2,7 @@ import hostPic from '../../img/host_img00.png';
 import userPic from '../../img/pic.png';
 import userPic01 from '../../img/pic01.png';
 import userPic02 from '../../img/pic02.png';
+import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from "react-router-dom";
@@ -26,8 +27,12 @@ import $ from 'jquery';
 function EventDetail00(props) {
 
   let navigate = useNavigate();
-  let [bg, bgSet] = useState(bgWBtnData);
-  let [user, userSet] = useState(userCardData);
+  let bg = useSelector((state)=>{
+    return state.bgWBtnData
+  })
+  let user = useSelector((state)=>{
+    return state.userCardData
+  })
   // modal
   let [modalJoin, modalJoinSet] = useState(false);
   let [modalConfirm, modalConfirmSet] = useState(false);

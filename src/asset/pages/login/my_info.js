@@ -1,8 +1,9 @@
-import {Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 //fontawesome
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faCircleUser,faEllipsisVertical,faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleUser, faEllipsisVertical, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import userPic from '../../img/pic.png';
 
 //components
@@ -27,32 +28,45 @@ import '../../css/pages/login/my_info_style.scss';
 //jquery
 import $ from 'jquery';
 
-function MyInfo(props){
+function MyInfo(props) {
 
-  let [button, buttonSet] = useState([{ 'name': '입력취소', 'id': 'cancel' },{ 'name': '회원가입', 'id': 'sign_up' }]);
+  let [button, buttonSet] = useState([{ 'name': '입력취소', 'id': 'cancel' }, { 'name': '회원가입', 'id': 'sign_up' }]);
   let input_array_0 = ['belong', 'work_location', 'work_position', 'phone'];
   let input_array_1 = ['u_email', 'u_pw']
   let input_file_array_0 = ['my_picture']
-  let [inputData, inputDataSet] = useState(infoInputData);
-  let [inputDataFile, inputDataFileSet] = useState(infoInputDataFile);
-  let [inputDataTextarea, inputDataTextareaSet] = useState(infoInputDataTextarea);
-  
-  let [dateButton, dateButtonSet] = useState(dateButtonData);
 
-  let [interest, interestSet] = useState(interestData);
-  let [hobby, hobbytSet] = useState(hobbyData);
-  let [talkType, talkTypeSet ] = useState(talkTypeData);
+  let inputData = useSelector((state) => {
+    return state.infoInputData
+  })
+  let inputDataFile = useSelector((state) => {
+    return state.infoInputDataFile
+  })
+  let inputDataTextarea = useSelector((state) => {
+    return state.infoInputDataTextarea
+  })
+  let dateButton = useSelector((state)=>{
+    return state.dateButtonData
+  })
+  let interest = useSelector((state)=>{
+    return state.interestData
+  })
+  let hobby = useSelector((state) => {
+    return state.hobbyData
+  })
+  let talkType = useSelector((state)=>{
+    return state.talkTypeData
+  })
 
-  let [inputBtnInfo, inputBtnInfoSet] = useState([{title : '관심사를 알려주세요.', data : interest},{title : '취미를 알려주세요.', data : hobby},{title : '대화 성향을 알려주세요.', data : talkType}])
+  let [inputBtnInfo, inputBtnInfoSet] = useState([{ title: '관심사를 알려주세요.', data: interest }, { title: '취미를 알려주세요.', data: hobby }, { title: '대화 성향을 알려주세요.', data: talkType }])
 
-    return(
-        <div id="my_info">
-          <LoginHeader n={3}></LoginHeader>
-        <div className="" id='card_contents'>
-          <div className="card">
+  return (
+    <div id="my_info">
+      <LoginHeader n={3}></LoginHeader>
+      <div className="" id='card_contents'>
+        <div className="card">
           <div className="pic_name_container">
-            <div className="pic" style={{backgroundImage: 'url('+userPic+')'}}>
-  
+            <div className="pic" style={{ backgroundImage: 'url(' + userPic + ')' }}>
+
             </div>
             <div className="name_container">
               <div className="name">
@@ -88,20 +102,20 @@ function MyInfo(props){
               소속단체
             </div>
             <div className="belong_group">
-                <span className="b_g_i" id='maru180'>
-                  MARU 180
-                </span>
-                <span className="b_g_i" id='ict_coc'>
-                  ICT COC
-                </span>
-                <span className="b_g_i" id='d_camp'>
-                  D.camp
-                </span>
-              </div>
-          </div>
+              <span className="b_g_i" id='maru180'>
+                MARU 180
+              </span>
+              <span className="b_g_i" id='ict_coc'>
+                ICT COC
+              </span>
+              <span className="b_g_i" id='d_camp'>
+                D.camp
+              </span>
+            </div>
           </div>
         </div>
-        <div className="contents" id='input_contents'>
+      </div>
+      <div className="contents" id='input_contents'>
         <div className="title">
           기본 정보
         </div>
@@ -154,8 +168,8 @@ function MyInfo(props){
               </div>
               <div className="input_btn_container">
                 {
-                  dateButton.map((a,i) => {
-                    return(
+                  dateButton.map((a, i) => {
+                    return (
                       <LoginDateButton dateButton={dateButton} i={i}></LoginDateButton>
                     )
                   })
@@ -163,8 +177,8 @@ function MyInfo(props){
               </div>
             </div>
             {
-              inputBtnInfo.map((a,i)=>{
-                return(
+              inputBtnInfo.map((a, i) => {
+                return (
                   <LoginInfoButton title={inputBtnInfo[i].title} infoInput={inputBtnInfo[i].data}></LoginInfoButton>
                 )
               })
@@ -181,14 +195,14 @@ function MyInfo(props){
           })
         }
       </div>
-      </div>
-    )
+    </div>
+  )
 }
 
-$(function(){
+$(function () {
   let location = window.location.pathname;
 
-  if(location == '/my_info'){
+  if (location == '/my_info') {
     $('#hi_my_page').addClass('active');
   }
 })

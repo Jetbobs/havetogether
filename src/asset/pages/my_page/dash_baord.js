@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import CardEventData from '../../data/card/card_event_data';
 //components
 import CardEvent from '../../../components/common/card/card_event';
+import { useSelector } from "react-redux";
 
 function DashBoard(props) {
 
@@ -37,7 +38,13 @@ function DashBoard(props) {
     {id : 'reward', title: '참가 리워드'},
     {id : 'met_ppl', title: '만난 사람들'}]);
 
-    let [CardEventD, CardEventDSet] = useState(CardEventData);
+    // let [CardEventD, CardEventDSet] = useState(CardEventData);
+    let cardEventDataComing = useSelector((state)=>{
+      return state.cardEventDataComing
+    })
+    let cardEventDataComplete = useSelector((state)=>{
+      return state.cardEventDataComplete
+    })
 
   //JS
   //참가현황 색변경
@@ -209,9 +216,9 @@ function DashBoard(props) {
             </div>
             <div className="card_container">
               {
-                CardEventD.CardEventDataComing.map((a,i)=>{
+                cardEventDataComing.map((a,i)=>{
                   return(
-                    <CardEvent CardEvent={CardEventD.CardEventDataComing} i={i}></CardEvent>
+                    <CardEvent CardEvent={cardEventDataComing} i={i}></CardEvent>
                   )
                 })
               }
@@ -223,9 +230,9 @@ function DashBoard(props) {
             </div>
             <div className="card_container">
                             {
-                CardEventD.CardEventDataComplete.map((a,i)=>{
+                cardEventDataComplete.map((a,i)=>{
                   return(
-                    <CardEvent CardEvent={CardEventD.CardEventDataComplete} i={i}></CardEvent>
+                    <CardEvent CardEvent={cardEventDataComplete} i={i}></CardEvent>
                   )
                 })
               }

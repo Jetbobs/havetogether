@@ -12,12 +12,17 @@ import Modal from '../../../components/modal/modal';
 import UserCard from '../../../components/common/card/user_card';
 //jquery
 import $ from 'jquery';
+import { useSelector } from 'react-redux';
 
 function MyPageInfo(props) {
 
   let [editBtn, editBtnSet] = useState(false);
   let [modalEnterCancel, modalEnterCancelSet] = useState(false);
-  let [user, userSet] = useState(userCardData);
+  // let [user, userSet] = useState(userCardData);
+
+let user = useSelector((state)=>{
+  return state.userCardData
+})
 
   useEffect(()=>{
     $('#hi_community').removeClass('active');

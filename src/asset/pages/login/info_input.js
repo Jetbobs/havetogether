@@ -16,6 +16,8 @@ import infoInputDataFile from '../../data/login/info_input/info_input_file_data'
 import infoInputDataTextarea from '../../data/login/info_input/info_input_textarea_data';
 //jquery
 import $ from 'jquery';
+//redux
+import { useSelector } from 'react-redux';
 
 
 function InfoInput() {
@@ -23,10 +25,19 @@ function InfoInput() {
   let input_array_0 = ['belong', 'work_location', 'work_position', 'phone'];
   let input_array_1 = ['u_email', 'u_pw']
   let input_file_array_0 = ['my_picture']
-  let [inputData, inputDataSet] = useState(infoInputData);
-  let [inputDataFile, inputDataFileSet] = useState(infoInputDataFile);
-  let [inputDataTextarea, inputDataTextareaSet] = useState(infoInputDataTextarea);
-  console.log(inputData[0].title)
+  // let [inputData, inputDataSet] = useState(infoInputData);
+  // let [inputDataFile, inputDataFileSet] = useState(infoInputDataFile);
+  // let [inputDataTextarea, inputDataTextareaSet] = useState(infoInputDataTextarea);
+  //data
+  let inputData = useSelector((state) => {
+    return state.infoInputData})
+  let inputDataFile = useSelector((state)=> {
+    return state.infoInputDataFile
+  })
+  let inputDataTextarea = useSelector((state)=>{
+    return state.infoInputDataTextarea
+  })
+  console.log();
 
   return (
     <div id="info_input">

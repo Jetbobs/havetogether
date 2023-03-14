@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faEllipsisVertical, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import '../../css/pages/event_create/event_create_style.scss';
+import { useSelector } from 'react-redux';
 //components
 import Input from '../../../components/input/input';
 import CheckBox from '../../../components/common/check/check_box';
@@ -18,10 +19,18 @@ import $ from 'jquery';
 
 function EventCreateMore(props) {
 
-  let [input00, input00Set] = useState(inputData00);
-  let [input01, input01Set] = useState(inputData01);
-  let [input02, input02Set] = useState(inputData02);
-  let [input03, input03Set] = useState(inputData03);
+  let input00 = useSelector((state)=>{
+    return state.input00
+  })
+  let input01 = useSelector((state)=>{
+    return state.input01
+  })
+  let input02 = useSelector((state)=>{
+    return state.input02
+  })
+  let input03 = useSelector((state)=>{
+    return state.input03
+  })
 
   let [checkBox, checkBoxSet] = useState([
     {title : '참가목적', desc : '텍스트 박스(최대 500자'},

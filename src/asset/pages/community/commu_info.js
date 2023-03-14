@@ -1,4 +1,5 @@
 import groupImg from '../../img/group_img_00.png';
+import { useSelector } from 'react-redux';
 //scss
 import '../../css/pages/community/commu_info_style.scss';
 //data
@@ -20,8 +21,12 @@ function CommuInfo(props) {
     { id: 'end_event', title: '종료됨 이벤트', count: 'NN개' }, 
     { id: 'member_number', title: '함께하는 멤버', count: 'NN명' }, 
     { id: 'alumni', title: '졸업한 알럼나이', count: 'NNN' + '명' }]);
-  let [bg, bgSet] = useState(bgData);
-  let [card, cardSet] = useState(cardData);
+  let bg = useSelector((state)=>{
+    return state.bgData
+  })
+  let card = useSelector((state)=>{
+    return state.cardData
+  })
 
   useEffect(()=>{
         

@@ -1,4 +1,33 @@
 import { configureStore,createSlice } from '@reduxjs/toolkit';
+//infoInput
+import infoInputData from './features/data/login/info_input/info_input_data';
+import infoInputDataFile from './features/data/login/info_input/info_input_file_data';
+import infoInputDataTextarea from './features/data/login/info_input/info_input_textarea_data';
+//infoInputMore
+import infoInputDataM from './features/data/login/info_input_more/info_input_data';
+import dateButtonData from './features/data/login/info_input_more/date_button_data';
+import interestData from './features/data/login/info_input_more/info_interest_data';
+import hobbyData from './features/data/login/info_input_more/info_hobby_data';
+import talkTypeData from './features/data/login/info_input_more/info_talk_type_data';
+import hobbyArrData from './features/data/login/info_input_more/info_hobbyArr';
+//community
+//commu_info
+import bgData from './features/data/bg/bg_data';
+import cardData from './features/data/card/card_data';
+//event_detail_00
+import bgWBtnData from './features/data/bg/bg_w_btn_data';
+import userCardData from './features/data/card/user_card_data';
+//event_info
+import headerData from './features/data/header/header_data';
+//event_create
+import { inputData00, inputData01, inputData02, inputData03 } from './features/data/input/event_create/event_create_data';
+//my_page
+//dash_board
+import { cardEventDataComing, cardEventDataComplete } from './features/data/card/card_event_data';
+//dash_board_manager
+import { cardEventDataComingM, cardEventDataOnM, cardEventDataCompleteM } from './features/data/card/card_event_manager_data';
+
+
 
 let loginHeader = createSlice({
   name : 'loginHeader',
@@ -118,9 +147,43 @@ let intputInfoInputTextarea = createSlice({
 
 export default configureStore({
   reducer: { 
+    // login
     loginHeader : loginHeader.reducer,
     loginHeaderNol : loginHeaderNol.reducer,
     inputInfoInputFile : inputInfoInputFile.reducer,
     intputInfoInputTextarea : intputInfoInputTextarea.reducer,
+    // info_input
+    infoInputData : infoInputData.reducer,
+    infoInputDataFile : infoInputDataFile.reducer,
+    infoInputDataTextarea : infoInputDataTextarea.reducer,
+    // info_input_more
+    infoInputDataM : infoInputDataM.reducer,
+    dateButtonData : dateButtonData.reducer,
+    interestData : interestData.reducer,
+    hobbyData : hobbyData.reducer,
+    talkTypeData : talkTypeData.reducer,
+    hobbyArrData : hobbyArrData.reducer,
+    //community
+    //commu_info
+    bgData : bgData.reducer,
+    cardData : cardData.reducer,
+    // event_detail_00
+    bgWBtnData : bgWBtnData.reducer,
+    userCardData : userCardData.reducer,
+    // event_info
+    headerData : headerData.reducer,
+    //event_create
+    inputData00 : inputData00.reducer,
+    inputData01 : inputData01.reducer,
+    inputData02 : inputData02.reducer,
+    inputData03 : inputData03.reducer,
+    //my_page
+    //dash_board
+    cardEventDataComing : cardEventDataComing.reducer,
+    cardEventDataComplete : cardEventDataComplete.reducer,
+    //dash_board_manager
+    cardEventDataComingM : cardEventDataComingM.reducer,
+    cardEventDataOnM : cardEventDataOnM.reducer,
+    cardEventDataCompleteM : cardEventDataCompleteM.reducer,
    }
 }) 

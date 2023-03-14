@@ -1,4 +1,5 @@
 import groupImg from '../../img/group_img_00.png';
+import { useSelector } from 'react-redux';
 import $ from 'jquery';
 import '../../css/pages/my_page/current_event_state_style.scss';
 import { useEffect, useState } from 'react';
@@ -18,7 +19,11 @@ function CurrentEventState(props){
     {id : 'review', title: '작성한 후기'},
     {id : 'reward', title: '참가 리워드'}]);
 
-    let [card, cardSet] = useState(cardData);
+    // let [card, cardSet] = useState(cardData);
+
+    let card = useSelector((state) => {
+      return state.cardData
+    })
 
     useEffect(()=>{
       // let smpArr = ['dash_board','event_state','my_info','wish_box','setting']

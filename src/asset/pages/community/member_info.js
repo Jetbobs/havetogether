@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faEllipsisVertical, faArrowRight, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import '../../css/pages/community/member_info_style.scss';
+import { useSelector } from 'react-redux';
 //components
 import Header from "../../../components/common/header/header";
 import UserCard from '../../../components/common/card/user_card';
@@ -16,8 +17,12 @@ import $ from 'jquery';
 
 function MemberInfo(props) {
 
-  let [header, headerSet] = useState(headerData);
-  let [user, userSet] = useState(userCardData);
+  let header = useSelector((state)=>{
+    return state.headerData
+  })
+  let user = useSelector((state)=>{
+    return userCardData
+  })
 
   useEffect(()=>{
     $('#hi_community').addClass('active');

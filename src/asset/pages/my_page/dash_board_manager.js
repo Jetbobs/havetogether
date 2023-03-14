@@ -12,9 +12,22 @@ import $ from 'jquery';
 import CardEventData from '../../data/card/card_event_manager_data';
 //components
 import CardEvent from '../../../components/common/card/card_event';
+import { useSelector } from "react-redux";
 
 function DashBoardManager(props) {
   let [CardEventD, CardEventDSet] = useState(CardEventData);
+
+  let cardEventDataComingM = useSelector((state)=>{
+    return state.cardEventDataComingM
+  })
+
+  let cardEventDataOnM = useSelector((state)=>{
+    return state.cardEventDataOnM
+  })
+
+  let cardEventDataCompleteM = useSelector((state)=>{
+    return state.cardEventDataCompleteM
+  })
 
   useEffect(() => {
     $('#smm_dash_board').addClass('active');
@@ -140,9 +153,9 @@ function DashBoardManager(props) {
           </div>
           <div className="card_container">
             {
-              CardEventD.CardEventDataComing.map((a, i) => {
+              cardEventDataComingM.map((a, i) => {
                 return (
-                  <CardEvent CardEvent={CardEventD.CardEventDataComing} i={i}></CardEvent>
+                  <CardEvent CardEvent={cardEventDataComingM} i={i}></CardEvent>
                 )
               })
             }
@@ -154,9 +167,9 @@ function DashBoardManager(props) {
           </div>
           <div className="card_container">
             {
-              CardEventD.CardEventDataOn.map((a, i) => {
+              cardEventDataOnM.map((a, i) => {
                 return (
-                  <CardEvent CardEvent={CardEventD.CardEventDataOn} i={i} />
+                  <CardEvent CardEvent={cardEventDataOnM} i={i} />
                 )
               })
             }
@@ -168,9 +181,9 @@ function DashBoardManager(props) {
           </div>
           <div className="card_container">
             {
-              CardEventD.CardEventDataComplete.map((a, i) => {
+              cardEventDataCompleteM.map((a, i) => {
                 return (
-                  <CardEvent CardEvent={CardEventD.CardEventDataComplete} i={i}></CardEvent>
+                  <CardEvent CardEvent={cardEventDataCompleteM} i={i}></CardEvent>
                 )
               })
             }

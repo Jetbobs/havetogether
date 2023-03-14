@@ -22,39 +22,61 @@ import hobbyData from '../../data/login/info_input_more/info_hobby_data';
 import talkTypeData from '../../data/login/info_input_more/info_talk_type_data';
 //jquery
 import $ from 'jquery';
+import { useSelector } from 'react-redux';
 
 function InfoInputMore(props) {
 
   let [button, buttonSet] = useState([{ 'name': '입력완료', 'id': 'complete' }]);
   let input_array_0 = ['email', 'pw_change'];
 
-  let [inputData, inputDataSet] = useState(infoInputData);
-  let [dateButton, dateButtonSet] = useState(dateButtonData);
+  // let [inputData, inputDataSet] = useState(infoInputData);
+  // let [dateButton, dateButtonSet] = useState(dateButtonData);
 
-  let [interest, interestSet] = useState(interestData);
-  let [hobby, hobbytSet] = useState(hobbyData);
-  let [talkType, talkTypeSet] = useState(talkTypeData);
+  // let [interest, interestSet] = useState(interestData);
+  // let [hobby, hobbytSet] = useState(hobbyData);
+  // let [talkType, talkTypeSet] = useState(talkTypeData);
+
+  let inputData = useSelector((state)=>{
+    return state.infoInputDataM
+  })
+  let dateButton = useSelector((state)=>{
+    return state.dateButtonData
+  })
+  let interest = useSelector((state)=>{
+    return state.interestData
+  })
+  let hobby = useSelector((state) => {
+    return state.hobbyData
+  })
+  let talkType = useSelector((state)=>{
+    return state.talkTypeData
+  })
+  let hobbyArr = useSelector((state)=>{
+    return state.hobbyArrData
+  })
 
   let [inputBtnInfo, inputBtnInfoSet] = useState([
     { title: '관심사를 알려주세요.', data: interest }, 
     { title: '취미를 알려주세요.', data: hobby }, 
     { title: '대화 성향을 알려주세요.', data: talkType }])
-  let [hobbyArr, hobbyArrSet] = useState([
-  { id: 'new_tech', title: '신문물' },
-  { id: 'excercise', title: '운동' },
-  { id: 'pet', title: '반려 동물' },
-  { id: 'reading', title: '독서' },
-  { id: 'self_development', title: '자기계발' },
-  { id: 'foreign_lang', title: '외국어' },
-  { id: 'hot_restaurant', title: '맛집' },
-  { id: 'trip', title: '여행' },
-  { id: 'music', title: '음악' },
-  { id: 'consert', title: '공연' },
-  { id: 'movie', title: '영화' },
-  { id: 'coffee', title: '커피' },
-  { id: 'hot_restaurant_01', title: '맛집' },
-  { id: 'stock', title: '주식' },
-  { id: 'investment', title: '투자' }])
+  // let [hobbyArr, hobbyArrSet] = useState([
+  // { id: 'new_tech', title: '신문물' },
+  // { id: 'excercise', title: '운동' },
+  // { id: 'pet', title: '반려 동물' },
+  // { id: 'reading', title: '독서' },
+  // { id: 'self_development', title: '자기계발' },
+  // { id: 'foreign_lang', title: '외국어' },
+  // { id: 'hot_restaurant', title: '맛집' },
+  // { id: 'trip', title: '여행' },
+  // { id: 'music', title: '음악' },
+  // { id: 'consert', title: '공연' },
+  // { id: 'movie', title: '영화' },
+  // { id: 'coffee', title: '커피' },
+  // { id: 'hot_restaurant_01', title: '맛집' },
+  // { id: 'stock', title: '주식' },
+  // { id: 'investment', title: '투자' }])
+
+
 
   // date 
   let [dateTime, dateTimeSet] = useState([{ id: 'm_11', time: '11:30' }])
